@@ -10,7 +10,7 @@ import { deriveErrorMessage } from '../../util/deriveErrorMessage';
 
 import DEFAULT_OPERATIONS from './orderHistoryPage.gql';
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 2;
 
 export const useOrderHistoryPage = (props = {}) => {
     const operations = mergeOperations(DEFAULT_OPERATIONS, props.operations);
@@ -25,7 +25,7 @@ export const useOrderHistoryPage = (props = {}) => {
     const history = useHistory();
     const [{ isSignedIn }] = useUserContext();
 
-    const [pageSize, setPageSize] = useState(PAGE_SIZE);
+    const [currentPage, setCurrentPage] = useState(1);
     const [searchText, setSearchText] = useState('');
 
     const {
@@ -40,7 +40,8 @@ export const useOrderHistoryPage = (props = {}) => {
                     match: searchText
                 }
             },
-            pageSize
+            currentPage,
+            pageSize: PAGE_SIZE
         }
     });
 
@@ -52,15 +53,16 @@ export const useOrderHistoryPage = (props = {}) => {
     const pageInfo = useMemo(() => {
         if (orderData) {
             const { total_count } = orderData.customer.orders;
+            const offset = currentPage * PAGE_SIZE;
 
             return {
-                current: pageSize < total_count ? pageSize : total_count,
+                current: offset < total_count ? offset : total_count,
                 total: total_count
             };
         }
 
         return null;
-    }, [orderData, pageSize]);
+    }, [currentPage, orderData]);
 
     const derivedErrorMessage = useMemo(
         () => deriveErrorMessage([getOrderError]),
@@ -81,7 +83,7 @@ export const useOrderHistoryPage = (props = {}) => {
             const { current_page, total_pages } = page_info;
 
             if (current_page < total_pages) {
-                return () => setPageSize(current => current + PAGE_SIZE);
+                return () => setCurrentPage(current => current + 1);
             }
         }
 

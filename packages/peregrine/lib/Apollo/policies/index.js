@@ -132,10 +132,7 @@ const typePolicies = {
                 }
             },
             orders: {
-                keyArgs: ['filter'],
-                items: {
-                    merge: true
-                }
+                keyArgs: ['filter']
             }
         }
     },
@@ -145,6 +142,25 @@ const typePolicies = {
                 // eslint-disable-next-line no-unused-vars
                 merge(existing, incoming) {
                     return incoming;
+                }
+            }
+        }
+    },
+    CustomerOrders: {
+        fields: {
+            items: {
+                // should this not be the default behavior, and instead go in useOrderHistoryPage
+                // using the useTypePolicies hook?
+                merge: (existing = [], incoming, { variables }) => {
+                    if (variables) {
+                        const { currentPage = 1 } = variables;
+                        // reset cache collection if we're on the first page
+                        if (currentPage === 1) {
+                            return incoming;
+                        }
+                    }
+
+                    return [...existing, ...incoming];
                 }
             }
         }
