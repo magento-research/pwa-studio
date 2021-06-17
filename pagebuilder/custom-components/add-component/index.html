@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Add component | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Page Builder</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/pagebuilder/" class="spectrum-SideNav-itemLink  ">Integration</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/pagebuilder/known-limitations/" class="spectrum-SideNav-itemLink  ">Known limitations</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Creating custom components</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/overview/" class="spectrum-SideNav-itemLink  ">Overview</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/setup-component/" class="spectrum-SideNav-itemLink  ">Set up component</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/add-aggregator/" class="spectrum-SideNav-itemLink  ">Add aggregator</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/add-stylesheet/" class="spectrum-SideNav-itemLink  ">Add stylesheet</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/add-component/" class="spectrum-SideNav-itemLink  ">Add component</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/debugging/" class="spectrum-SideNav-itemLink  ">Debugging tips</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/pagebuilder/utility-functions/" class="spectrum-SideNav-itemLink  ">Utility functions</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Components</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/banner/" class="spectrum-SideNav-itemLink  ">Banner</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/block/" class="spectrum-SideNav-itemLink  ">Block</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/buttons/" class="spectrum-SideNav-itemLink  ">Buttons</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/column/" class="spectrum-SideNav-itemLink  ">Column</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/divider/" class="spectrum-SideNav-itemLink  ">Divider</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/heading/" class="spectrum-SideNav-itemLink  ">Heading</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/html/" class="spectrum-SideNav-itemLink  ">HTML Code</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/image/" class="spectrum-SideNav-itemLink  ">Image</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/map/" class="spectrum-SideNav-itemLink  ">Map</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/products/" class="spectrum-SideNav-itemLink  ">Products</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/row/" class="spectrum-SideNav-itemLink  ">Row</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/slider/" class="spectrum-SideNav-itemLink  ">Slider</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/tabs/" class="spectrum-SideNav-itemLink  ">Tabs</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/text/" class="spectrum-SideNav-itemLink  ">Text</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/video/" class="spectrum-SideNav-itemLink  ">Video</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Add component</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/pagebuilder/custom-components/add-component/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /pagebuilder/custom-components/add-component/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The purpose of a Page Builder component is to recreate a Page Builder content type (from your Magento instance) to display inside a PWA app. Developing this component is similar to developing other React components in PWA Studio. However, the properties defined within a Page Builder component are determined by the properties returned from your configuration aggregator. The following steps highlight how to put these properties to use in your component:</p>
+
+<p><img src="images/AddComponentSteps.svg" alt="Add Component steps overview" /></p>
+
+<h2 id="step-1-add-local-props-and-prop-types">Step 1: Add local props and prop-types</h2>
+
+<p>The first step is to declare local variables that match the names of the props being passed from your aggregator, for destructuring. For our <code class="highlighter-rouge">ExampleQuote</code>, we declare and assign these properties as follows:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">ExampleQuote</span> <span class="o">=</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span>
+        <span class="nx">quote</span><span class="p">,</span>
+        <span class="nx">author</span><span class="p">,</span>
+        <span class="nx">description</span><span class="p">,</span>
+        <span class="nx">textAlign</span><span class="p">,</span>
+        <span class="nx">border</span><span class="p">,</span>
+        <span class="nx">borderColor</span><span class="p">,</span>
+        <span class="nx">borderWidth</span><span class="p">,</span>
+        <span class="nx">borderRadius</span><span class="p">,</span>
+        <span class="nx">isHidden</span><span class="p">,</span>
+        <span class="nx">marginTop</span><span class="p">,</span>
+        <span class="nx">marginRight</span><span class="p">,</span>
+        <span class="nx">marginBottom</span><span class="p">,</span>
+        <span class="nx">marginLeft</span><span class="p">,</span>
+        <span class="nx">paddingTop</span><span class="p">,</span>
+        <span class="nx">paddingRight</span><span class="p">,</span>
+        <span class="nx">paddingBottom</span><span class="p">,</span>
+        <span class="nx">paddingLeft</span><span class="p">,</span>
+        <span class="nx">cssClasses</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>With a destructuring assignment, our component takes a <code class="highlighter-rouge">props</code> object and copies its values to our local variables. All you need to do is make sure the names of your local variables exactly match the names of the <code class="highlighter-rouge">props</code> passed from your aggregator. As noted before, you can use <code class="highlighter-rouge">console.log(props)</code> at the top of your component to see the names of the <code class="highlighter-rouge">keys</code> being passed in on the props object.</p>
+
+<p>Along with defining your local variables, you need to add the comparable <code class="highlighter-rouge">prop-types</code> to define exactly what can be passed into your component. The <code class="highlighter-rouge">ExampleQuote</code> component defines the following <code class="highlighter-rouge">prop-types</code>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">arrayOf</span><span class="p">,</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">bool</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">prop-types</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">ExampleQuote</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">quote</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">author</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">textAlign</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">border</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">borderColor</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">borderWidth</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">borderRadius</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">isHidden</span><span class="p">:</span> <span class="nx">bool</span><span class="p">,</span>
+    <span class="na">marginTop</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">marginRight</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">marginBottom</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">marginLeft</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">paddingTop</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">paddingRight</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">paddingBottom</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">paddingLeft</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+    <span class="na">cssClasses</span><span class="p">:</span> <span class="nx">arrayOf</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="step-2-add-jsx-markup">Step 2: Add JSX markup</h2>
+
+<p>Your JSX markup should recreate the HTML structure of your Page Builder content type and provide the slots for rendering its content and styles. For example, here is the markup needed to recreate the structure of our Quote content type and host the local content-related <code class="highlighter-rouge">props</code> values from our aggregator:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">toHTML</span> <span class="o">=</span> <span class="nx">str</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">__html</span><span class="p">:</span> <span class="nx">str</span> <span class="p">});</span>
+
+<span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">quote</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">author</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">dangerouslySetInnerHTML=</span><span class="si">{</span><span class="nx">toHTML</span><span class="p">(</span><span class="nx">description</span><span class="p">)</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Because our <code class="highlighter-rouge">description</code> property value is HTML, we need to use React’s <a href="https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml">dangerouslySetInnerHTML</a> and <code class="highlighter-rouge">__html</code> to render it out properly.</p>
+
+<h2 id="step-3-apply-form-styles">Step 3: Apply form styles</h2>
+
+<p>To make it easy to apply all the inline styles from your content type to your Page Builder component, you can create a separate object that contains only the styles retrieved from the content type’s form. These styles include those that are retrieved by <a href="/pwa-studio/pagebuilder/utility-functions/">utility functions</a> like <code class="highlighter-rouge">getAdvanced()</code> and <code class="highlighter-rouge">getBackgroundImages()</code>.</p>
+
+<p>For our component, we created an object called <code class="highlighter-rouge">formStyles</code> to group our form styles as shown here:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">formStyles</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">textAlign</span><span class="p">,</span>
+    <span class="nx">border</span><span class="p">,</span>
+    <span class="nx">borderColor</span><span class="p">,</span>
+    <span class="nx">borderWidth</span><span class="p">,</span>
+    <span class="nx">borderRadius</span><span class="p">,</span>
+    <span class="nx">isHidden</span><span class="p">,</span>
+    <span class="nx">marginTop</span><span class="p">,</span>
+    <span class="nx">marginRight</span><span class="p">,</span>
+    <span class="nx">marginBottom</span><span class="p">,</span>
+    <span class="nx">marginLeft</span><span class="p">,</span>
+    <span class="nx">paddingTop</span><span class="p">,</span>
+    <span class="nx">paddingRight</span><span class="p">,</span>
+    <span class="nx">paddingBottom</span><span class="p">,</span>
+    <span class="nx">paddingLeft</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>These are the styles returned from the Advanced form section of our Quote content type (using <code class="highlighter-rouge">getAdvanced()</code>). When they are grouped together as shown, we can apply them all at once to our component, as follows:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style=</span><span class="si">{</span><span class="nx">formStyles</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">quote</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">author</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">dangerouslySetInnerHTML=</span><span class="si">{</span><span class="nx">toHTML</span><span class="p">(</span><span class="nx">description</span><span class="p">)</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Now we need to apply the CSS classes we used to style the rest of our content type.</p>
+
+<h2 id="step-4-apply-css-classes">Step 4: Apply CSS classes</h2>
+
+<p>Applying CSS classes to your component in PWA involves importing both your CSS stylesheet and a PWA Studio function called <code class="highlighter-rouge">mergeClasses</code>. This function does exactly what its name implies: it merges classes from different sources into a single variable you can use to add your classes to your JSX, using <code class="highlighter-rouge">className</code>.</p>
+
+<p>For our component, we import our component stylesheet and the <code class="highlighter-rouge">mergeClasses</code> function as follows:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">defaultClasses</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./exampleQuote.css</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">mergeClasses</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../../../../classify</span><span class="dl">'</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p>We then merge the classes from our stylesheet with any classes passed in on the props and use a single variable (<code class="highlighter-rouge">classes</code>) to apply our consolidated classes to the correct nodes in the JSX:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">classes</span> <span class="o">=</span> <span class="nx">mergeClasses</span><span class="p">(</span><span class="nx">defaultClasses</span><span class="p">,</span> <span class="nx">props</span><span class="p">.</span><span class="nx">classes</span><span class="p">);</span>
+
+<span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style=</span><span class="si">{</span><span class="nx">formStyles</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className=</span><span class="si">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">quote</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">quote</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className=</span><span class="si">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">quoteAuthor</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">author</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span>
+            <span class="na">className=</span><span class="si">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">quoteDescription</span><span class="si">}</span>
+            <span class="na">dangerouslySetInnerHTML=</span><span class="si">{</span><span class="nx">toHTML</span><span class="p">(</span><span class="nx">description</span><span class="p">)</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>Merging the <code class="highlighter-rouge">props.classes</code> ensures that our component can apply and override styles from other components.</p>
+
+<p>In the previous code block, we only used a single class, <code class="highlighter-rouge">classes.quote</code>, to style the quote in our component. However, our original class required two different classes (<code class="highlighter-rouge">.quote</code> and <code class="highlighter-rouge">.blue-quote</code>) for styling. As a best practice, you want to use the <code class="highlighter-rouge">composes</code> construct from <a href="/pwa-studio/technologies/basic-concepts/css-modules/">CSS Modules</a> as much as possible.</p>
+
+<p>For example, in our <code class="highlighter-rouge">exampleQuote.css</code>, we composed each color quote class with the <code class="highlighter-rouge">.qoute</code> class as shown in the following snippet:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.quote</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.4em</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">1em</span> <span class="m">1em</span> <span class="m">0.3em</span> <span class="m">0.6em</span><span class="p">;</span>
+    <span class="nl">quotes</span><span class="p">:</span> <span class="s2">'\201C''\201D''\2018''\2019'</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">italic</span><span class="p">;</span>
+    <span class="nl">word-break</span><span class="p">:</span> <span class="nb">normal</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.25em</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">300</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.blackQuote</span> <span class="p">{</span>
+    <span class="py">composes</span><span class="p">:</span> <span class="n">quote</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#333333</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.blueQuote</span> <span class="p">{</span>
+    <span class="py">composes</span><span class="p">:</span> <span class="n">quote</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#007ab9</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">...</span>
+</code></pre></div></div>
+
+<p>This ensures that for each colored quote class, we also apply the <code class="highlighter-rouge">.quote</code> class.</p>
+
+<h2 id="component-output">Component output</h2>
+
+<p>If you have followed along using the <code class="highlighter-rouge">ExampleQuote</code> component, you should see something like this displayed in the PWA Venia app:</p>
+
+<p><img src="images/AddComponentOutput.svg" alt="Add Component output" /></p>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

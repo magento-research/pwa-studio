@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" data-name="S_Search_18_N@2x" height="36" id="S_Search_18_N_2x" viewBox="0 0 36 36" width="36">
+  <defs>
+    <style>
+      .fill {
+        fill: #6E6E6E;
+      }      
+    </style>
+  </defs>
+  <rect id="ToDelete" fill="#ff13dc" opacity="0" width="36" height="36" /><path class="fill" d="M33.173,30.215,25.4,22.443A12.826,12.826,0,1,0,22.443,25.4l7.772,7.772a2.1,2.1,0,0,0,2.958-2.958ZM6,15a9,9,0,1,1,9,9A9,9,0,0,1,6,15Z" />
+</svg>

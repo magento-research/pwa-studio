@@ -1,0 +1,1 @@
+window.addEventListener("load",e=>{if(document.getElementsByClassName("table-of-contents")){let e=document.getElementsByClassName("active")[0];e&&e.scrollIntoView({inline:"center",block:"center",behavior:"smooth"})}});

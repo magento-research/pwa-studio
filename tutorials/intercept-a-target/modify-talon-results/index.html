@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Modify talon results | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item is-selected">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Tutorials</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/" class="spectrum-SideNav-itemLink  parent">Getting Started</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/" class="spectrum-SideNav-itemLink  ">Setup your project</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-structure/" class="spectrum-SideNav-itemLink  ">Explore the project structure</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Basic modifications</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/enable-sass-less-support/" class="spectrum-SideNav-itemLink  ">Enable SASS or LESS support</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/add-a-static-route/" class="spectrum-SideNav-itemLink  ">Add a static route</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/modify-site-footer/" class="spectrum-SideNav-itemLink  ">Modify the site footer</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/intercept-a-target/" class="spectrum-SideNav-itemLink  parent">Target interception</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/modify-talon-results/" class="spectrum-SideNav-itemLink  ">Modify talon results</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/add-new-environment-variable/" class="spectrum-SideNav-itemLink  ">Add a new environment variable</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/change-static-assets-directory/" class="spectrum-SideNav-itemLink  ">Change static assets directory</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/targetables/" class="spectrum-SideNav-itemLink  ">Modify code with Targetables</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/extension-development/" class="spectrum-SideNav-itemLink  parent">Extension development</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/extension-development/taglist/" class="spectrum-SideNav-itemLink  ">Create a tag list extension</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/production-launch-checklist/" class="spectrum-SideNav-itemLink  parent">Production deployments</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/cloud-deploy/" class="spectrum-SideNav-itemLink  ">Deploy to Magento Cloud</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Modify talon results</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/tutorials/intercept-a-target/modify-talon-results/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /tutorials/intercept-a-target/modify-talon-results/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>In core Magento development:</p>
+
+<blockquote>
+  <p>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call.
+This allows you to substitute or extend the behavior of original, public methods for any class or interface.</p>
+</blockquote>
+
+<p>See: <a href="https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html">Plugins (Interceptors)</a></p>
+
+<p>PWA Studio’s extensibility framework provides a similar feature that allows you to intercept a talon call and surround it with custom logic.
+This is useful if you want to add tracking logic or alter the incoming or outgoing values for a talon.</p>
+
+<p>This tutorial teaches you how to create an extension that intercepts a talon and changes the results.</p>
+
+<h2 id="tasks-overview">Tasks overview</h2>
+
+<ol>
+  <li>Initialize the project</li>
+  <li>Create and register an intercept file</li>
+  <li>Define the intercept file</li>
+  <li>Make a data fetch hook</li>
+  <li>Create the talon wrapper module</li>
+  <li>Update the package entry point</li>
+  <li>Test on a local instance</li>
+</ol>
+
+<h2 id="initialize-the-project">Initialize the project</h2>
+
+<p>To intercept and wrap a talon, you need a PWA Studio extension.
+Use <a href="https://docs.npmjs.com/cli/init"><code class="highlighter-rouge">npm init</code></a> or <a href="https://classic.yarnpkg.com/en/docs/cli/init/"><code class="highlighter-rouge">yarn init</code></a> to create a new JavaScript package project for this tutorial.</p>
+
+<p class="bs-callout bs-callout-info"><strong>Note:</strong> This is a standalone project.
+You do not need to create this inside a storefront project.</p>
+
+<p>Edit the <code class="highlighter-rouge">packages.json</code> file so it looks like the following:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-extension"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A PWA Studio extension"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"publishConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(OSL-3.0 OR AFL-3.0)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"repository"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"peerDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"@magento/peregrine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~7.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"@magento/pwa-buildpack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~6.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"@magento/venia-ui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"@apollo/client"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~3.1.2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"graphql-tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.10.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"react"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~17.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"webpack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4.38.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="create-and-register-the-intercept-file">Create and register the intercept file</h2>
+
+<p>You can create the intercept file anywhere in your project.
+For this tutorial, create this file under <code class="highlighter-rouge">src/targets</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/targets <span class="o">&amp;&amp;</span> <span class="nb">touch </span>src/targets/my-intercept.js
+</code></pre></div></div>
+
+<p>Set the value for <code class="highlighter-rouge">pwa-studio.targets.intercept</code> in your project’s <code class="highlighter-rouge">package.json</code> file to tell the build process where to find the intercept file.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    "react": "~17.0.1",
+    "webpack": "~4.38.0"
+  },
+<span class="gi">+ "pwa-studio": {
++   "targets": {
++     "intercept": "src/targets/my-intercept"
++   }
++ }
+</span><span class="err">}</span>
+</code></pre></div></div>
+
+<h2 id="define-the-intercept-file">Define the intercept file</h2>
+
+<p>The intercept file is where you tap into PWA Studio’s extensibility framework and add your modifications.</p>
+
+<p>In your intercept file, add the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">targets</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Wrap the useProductFullDetail talon with this extension</span>
+  <span class="kd">const</span> <span class="nx">peregrineTargets</span> <span class="o">=</span> <span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">"</span><span class="s2">@magento/peregrine</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">talonsTarget</span> <span class="o">=</span> <span class="nx">peregrineTargets</span><span class="p">.</span><span class="nx">talons</span><span class="p">;</span>
+
+  <span class="nx">talonsTarget</span><span class="p">.</span><span class="nx">tap</span><span class="p">((</span><span class="nx">talonWrapperConfig</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">talonWrapperConfig</span><span class="p">.</span><span class="nx">ProductFullDetail</span><span class="p">.</span><span class="nx">useProductFullDetail</span><span class="p">.</span><span class="nx">wrapWith</span><span class="p">(</span>
+      <span class="dl">"</span><span class="s2">my-extension</span><span class="dl">"</span>
+    <span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="c1">// Set the buildpack features required by this extension</span>
+  <span class="kd">const</span> <span class="nx">builtins</span> <span class="o">=</span> <span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">"</span><span class="s2">@magento/pwa-buildpack</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">builtins</span><span class="p">.</span><span class="nx">specialFeatures</span><span class="p">.</span><span class="nx">tap</span><span class="p">((</span><span class="nx">featuresByModule</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">featuresByModule</span><span class="p">[</span><span class="dl">"</span><span class="s2">@my-extension/my-product-page</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="c1">// Wrapper modules must be ES Modules</span>
+      <span class="na">esModules</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>When this file runs, it taps into the <code class="highlighter-rouge">talonsTarget</code> from the available targets in <code class="highlighter-rouge">@magento/peregrine</code> and wraps the <code class="highlighter-rouge">useProductFullDetail()</code> function call with your extension.</p>
+
+<p>Since talon wrappers must be ES modules, this file also taps into the <code class="highlighter-rouge">specialFeatures</code> target from <code class="highlighter-rouge">@magento/pwa-buildpack</code> to set the <code class="highlighter-rouge">esModules</code> flag to <code class="highlighter-rouge">true</code>.</p>
+
+<h2 id="make-a-data-fetch-hook">Make a data fetch hook</h2>
+
+<p>Create a data fetch hook to query the backend for more data.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/hooks <span class="o">&amp;&amp;</span> <span class="nb">touch </span>src/hooks/useProductCategoriesList.js
+</code></pre></div></div>
+
+<p>Inside the <code class="highlighter-rouge">useProductCategoriesList.js</code> file, add the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useMemo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@apollo/client</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">gql</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">graphql-tag</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">GET_PRODUCT_CATEGORIES</span> <span class="o">=</span> <span class="nx">gql</span><span class="s2">`
+  query getProductCategories($urlKey: String!) {
+    products(filter: { url_key: { eq: $urlKey } }) {
+      items {
+        categories {
+          name
+          url_path
+        }
+      }
+    }
+  }
+`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">useProductCategoriesList</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">urlKey</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">loading</span><span class="p">,</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="nx">GET_PRODUCT_CATEGORIES</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">fetchPolicy</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cache-and-network</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">nextFetchPolicy</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cache-first</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">variables</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">urlKey</span><span class="p">:</span> <span class="nx">urlKey</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="kd">const</span> <span class="nx">categories</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">categories</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">data</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">error</span><span class="p">,</span>
+    <span class="na">isLoading</span><span class="p">:</span> <span class="nx">loading</span><span class="p">,</span>
+    <span class="nx">categories</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">useProductCategoriesList</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>This code defines a GraphQL query that fetches a list of category names and URL for a product at a specific URL key.
+It returns a hook that sends the query to the backend and returns data about the request, which includes the results.</p>
+
+<h2 id="create-the-talon-wrapper-module">Create the talon wrapper module</h2>
+
+<p>A talon wrapper module wraps around an existing talon and injects code around the implementation logic the talon executes.</p>
+
+<p>You can define this module anywhere in your project, but for this tutorial create it under <code class="highlighter-rouge">src/targets</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>src/targets/wrapper.js
+</code></pre></div></div>
+
+<p>Inside <code class="highlighter-rouge">wrapper.js</code>, add the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">useProductCategoriesList</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../hooks/useProductCategoriesList</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">wrapUseProductFullDetails</span> <span class="o">=</span> <span class="p">(</span><span class="nx">original</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="nx">useProductFullDetails</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="p">...</span><span class="nx">restArgs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Calling new useProductFullDetails() function!</span><span class="dl">"</span><span class="p">)</span>
+
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">product</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">categoriesListData</span> <span class="o">=</span> <span class="nx">useProductCategoriesList</span><span class="p">({</span>
+      <span class="na">urlKey</span><span class="p">:</span> <span class="nx">product</span><span class="p">.</span><span class="nx">url_key</span>
+    <span class="p">});</span>
+
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">productDetails</span><span class="p">,</span> <span class="p">...</span><span class="nx">defaultReturnData</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">original</span><span class="p">(</span>
+      <span class="nx">props</span><span class="p">,</span>
+      <span class="p">...</span><span class="nx">restArgs</span>
+    <span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="p">...</span><span class="nx">defaultReturnData</span><span class="p">,</span>
+      <span class="na">productDetails</span><span class="p">:</span> <span class="p">{</span>
+        <span class="p">...</span><span class="nx">productDetails</span><span class="p">,</span>
+        <span class="na">categoriesList</span><span class="p">:</span> <span class="nx">categoriesListData</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">wrapUseProductFullDetails</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>This module exports a function that returns a new <code class="highlighter-rouge">useProductFullDetails()</code> function.
+Whenever a component calls the original <code class="highlighter-rouge">useProductFullDetails()</code> talon, it calls this new function instead.</p>
+
+<p>The module imports and uses the <code class="highlighter-rouge">useProductCategoriesList()</code> hook defined in a previous step to get the <code class="highlighter-rouge">categoriesListData</code>, which contains information about the request.
+The code uses the <code class="highlighter-rouge">props</code> normally passed into the <code class="highlighter-rouge">original</code> function to get the value of the <code class="highlighter-rouge">urlKey</code> for the GraphQL request.</p>
+
+<p>The extensibility framework provides the <code class="highlighter-rouge">original</code> talon function when it executes the wrapper module.
+The new <code class="highlighter-rouge">useProductFullDetails()</code> function calls this function and uses the props data result as a starting point for the final returned value.</p>
+
+<p>The final return value is combination of the original props data and the categories list data returned by the hook.</p>
+
+<h2 id="update-the-package-entry-point">Update the package entry point</h2>
+
+<p>Update the <code class="highlighter-rouge">package.json</code> file and set the main entry point to the talon wrapper module.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "publishConfig": {
+    "access": "public"
+  },
+<span class="gd">- "main": "index.js",
+</span><span class="gi">+ "main": "src/targets/wrapper.js",
+</span>  "license": "(OSL-3.0 OR AFL-3.0)",
+</code></pre></div></div>
+
+<p>This indicates which module to return when another project uses this package as a dependency.
+This is an important step because the intercept file in this project tells the extensibility framework to wrap the <code class="highlighter-rouge">useProductFullDetails()</code> talon with the module this package provides.</p>
+
+<h2 id="test-on-a-local-instance">Test on a local instance</h2>
+
+<p>Install this extension in a local storefront project to test its functionality.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add <span class="nt">--dev</span> file:/path/to/your/extension/project
+</code></pre></div></div>
+
+<p>This will add a <code class="highlighter-rouge">devDependencies</code> entry to your storefront project’s <code class="highlighter-rouge">package.json</code> that looks like the following:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "memory-fs": "~0.4.1",
+<span class="gi">+ "my-extension": "file:/path/to/your/extension/project"
+</span>  "prettier": "~1.16.4",
+</code></pre></div></div>
+
+<p>Now, when you navigate to a product page, the following message appears in the console:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Calling new useProductFullDetails() function!".
+</code></pre></div></div>
+
+<p>Use additional <code class="highlighter-rouge">console.log()</code> calls to verify the application calls the data fetch hook.</p>
+
+<!-- TODO: Create a follw-up tutorial for this or update the create-taglist-component topic when the targetables PR is merged or released -->
+<p>To test the new props data the wrapped talon returns, you will need to create a copy of the ProductFullDetails component and alter it to log or render the new data.</p>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

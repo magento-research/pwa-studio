@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>tip</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13,5 L15,5 L15,1 L13,1 L13,5 Z M20.879,6.707 L22.293,8.121 L25.121,5.293 L23.707,3.879 L20.879,6.707 Z M2.879,5.293 L5.707,8.121 L7.121,6.707 L4.293,3.879 L2.879,5.293 Z M7,14 C7,16.38 8.19,18.469 10,19.74 L10,22 C10,22.55 10.45,23 11,23 L17,23 C17.55,23 18,22.55 18,22 L18,19.74 C19.81,18.469 21,16.38 21,14 C21,10.14 17.859,7 14,7 C10.14,7 7,10.14 7,14 Z M23,15 L27,15 L27,13 L23,13 L23,15 Z M1,15 L5,15 L5,13 L1,13 L1,15 Z M11,25 L11,26 C11,26.55 11.45,27 12,27 L16,27 C16.55,27 17,26.55 17,26 L17,25 L11,25 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/tip">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="tip" fill="#43751C" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

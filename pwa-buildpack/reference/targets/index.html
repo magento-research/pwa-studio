@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Built-in Targets | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">PWA Buildpack API</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Extension points</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targets/" class="spectrum-SideNav-itemLink  ">Targets</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/definitions-api/" class="spectrum-SideNav-itemLink  ">EnvVarDefinitions</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/transform-requests/" class="spectrum-SideNav-itemLink  ">Transform Requests</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Targetables</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableModule/" class="spectrum-SideNav-itemLink  ">TargetableModule</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModule/" class="spectrum-SideNav-itemLink  ">TargetableESModule</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModuleArray/" class="spectrum-SideNav-itemLink  ">TargetableESModuleArray</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModuleObject/" class="spectrum-SideNav-itemLink  ">TargetableESModuleObject</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableReactComponent/" class="spectrum-SideNav-itemLink  ">TargetableReactComponent</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableSet/" class="spectrum-SideNav-itemLink  ">TargetableSet</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/SingleImportStatement/" class="spectrum-SideNav-itemLink  ">SingleImportStatement</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Extension framework</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/extension-framework/" class="spectrum-SideNav-itemLink  ">BuildBus</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/extension-framework/target/" class="spectrum-SideNav-itemLink  ">Target</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/extension-framework/targetprovider/" class="spectrum-SideNav-itemLink  ">TargetProvider</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Command line interface</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/" class="spectrum-SideNav-itemLink  ">Using the CLI</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/create-custom-origin/" class="spectrum-SideNav-itemLink  ">Create custom origin</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/create-env-file/" class="spectrum-SideNav-itemLink  ">Create environment file</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/create-project/" class="spectrum-SideNav-itemLink  ">Create project</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/load-env/" class="spectrum-SideNav-itemLink  ">Load environment file</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Developer utilities</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/load-env/#programmatic-api" class="spectrum-SideNav-itemLink  ">loadEnvironment</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/load-env/#programmatic-api" class="spectrum-SideNav-itemLink  ">createDotEnvFile</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/definitions-api/" class="spectrum-SideNav-itemLink  ">getEnvVarDefinitions</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Webpack tools</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/configure-webpack" class="spectrum-SideNav-itemLink  ">configureWebpack</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/magento-resolver/" class="spectrum-SideNav-itemLink  ">MagentoResolver</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/root-components-plugin/" class="spectrum-SideNav-itemLink  ">MagentoRootComponentsPlugin</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/pwa-dev-server/" class="spectrum-SideNav-itemLink  ">PWADevServer</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/serviceworker-plugin/" class="spectrum-SideNav-itemLink  ">ServiceWorkerPlugin</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Environment configuration</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/definitions-api/" class="spectrum-SideNav-itemLink  ">Variable definition API</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/core-definitions/" class="spectrum-SideNav-itemLink  ">Core variable definitions</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Built-in Targets</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/pwa-buildpack/reference/targets/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /pwa-buildpack/reference/targets/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>Buildpack’s targets follow the same Target API as other packages’ targets, but they play a unique role. Buildpack targets are the fundamental “roots” of the PWA Studio Target system.</p>
+
+<p>All other Targets operate by intercepting other Targets.
+BuildBus runs the declare and intercept phases by itself.
+But nothing <em>calls</em> targets to run any interceptors until Buildpack begins the process, by directly invoking one of its <em>own</em> targets.</p>
+
+<p>The Buildpack targets are therefore very generic and low-level. They are meant to be used as building blocks for higher-level feature targets, such as adding routing or navigation logic.</p>
+
+<p>Even deeper than Buildpack targets are the very similar Hooks that make up <a href="https://v4.webpack.js.org/api/plugins/">Webpack’s plugin system</a>. Interceptors can use Buildpack’s <code class="highlighter-rouge">webpackCompiler</code> target to acquire a reference to the Webpack Compiler object for each build, and can then do anything a Webpack plugin can do.
+Because of their similarity in form and function, the PWA Studio Targets system integrates seamlessly into the larger Webpack ecosystem as a commerce-driven superset of its functionality.</p>
+
+<!--
+The reference doc content is generated automatically from the source code.
+To update this section, update the doc blocks in the source code
+-->
+
+<h2 id="modules">Modules</h2>
+
+<dl>
+<dt><a href="#module_BuiltinTargets">BuiltinTargets</a></dt>
+<dd></dd>
+</dl>
+
+<h2 id="typedefs">Typedefs</h2>
+
+<dl>
+<dt><a href="#transformModulesIntercept">transformModulesIntercept</a> : <code>function</code></dt>
+<dd><p>Intercept function signature for the transformModules target.</p>
+<p>Interceptors of <code>transformModules</code> should call the <a href="#addTransform"><code>addTransform()</code></a>
+callback to add module specific transformers.
+Any returned value will be ignored.</p>
+</dd>
+<dt><a href="#addTransform">addTransform</a> : <code>function</code></dt>
+<dd><p>Callback to add a transform.</p>
+</dd>
+<dt><a href="#webpackCompilerIntercept">webpackCompilerIntercept</a> : <code>function</code></dt>
+<dd><p>Intercept function signature for the webpackCompiler target.</p>
+<p>Interceptors of <code>webpackCompiler</code> should tap hooks on the provided
+<code>compiler</code> object. Any returned value will be ignored.</p>
+</dd>
+<dt><a href="#specialFeaturesIntercept">specialFeaturesIntercept</a> : <code>function</code></dt>
+<dd><p>Intercept function signature for the specialFeatures target.</p>
+<p>Interceptors of the <code>specialFeatures</code> target can use the mapping object provided
+to map special build flags to their project modules.</p>
+</dd>
+<dt><a href="#transformUpwardIntercept">transformUpwardIntercept</a> ⇒ <code>Promise</code></dt>
+<dd><p>Intercept function signature for the transformUpward target.</p>
+<p>Interceptors of the <code>transformUpward</code> target receive the parsed UPWARD
+definition as a plain JavaScript object. Mutate that object in place to
+change the final <code>upward.yml</code> output by the build.</p>
+<p>This Target can be used asynchronously. If you need to do asynchronous work
+to get what you need to modify the UPWARD definition (for example, a network
+request) then you can provide an <code>async</code> function as interceptor (or simply
+return a Promise from any function).</p>
+</dd>
+<dt><a href="#envValidationInterceptor">envValidationInterceptor</a> ⇒ <code>Boolean</code></dt>
+<dd><p>Intercept function signature for the validateEnv target.</p>
+<p>Interceptors of the <code>validateEnv</code> target receive a config object.
+The config object contains the project env, an onFail callback and
+the debug function to be used in case of the debug mode to log more
+inforamtion to the console.</p>
+<p>This Target can be used asynchronously in the parallel mode. If a
+validator needs to stop the process immediately, it can throw an error.
+If it needs to report an error but not stop the whole process, it can do
+so by calling the onFail function with the error message it wants to report.
+It can call the onFail multiple times if it wants to report multiple errors.</p>
+<p>All the errors will be queued and printed into the console at the end of the
+validation process and the build process will be stopeed.</p>
+</dd>
+</dl>
+
+<p><a name="module_BuiltinTargets"></a></p>
+
+<h2 id="builtintargets">BuiltinTargets</h2>
+
+<ul>
+  <li><a href="#module_BuiltinTargets">BuiltinTargets</a>
+    <ul>
+      <li><a href="#module_BuiltinTargets.envVarDefinitions">.envVarDefinitions</a> : <code>tapable.SyncHook</code></li>
+      <li><a href="#module_BuiltinTargets.transformModules">.transformModules</a> : <code>tapable.AsyncSeriesHook</code></li>
+      <li><a href="#module_BuiltinTargets.webpackCompiler">.webpackCompiler</a> : <code>tapable.SyncHook</code></li>
+      <li><a href="#module_BuiltinTargets.specialFeatures">.specialFeatures</a> : <code>tapable.SyncHook</code></li>
+      <li><a href="#module_BuiltinTargets.transformUpward">.transformUpward</a> : <code>tapable.AsyncSeriesHook</code></li>
+      <li><a href="#module_BuiltinTargets.validateEnv">.validateEnv</a> : <code>tapable.AsyncParallelHook</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><a name="module_BuiltinTargets.envVarDefinitions"></a></p>
+
+<h3 id="builtintargetsenvvardefinitions--tapablesynchook">BuiltinTargets.envVarDefinitions : <code>tapable.SyncHook</code></h3>
+<p>Called to collect the definitions and documentation for project-wide
+configuration values. Core environment variables are defined in the
+<a href="http://pwastudio.io/pwa-buildpack/reference/environment-variables/core-definitions/"><code class="highlighter-rouge">envVarDefinitions.json</code> file</a>.</p>
+
+<p>Intercept this target in your project to add new environment
+variables, typed and documented. This integrates your extension
+configuration with the project-wide environment variable system.</p>
+
+<p><strong>Kind</strong>: static property of <a href="#module_BuiltinTargets"><code>BuiltinTargets</code></a><br />
+<strong>See</strong></p>
+
+<ul>
+  <li><a href="http://pwastudio.io/pwa-buildpack/reference/environment-variables/definitions-api/">Variable definition schema</a></li>
+  <li><a href="http://pwastudio.io/pwa-buildpack/reference/environment-variables/core-definitions/">Core variable definitions</a></li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>envVarDefinitions</td>
+      <td><code>object</code></td>
+      <td>The <a href="http://pwastudio.io/pwa-buildpack/reference/environment-variables/definitions-api/">variable definitions object</a>. Modify in place.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Add config fields for your extension)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">).</span><span class="nx">envVarDefinitions</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="nx">defs</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">defs</span><span class="p">.</span><span class="nx">sections</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">My Extension Settings</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">variables</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">MY_EXTENSION_API_KEY</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">str</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">desc</span><span class="p">:</span> <span class="dl">'</span><span class="s1">API key for remote service access.</span><span class="dl">'</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p><a name="module_BuiltinTargets.transformModules"></a></p>
+
+<h3 id="builtintargetstransformmodules--tapableasyncserieshook">BuiltinTargets.transformModules : <code>tapable.AsyncSeriesHook</code></h3>
+<p>Called when configuring the loading and processing rules for Webpack.</p>
+
+<p>Interceptors receive a function <code class="highlighter-rouge">addTransform()</code>. They may call this function to request that Webpack process <em>a particular file</em> with a particular transform module.</p>
+
+<p>Since the storefront developer is in charge of important dependencies,
+the interceptor files in the storefront project itself should be able to
+transform ANY file from ANY dependency.
+However, interceptor files in the storefront dependencies are prevented
+from modifying files from other dependencies.</p>
+
+<p>NOTE: This is a very low-level extension point. It should be used as a
+building block for higher-level extensions that expose functional
+areas rather than files on disk.</p>
+
+<p><strong>Kind</strong>: static property of <a href="#module_BuiltinTargets"><code>BuiltinTargets</code></a><br />
+<strong>See</strong>: <a href="#transformModulesIntercept">transformModules intercept function</a><br />
+<strong>Example</strong> <em>(Strip unnecessary Lodash code from a specific JS module.)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">).</span><span class="nx">transformModules</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="nx">addTransform</span> <span class="o">=&gt;</span> <span class="nx">addTransform</span><span class="p">({</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">babel</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">fileToTransform</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./lib/uses-pipeline-syntax.js</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">transformModule</span><span class="p">:</span> <span class="dl">'</span><span class="s1">babel-plugin-lodash</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">options</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">async</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">lodash-bound</span><span class="dl">"</span> <span class="p">]}</span>
+<span class="p">}));</span>
+</code></pre></div></div>
+<p><a name="module_BuiltinTargets.webpackCompiler"></a></p>
+
+<h3 id="builtintargetswebpackcompiler--tapablesynchook">BuiltinTargets.webpackCompiler : <code>tapable.SyncHook</code></h3>
+<p>Calls interceptors whenever a Webpack Compiler object is created.
+This almost always happens once per build, even in dev mode.</p>
+
+<p>Use an <a href="#webpackCompilerIntercept">intercept function</a> on this target
+to access the <a href="https://webpack.js.org/api/compiler-hooks/">webpack compiler</a>.</p>
+
+<p><strong>Kind</strong>: static property of <a href="#module_BuiltinTargets"><code>BuiltinTargets</code></a><br />
+<strong>Example</strong> <em>(Tap the compiler's `watchRun` hook.)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">).</span><span class="nx">webpackCompiler</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="nx">compiler</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">compiler</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">watchRun</span><span class="p">.</span><span class="nx">tapPromise</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="nx">compiler</span><span class="p">.</span><span class="nx">getInfrastructureLogger</span><span class="p">(</span><span class="dl">'</span><span class="s1">my-extension</span><span class="dl">'</span><span class="p">)</span>
+       <span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="dl">'</span><span class="s1">I do something special in the dev server!</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p><a name="module_BuiltinTargets.specialFeatures"></a></p>
+
+<h3 id="builtintargetsspecialfeatures--tapablesynchook">BuiltinTargets.specialFeatures : <code>tapable.SyncHook</code></h3>
+<p>Collects flags for special build features that dependency packages
+want to use.</p>
+
+<p>If your extension uses ES Modules instead of CommonJS in
+its frontend code (as most should), Webpack will not parse and build
+the modules by default. It will expect extension code to be CommonJS
+style and will not process the ES Modules.
+Likewise, if your extension uses CSS Modules, you must add the <code class="highlighter-rouge">cssModules</code> flag using this target.
+Use a <a href="#specialFeaturesIntercept">specialFeatures intercept function</a>
+to add special build features for the modules used in your project.</p>
+
+<p><strong>Kind</strong>: static property of <a href="#module_BuiltinTargets"><code>BuiltinTargets</code></a><br />
+<strong>See</strong>: <a href="http://pwastudio.io/pwa-buildpack/reference/configure-webpack/#special-flags">Special flags in <code class="highlighter-rouge">configureWebpack()</code></a><br />
+<strong>Example</strong> <em>(Declare that your extension contains CSS modules.)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">).</span><span class="nx">specialFeatures</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="nx">featuresByModule</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">featuresByModule</span><span class="p">[</span><span class="dl">'</span><span class="s1">my-module</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="na">cssModules</span><span class="p">:</span> <span class="kc">true</span> <span class="p">};</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p><a name="module_BuiltinTargets.transformUpward"></a></p>
+
+<h3 id="builtintargetstransformupward--tapableasyncserieshook">BuiltinTargets.transformUpward : <code>tapable.AsyncSeriesHook</code></h3>
+<p>Exposes the fully merged UPWARD definition for fine tuning. The
+UpwardIncludePlugin does a simple shallow merge of the upward.yml
+files in every package which sets the <code class="highlighter-rouge">upward: true</code> flag in the
+<code class="highlighter-rouge">specialFeatures</code> object. After that is complete,
+UpwardIncludePlugin calls this target with the parsed and merged
+definition.</p>
+
+<p><strong>Kind</strong>: static property of <a href="#module_BuiltinTargets"><code>BuiltinTargets</code></a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>interceptor</td>
+      <td><a href="#transformUpwardIntercept"><code>transformUpwardIntercept</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Send empty responses in maintenance mode.)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">).</span><span class="nx">transformUpward</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="nx">def</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">guardMaintenanceMode</span> <span class="o">=</span> <span class="p">(</span><span class="nx">prop</span><span class="p">,</span> <span class="nx">inline</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">def</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">when</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="na">matches</span><span class="p">:</span> <span class="dl">'</span><span class="s1">env.MAINTENANCE_MODE</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">pattern</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">use</span><span class="p">:</span> <span class="p">{</span> <span class="nx">inline</span> <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="na">default</span><span class="p">:</span> <span class="nx">def</span><span class="p">[</span><span class="nx">prop</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">guardMaintenanceMode</span><span class="p">(</span><span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">,</span> <span class="mi">503</span><span class="p">);</span>
+  <span class="nx">guardMaintenanceMode</span><span class="p">(</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">,</span> <span class="dl">''</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p><a name="module_BuiltinTargets.validateEnv"></a></p>
+
+<h3 id="builtintargetsvalidateenv--tapableasyncparallelhook">BuiltinTargets.validateEnv : <code>tapable.AsyncParallelHook</code></h3>
+<p>Collect all ENV validation functions that will run against the
+project’s ENV. The functions can be async and they will run in
+parallel. If a validation function wants to stop the whole process
+for instance in case of a serious security issue, it can do so
+by throwing an error. If it wants to report an error, it can do so
+by using the onFail callback provided as an argument. A validation
+function can submit multiple errors by calling the onFail function
+multiple times. All the errors will be queued into an array and
+displayed on the console at the end of the process.</p>
+
+<p><strong>Kind</strong>: static property of <a href="#module_BuiltinTargets"><code>BuiltinTargets</code></a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>validator</td>
+      <td><a href="#envValidationInterceptor"><code>envValidationInterceptor</code></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">).</span><span class="nx">validateEnv</span><span class="p">.</span><span class="nx">tapPromise</span><span class="p">(</span><span class="nx">validateBackendUrl</span><span class="p">);</span>
+</code></pre></div></div>
+<p><a name="transformModulesIntercept"></a></p>
+
+<h2 id="transformmodulesintercept--function">transformModulesIntercept : <code>function</code></h2>
+<p>Intercept function signature for the transformModules target.</p>
+
+<p>Interceptors of <code class="highlighter-rouge">transformModules</code> should call the <a href="#addTransform"><code class="highlighter-rouge">addTransform()</code></a>
+callback to add module specific transformers.
+Any returned value will be ignored.</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>addTransform</td>
+      <td><a href="#addTransform"><code>addTransform</code></a></td>
+      <td>Callback to add a transform.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="addTransform"></a></p>
+
+<h2 id="addtransform--function">addTransform : <code>function</code></h2>
+<p>Callback to add a transform.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>See</strong>: <a href="https://pwastudio.io/pwa-buildpack/reference/transform-requests/#addTransform">TransformRequest</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>transformRequest</td>
+      <td><code>Buildpack/WebpackTools~TransformRequest</code></td>
+      <td><a href="https://pwastudio.io/pwa-buildpack/reference/transform-requests/#addTransform">Request</a> to apply a transform to a file provided by this dependency.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="webpackCompilerIntercept"></a></p>
+
+<h2 id="webpackcompilerintercept--function">webpackCompilerIntercept : <code>function</code></h2>
+<p>Intercept function signature for the webpackCompiler target.</p>
+
+<p>Interceptors of <code class="highlighter-rouge">webpackCompiler</code> should tap hooks on the provided
+<code class="highlighter-rouge">compiler</code> object. Any returned value will be ignored.</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>compiler</td>
+      <td><code>webpack.Compiler</code></td>
+      <td>The <a href="https://webpack.js.org/api/compiler-hooks/">webpack compiler</a> instance</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="specialFeaturesIntercept"></a></p>
+
+<h2 id="specialfeaturesintercept--function">specialFeaturesIntercept : <code>function</code></h2>
+<p>Intercept function signature for the specialFeatures target.</p>
+
+<p>Interceptors of the <code class="highlighter-rouge">specialFeatures</code> target can use the mapping object provided
+to map special build flags to their project modules.</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>featuresByModule</td>
+      <td><code>Object.&lt;string, SpecialBuildFlags&gt;</code></td>
+      <td>An object mapping of module names to their special build flags</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="transformUpwardIntercept"></a></p>
+
+<h2 id="transformupwardintercept--promise">transformUpwardIntercept ⇒ <code>Promise</code></h2>
+<p>Intercept function signature for the transformUpward target.</p>
+
+<p>Interceptors of the <code class="highlighter-rouge">transformUpward</code> target receive the parsed UPWARD
+definition as a plain JavaScript object. Mutate that object in place to
+change the final <code class="highlighter-rouge">upward.yml</code> output by the build.</p>
+
+<p>This Target can be used asynchronously. If you need to do asynchronous work
+to get what you need to modify the UPWARD definition (for example, a network
+request) then you can provide an <code class="highlighter-rouge">async</code> function as interceptor (or simply
+return a Promise from any function).</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>definition</td>
+      <td><code>object</code></td>
+      <td>Parsed UPWARD definition object.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="envValidationInterceptor"></a></p>
+
+<h2 id="envvalidationinterceptor--boolean">envValidationInterceptor ⇒ <code>Boolean</code></h2>
+<p>Intercept function signature for the validateEnv target.</p>
+
+<p>Interceptors of the <code class="highlighter-rouge">validateEnv</code> target receive a config object.
+The config object contains the project env, an onFail callback and
+the debug function to be used in case of the debug mode to log more
+inforamtion to the console.</p>
+
+<p>This Target can be used asynchronously in the parallel mode. If a
+validator needs to stop the process immediately, it can throw an error.
+If it needs to report an error but not stop the whole process, it can do
+so by calling the onFail function with the error message it wants to report.
+It can call the onFail multiple times if it wants to report multiple errors.</p>
+
+<p>All the errors will be queued and printed into the console at the end of the
+validation process and the build process will be stopeed.</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>config.env</td>
+      <td><code>Object</code></td>
+      <td>Project ENV</td>
+    </tr>
+    <tr>
+      <td>config.onFail</td>
+      <td><code>function</code></td>
+      <td>On fail callback</td>
+    </tr>
+    <tr>
+      <td>config.debug</td>
+      <td><code>function</code></td>
+      <td>Debug function to be used for additional reporting in debug mode</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For implementation details <a href="https://github.com/magento/pwa-studio/blob/develop/packages/pwa-buildpack/lib/BuildBus/declare-base.js"><strong>View Source</strong></a>.</p>
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

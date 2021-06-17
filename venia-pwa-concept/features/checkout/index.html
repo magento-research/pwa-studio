@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Checkout | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Overview</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/overview/" class="spectrum-SideNav-itemLink  parent">PWA Studio Overview</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/tools-libraries/" class="spectrum-SideNav-itemLink  ">External tools and libraries</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/versioning/" class="spectrum-SideNav-itemLink  ">Versioning strategy</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/upgrading-versions/" class="spectrum-SideNav-itemLink  ">Upgrading versions</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/contribute/" class="spectrum-SideNav-itemLink  ">Contributing to PWA Studio</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/frequently-asked-questions/" class="spectrum-SideNav-itemLink  ">Frequently Asked Questions</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Magento integration</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/magento-compatibility/" class="spectrum-SideNav-itemLink  ">Version compatibility</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/theme-vs-storefront/" class="spectrum-SideNav-itemLink  ">Magento theme vs PWA storefront</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/basic-concepts/" class="spectrum-SideNav-itemLink  parent">Basic concepts</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/app-shell/" class="spectrum-SideNav-itemLink  ">Application shell</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/content-rendering/" class="spectrum-SideNav-itemLink  ">Content rendering</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/css-modules/" class="spectrum-SideNav-itemLink  ">CSS modules</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/graphql/" class="spectrum-SideNav-itemLink  ">GraphQL</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/client-side-caching/" class="spectrum-SideNav-itemLink  ">Client-side caching</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/internationalization/" class="spectrum-SideNav-itemLink  ">Internationalization</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/state-management/" class="spectrum-SideNav-itemLink  ">State management</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/storefront-architecture/" class="spectrum-SideNav-itemLink  parent">PWA Storefront architecture</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/storefront-architecture/runtime/" class="spectrum-SideNav-itemLink  ">Runtime architecture</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/storefront-architecture/buildtime/" class="spectrum-SideNav-itemLink  ">Build-time architecture</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/venia-pwa-concept/" class="spectrum-SideNav-itemLink  parent">Venia</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/setup/" class="spectrum-SideNav-itemLink  ">Venia storefront setup</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/install-sample-data/" class="spectrum-SideNav-itemLink  ">Install Venia sample data</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/project-structure/" class="spectrum-SideNav-itemLink  ">Venia project structure</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/features/modular-components/" class="spectrum-SideNav-itemLink  ">Modular components</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/peregrine/" class="spectrum-SideNav-itemLink  parent">Peregrine</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/talons/" class="spectrum-SideNav-itemLink  ">Talons</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/routing/" class="spectrum-SideNav-itemLink  ">Routing in PWA Studio</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/pwa-buildpack/" class="spectrum-SideNav-itemLink  parent">PWA Buildpack tools</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/configuration-management/" class="spectrum-SideNav-itemLink  ">Configuration management</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/extensibility-framework/" class="spectrum-SideNav-itemLink  ">Extensibility framework</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/scaffolding/" class="spectrum-SideNav-itemLink  ">Scaffolding</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/scaffolding/custom-project-templates/" class="spectrum-SideNav-itemLink  ">Custom project templates</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/troubleshooting/" class="spectrum-SideNav-itemLink  ">Troubleshooting</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/upward/" class="spectrum-SideNav-itemLink  parent">UPWARD</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/upward/reference-implementation/" class="spectrum-SideNav-itemLink  ">Reference implementation</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Checkout</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/venia-pwa-concept/features/checkout/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /venia-pwa-concept/features/checkout/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p class="bs-callout bs-callout-warning">This topic is subject to change as the progress of Magento 2.3 GraphQL coverage continues to expand.</p>
+
+<p>The checkout process is an important piece of any online store.
+It can be as simple as a single click or as complicated as filling out a series of forms to complete a purchase.</p>
+
+<p>The goal of this topic is to describe the end-to-end checkout implementation in Venia to learn from and build upon in your own projects.</p>
+
+<h2 id="a-note-about-using-magento-rest-endpoints">A note about using Magento REST endpoints</h2>
+
+<p>GraphQL is a significant improvement over REST when working with asynchronous data requests.
+In its current state, Magento 2.3 GraphQL coverage only includes a limited subset of catalog operations, so
+the checkout flow described in this topic uses the REST API to complete the process.</p>
+
+<p>For a list of Magento REST endpoints, see the <a href="https://devdocs.magento.com/redoc/2.3/">REST API documentation</a> in devdocs.</p>
+
+<h2 id="shopper-experience">Shopper experience</h2>
+
+<p>Familiarize yourself with the user experience surrounding the checkout process to provide context for the technical steps that happen in the background.</p>
+
+<p>The following steps summarize the basic checkout experience for a Venia shopper:</p>
+
+<ol>
+  <li>The shopper navigates to a product page.</li>
+  <li>The shopper adds an item to the cart using the <strong>Add to Cart</strong> button.</li>
+  <li>The shopping cart drawer slides in response and shows the product in the shopping cart.</li>
+  <li>The shopper clicks on the <strong>Checkout</strong> button.</li>
+  <li>
+    <p>The <strong>Shipping and Billing</strong> summary page appears with the following items:</p>
+
+    <ul>
+      <li><strong>Ship To</strong> - Click to display a form for setting the shipping address.</li>
+      <li><strong>Pay With</strong> - Click to display a form that allows the shopper to select the payment method and billing address.</li>
+      <li><strong>Get It By</strong> - Click to display a form that allows the shopper to select the shipping method.</li>
+      <li><strong>TOTAL</strong> - Shows the shopping cart total.</li>
+    </ul>
+  </li>
+  <li>The shopper fills out the forms and clicks on the <strong>Place Order</strong> button.</li>
+  <li>A confirmation page appears with buttons that lets the shopper <strong>Continue Shopping</strong> or <strong>Create an Account</strong>.</li>
+</ol>
+
+<h2 id="detailed-technical-flow">Detailed technical flow</h2>
+
+<p>The following sections provide the technical details for each step in the checkout flow for a guest customer.
+Authenticated (signed in) customers follow the same steps but may call different endpoints.</p>
+
+<h3 id="updating-the-cart">Updating the cart</h3>
+
+<ol>
+  <li>When the shopper clicks on the <strong>Add To Cart</strong> button, the application passes the shopper-specified product configuration to the <code class="highlighter-rouge">addItemToCart()</code> function.</li>
+  <li>
+    <p>Before the <code class="highlighter-rouge">addItemToCart()</code> function can add the product to the cart, it first checks the local storage for an existing cart ID.</p>
+
+    <p>If an existing cart ID does not exist, it calls the <code class="highlighter-rouge">createCart()</code> function.
+ This function creates a POST request to the <code class="highlighter-rouge">/V1/guest-carts</code> REST endpoint to get a cart ID to store in the local storage.</p>
+
+    <p>After a cart ID is found, the <code class="highlighter-rouge">addItemToCart</code> function uses the product information passed in by the application to update the cart.
+ The cart is updated on the server side using a POST request to the <code class="highlighter-rouge">V1/guest-carts/&lt;cartID&gt;/items</code> REST endpoint.</p>
+  </li>
+  <li>
+    <p>After the server update completes, the function dispatches <code class="highlighter-rouge">toggleDrawer()</code> and <code class="highlighter-rouge">getCartDetails()</code>.</p>
+
+    <p>The <code class="highlighter-rouge">toggleDrawer()</code> function is a general app action that toggles a named drawer.
+ In this case, the ‘cart’ drawer is toggled to appear after adding an item.</p>
+
+    <p>The <code class="highlighter-rouge">getCartDetails()</code> function retrieves cart data from the local cache or server to update the items displayed in the shopping cart drawer.
+ This functions uses <code class="highlighter-rouge">fetchCartPart()</code> to call the <code class="highlighter-rouge">V1/guest-carts/&lt;cartId&gt;</code> and <code class="highlighter-rouge">V1/guest-carts/&lt;cartId&gt;/totals</code> REST endpoints to fetch and cache the cart details stored on the server.</p>
+  </li>
+</ol>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>REST Endpoint</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://devdocs.magento.com/redoc/2.3/guest-rest-api.html#tag/guest-carts"><code class="highlighter-rouge">guest-carts</code></a></td>
+      <td>Get information about or create and store a new cart ID on the server</td>
+    </tr>
+    <tr>
+      <td><a href="https://devdocs.magento.com/redoc/2.3/guest-rest-api.html#operation/quoteGuestCartItemRepositoryV1GetListGet"><code class="highlighter-rouge">guest-carts/&lt;cartId&gt;/items</code></a></td>
+      <td>Update cart with item details</td>
+    </tr>
+    <tr>
+      <td><a href="https://devdocs.magento.com/redoc/2.3/guest-rest-api.html#tag/guest-cartscartId"><code class="highlighter-rouge">guest-carts/&lt;cartId&gt;</code></a></td>
+      <td>Get information about the cart items</td>
+    </tr>
+    <tr>
+      <td><a href="https://devdocs.magento.com/redoc/2.3/guest-rest-api.html#tag/guest-cartscartIdtotals"><code class="highlighter-rouge">guest-carts/&lt;cartId&gt;/totals</code></a></td>
+      <td>Get information about cart totals</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/actions/cart/asyncActions.js">src/actions/cart/asyncActions.js</a></td>
+      <td>Contains asynchronous functions for cart-related actions such as <code class="highlighter-rouge">addItemToCart()</code> and <code class="highlighter-rouge">createCart()</code>.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/actions/app/asyncActions.js">src/actions/app/asyncActions.js</a></td>
+      <td>Contains the <code class="highlighter-rouge">toggleDrawer()</code> function</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="gathering-payment-and-shipping-information">Gathering payment and shipping information</h3>
+
+<p>When the shopper clicks on the <strong>Checkout</strong> button, the <code class="highlighter-rouge">beginCheckout()</code> function executes and dispatches the following actions:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">actions.begin()</code> - Updates the application’s <code class="highlighter-rouge">step</code> state to display the <em>Form</em> component in the shopping cart drawer.
+This component contains clickable <em>Section</em> components that contain an overview of the shipping address, payment method, and shipping method forms.</li>
+  <li><code class="highlighter-rouge">getShippingMethods()</code> - Creates a POST request to <code class="highlighter-rouge">guest-carts/&lt;cartId&gt;/estimate-shipping-methods</code> to get a list of available shipping methods based on a given address.
+If an address has not been provided, the ability to choose a shipping method is disabled.</li>
+</ol>
+
+<h4 id="braintree-integration">Braintree integration</h4>
+
+<p>Venia comes with Braintree integration built into the checkout process.
+This gives Venia the ability to simulate payment submission using a real payments platform.</p>
+
+<p>See <a href="/pwa-studio/venia-pwa-concept/features/braintree/">Braintree integration</a> for more information.</p>
+
+<h4 id="form-sections">Form sections</h4>
+
+<p>Clicking on a <em>Section</em> component dispatches actions that update the <em>Form</em> component to show an editable form for shipping address, payment method, or shipping method.</p>
+
+<p>Each form has a <strong>Save</strong> and <strong>Cancel</strong> button.</p>
+
+<p>Clicking on the <strong>Cancel</strong> button on each form dispatches an action that returns the <em>Form</em> component to its order overview state.</p>
+
+<p>On the shipping address form, the <strong>Save</strong> button calls the <code class="highlighter-rouge">submitShippingAddress()</code> function.
+This function validates the address data before saving locally.</p>
+
+<p>On the payment method form, the <strong>Save</strong> button calls the <code class="highlighter-rouge">submitPaymentMethodAndBillingAddress()</code> function.
+This function saves the selected payment method and billing address locally.</p>
+
+<p>On the shipping method form, the <strong>Save</strong> button calls the <code class="highlighter-rouge">submitShippingMethod()</code> function.
+This function saves the selected shipping method locally.
+It also creates a POST request to the <code class="highlighter-rouge">guest-carts/&lt;cartId&gt;/shipping-information</code> REST endpoint to update the shipping method information on the server.</p>
+
+<p>After a form is saved, each of the submit functions dispatches an action that returns the <em>Form</em> component to its order overview state.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>REST Endpoint</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://devdocs.magento.com/redoc/2.3/guest-rest-api.html#tag/guest-cartscartIdestimate-shipping-methods"><code class="highlighter-rouge">guest-carts/&lt;cartId&gt;/estimate-shipping-methods</code></a></td>
+      <td>Get a list of available shipping methods</td>
+    </tr>
+    <tr>
+      <td><a href="https://devdocs.magento.com/redoc/2.3/guest-rest-api.html#tag/directorycountries"><code class="highlighter-rouge">directory/countries</code></a></td>
+      <td>Get a list of countries and regions</td>
+    </tr>
+    <tr>
+      <td><a href="https://devdocs.magento.com/redoc/2.3/guest-rest-api.html#tag/guest-cartscartIdshipping-information"><code class="highlighter-rouge">guest-carts/&lt;cartId&gt;/shipping-information</code></a></td>
+      <td>Updates the shipping method information on the order</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/actions/checkout/asyncActions.js">src/actions/checkout/asyncActions.js</a></td>
+      <td>Contains asynchronous functions for checkout-related actions such as <code class="highlighter-rouge">beginCheckout()</code> and the order form submit methods.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/reducers/checkout.js">src/reducers/checkout.js</a></td>
+      <td>Reducer functions for checkout-related actions.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/actions/cart/asyncActions.js">src/actions/cart/asyncActions.js</a></td>
+      <td>Contains the definition for the <code class="highlighter-rouge">getShippingMethods()</code> function.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/components/Checkout/flow.js">src/components/Checkout/flow.js</a></td>
+      <td><em>Flow</em> component that determines the content of the shopping cart drawer.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/components/Checkout/form.js">src/components/Checkout/form.js</a></td>
+      <td><em>Form</em> component which shows the checkout forms or a summary of the checkout information provided by the shopper</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="submitting-the-order">Submitting the order</h3>
+
+<p>After all the order information forms are filled out and save, the <strong>Place Order</strong> button becomes active.
+Clicking on this button executes the <code class="highlighter-rouge">submitOrder()</code> function:</p>
+
+<ol>
+  <li>
+    <p>The <code class="highlighter-rouge">submitOrder()</code> function retrieves the provided order information from local storage and sends that information in a POST request to the <code class="highlighter-rouge">guest-carts/&lt;cartId&gt;/payment-information</code> REST endpoint.
+The rest of the order processing flow is completed on the server.</p>
+  </li>
+  <li>
+    <p>On a successful request, the server responds with an order ID.
+The application saves this value in the local storage for use in the <code class="highlighter-rouge">receipt</code> phase of the checkout flow.</p>
+  </li>
+  <li>
+    <p>Next, the application clears everything about the shopping cart in the local storage.
+This includes the following:</p>
+
+    <ul>
+      <li>Cart ID</li>
+      <li>Address information</li>
+      <li>Payment type information</li>
+      <li>Shipping method information</li>
+    </ul>
+  </li>
+  <li>
+    <p>The last thing the <code class="highlighter-rouge">submitOrder()</code> function does is dispatch an action that updates the applications <code class="highlighter-rouge">step</code> state to show the <em>Receipt</em> component.</p>
+  </li>
+</ol>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>REST Endpoint</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://devdocs.magento.com/redoc/2.3/guest-rest-api.html#tag/guest-cartscartIdpayment-information"><code class="highlighter-rouge">guest-carts/&lt;cartId&gt;/payment-information</code></a></td>
+      <td>Set the payment information and places the order for a specific cart</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/actions/checkout/asyncActions.js">src/actions/checkout/asyncActions.js</a></td>
+      <td>Contains the <code class="highlighter-rouge">submitOrder()</code> asynchronous function</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/components/Checkout/form.js">src/components/Checkout/form.js</a></td>
+      <td><em>Form</em> component which displays the submit order button</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="completing-the-checkout-flow">Completing the checkout flow</h3>
+
+<p>The final screen in the shopping cart flow is the receipt screen.
+This screen shows the recently stored order ID number and buttons to <strong>Continue Shopping</strong> or <strong>Create an Account</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/magento/pwa-studio/blob/master/packages/venia-concept/src/components/Checkout/Receipt/receipt.js">src/components/Checkout/Receipt/receipt.js</a></td>
+      <td><em>Receipt</em> component which displays the order submit summary</td>
+    </tr>
+  </tbody>
+</table>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

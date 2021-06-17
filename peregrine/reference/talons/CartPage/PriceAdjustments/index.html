@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Price Adjustments Talons | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Peregrine API</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Extension points</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/targets/" class="spectrum-SideNav-itemLink  ">Targets</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/targets/wrappable-talons/" class="spectrum-SideNav-itemLink  ">Wrappable Talons</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Components and utilities</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/item/" class="spectrum-SideNav-itemLink  ">Item</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/items/" class="spectrum-SideNav-itemLink  ">Items</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/list/" class="spectrum-SideNav-itemLink  ">List</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/price/" class="spectrum-SideNav-itemLink  ">Price</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/router/" class="spectrum-SideNav-itemLink  ">Router</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Custom React hooks</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useDropdown/" class="spectrum-SideNav-itemLink  ">useDropdown</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useEventListener/" class="spectrum-SideNav-itemLink  ">useEventListener</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/usePagination/" class="spectrum-SideNav-itemLink  ">usePagination</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useSearchParam/" class="spectrum-SideNav-itemLink  ">useSearchParam</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/toasts/useToasts/" class="spectrum-SideNav-itemLink  ">useToasts</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/toasts/useToastContext/" class="spectrum-SideNav-itemLink  ">useToastContext</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useWindowSize/" class="spectrum-SideNav-itemLink  ">useWindowSize</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Shopping Cart Talons</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/" class="spectrum-SideNav-itemLink  ">Cart Page</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/GiftCards/" class="spectrum-SideNav-itemLink  ">Gift Cards</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/GiftOptions/" class="spectrum-SideNav-itemLink  ">Gift Options</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/PriceAdjustments/" class="spectrum-SideNav-itemLink  ">Price Adjustments</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/PriceSummary/" class="spectrum-SideNav-itemLink  ">Price Summary</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/ProductListing/" class="spectrum-SideNav-itemLink  ">Product Listing</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Price Adjustments Talons</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/peregrine/reference/talons/CartPage/PriceAdjustments/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /peregrine/reference/talons/CartPage/PriceAdjustments/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>These talons provide logic for components that may adjust the total price in a shopping cart.</p>
+
+<!--
+The reference doc content is generated automatically from the source code.
+To update this section, update the doc blocks in the source code
+-->
+
+<h2 id="functions">Functions</h2>
+
+<dl>
+<dt><a href="#useCouponCode">useCouponCode(props)</a> ⇒ <code><a href="#CouponCodeTalonProps">CouponCodeTalonProps</a></code></dt>
+<dd><p>This talon contains the logic for a coupon code form component.
+It performs effects and returns props data for rendering the component.</p>
+<p>This talon performs the following effects:</p>
+<ul>
+<li>Fetch all coupons associated with the cart</li>
+<li>Manage the updating state of the cart while a coupon is being applied or removed</li>
+</ul>
+</dd>
+<dt><a href="#useShippingForm">useShippingForm(props)</a> ⇒ <code><a href="#ShippingFormTalonProps">ShippingFormTalonProps</a></code></dt>
+<dd><p>Contains logic for a shipping form component.
+It performs effects and returns props data related to rendering a shipping address form.</p>
+<p>This talon performs the following effects:</p>
+<ul>
+<li>Manage the updating state of the cart while the mutation for setting the shipping address is in flight</li>
+</ul>
+</dd>
+<dt><a href="#useShippingMethods">useShippingMethods(props)</a> ⇒ <code><a href="#ShippingMethodsTalonProps">ShippingMethodsTalonProps</a></code></dt>
+<dd><p>Contains logic for a shipping method selector component.
+It performs effect and returns props data used to render that component.</p>
+<p>This talon performs the following effects:</p>
+<ul>
+<li>Set the shipping form visibility value based on the shipping methods associated with the cart</li>
+</ul>
+</dd>
+<dt><a href="#useShippingRadios">useShippingRadios(props)</a> ⇒ <code><a href="#ShippingRadiosTalonProps">ShippingRadiosTalonProps</a></code></dt>
+<dd><p>Contains logic for a component that renders a radio selector for shipping.
+It performs effects and returns props data used for rendering that component.</p>
+<p>This talon performs the following effects:</p>
+<ul>
+<li>Sets the value of the shipping method to a default value if there is no current method selected</li>
+<li>Manage the updating state of the cart while a shipping method is being applied</li>
+</ul>
+</dd>
+</dl>
+
+<h2 id="typedefs">Typedefs</h2>
+
+<dl>
+<dt><a href="#CouponCodeMutations">CouponCodeMutations</a> : <code>Object</code></dt>
+<dd><p>GraphQL mutations for a cart&#39;s coupon code.
+This is a type used by the <a href="#useCouponCode">useCouponCode</a> talon.</p>
+</dd>
+<dt><a href="#CouponCodeQueries">CouponCodeQueries</a> : <code>Object</code></dt>
+<dd><p>GraphQL queries for a cart&#39;s coupon code.
+This is a type used by the <a href="#useCouponCode">useCouponCode</a> talon.</p>
+</dd>
+<dt><a href="#CouponCodeTalonProps">CouponCodeTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useCouponCode">useCouponCode</a> talon.
+It provides props data to use when rendering a coupon code component.</p>
+</dd>
+<dt><a href="#SelectShippingFields">SelectShippingFields</a> : <code>Object</code></dt>
+<dd><p>Values for the select input fields on the shipping form.
+This is a prop used by the <a href="#useShippingForm">useShippingForm</a> talon.</p>
+</dd>
+<dt><a href="#ShippingFormMutations">ShippingFormMutations</a> : <code>Object</code></dt>
+<dd><p>GraphQL mutations for the shipping form.
+This is a type used by the <a href="#useShippingForm">useShippingForm</a> talon.</p>
+</dd>
+<dt><a href="#ShippingFormQueries">ShippingFormQueries</a> : <code>Object</code></dt>
+<dd><p>GraphQL queries for the shipping form.
+This is a type used by the <a href="#useShippingForm">useShippingForm</a> talon.</p>
+</dd>
+<dt><a href="#ShippingFormTalonProps">ShippingFormTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useShippingForm">useShippingForm</a> talon.
+It provides props data to use when rendering a shipping form component.</p>
+</dd>
+<dt><a href="#ShippingMethodsQueries">ShippingMethodsQueries</a> : <code>Object</code></dt>
+<dd><p>GraphQL queries for shipping methods.
+This is a type used in the <a href="#useShippingMethods">useShippingMethods</a> talon.</p>
+</dd>
+<dt><a href="#ShippingMethodsTalonProps">ShippingMethodsTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useShippingMethods">useShippingMethods</a> talon.
+It provides prop data to use when rendering shipping methods.</p>
+</dd>
+<dt><a href="#ShippingRadiosMutations">ShippingRadiosMutations</a> : <code>Object</code></dt>
+<dd><p>GraphQL mutations for a shipping radio selector component.
+This is a type used by the <a href="#useShippingRadios">useShippingRadios</a> talon.</p>
+</dd>
+<dt><a href="#ShippingRadiosTalonProps">ShippingRadiosTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useShippingRadios">useShippingRadios</a> talon.
+It provides data to use when rendering a radio selector for shipping methods.</p>
+</dd>
+</dl>
+
+<p><a name="useCouponCode"></a></p>
+
+<h2 id="usecouponcodeprops--couponcodetalonprops">useCouponCode(props) ⇒ <a href="#CouponCodeTalonProps"><code>CouponCodeTalonProps</code></a></h2>
+<p>This talon contains the logic for a coupon code form component.
+It performs effects and returns props data for rendering the component.</p>
+
+<p>This talon performs the following effects:</p>
+
+<ul>
+  <li>Fetch all coupons associated with the cart</li>
+  <li>Manage the updating state of the cart while a coupon is being applied or removed</li>
+</ul>
+
+<p><strong>Kind</strong>: global function</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>props</td>
+      <td><code>Object</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.setIsCartUpdating</td>
+      <td><code>function</code></td>
+      <td>Callback function for setting the update state for the cart.</td>
+    </tr>
+    <tr>
+      <td>props.mutations</td>
+      <td><a href="#CouponCodeMutations"><code>CouponCodeMutations</code></a></td>
+      <td>GraphQL mutations for a cart’s coupon code.</td>
+    </tr>
+    <tr>
+      <td>props.queries</td>
+      <td><a href="#CouponCodeQueries"><code>CouponCodeQueries</code></a></td>
+      <td>GraphQL queries for a cart’s coupon code.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useCouponCode</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/PriceAdjustments/useCouponCode</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="useShippingForm"></a></p>
+
+<h2 id="useshippingformprops--shippingformtalonprops">useShippingForm(props) ⇒ <a href="#ShippingFormTalonProps"><code>ShippingFormTalonProps</code></a></h2>
+<p>Contains logic for a shipping form component.
+It performs effects and returns props data related to rendering a shipping address form.</p>
+
+<p>This talon performs the following effects:</p>
+
+<ul>
+  <li>Manage the updating state of the cart while the mutation for setting the shipping address is in flight</li>
+</ul>
+
+<p><strong>Kind</strong>: global function</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>props</td>
+      <td><code>Object</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.selectedValues</td>
+      <td><a href="#SelectShippingFields"><code>SelectShippingFields</code></a></td>
+      <td>The values from the select input fields in the shipping form</td>
+    </tr>
+    <tr>
+      <td>props.setIsCartUpdating</td>
+      <td><code>function</code></td>
+      <td>Callback function for setting the update state for the cart.</td>
+    </tr>
+    <tr>
+      <td>props.mutations</td>
+      <td><a href="#ShippingFormMutations"><code>ShippingFormMutations</code></a></td>
+      <td>GraphQL mutations for the shipping form.</td>
+    </tr>
+    <tr>
+      <td>props.queries</td>
+      <td><a href="#ShippingFormQueries"><code>ShippingFormQueries</code></a></td>
+      <td>GraphQL queries for the shipping form.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useShippingForm</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/useShippingForm</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="useShippingMethods"></a></p>
+
+<h2 id="useshippingmethodsprops--shippingmethodstalonprops">useShippingMethods(props) ⇒ <a href="#ShippingMethodsTalonProps"><code>ShippingMethodsTalonProps</code></a></h2>
+<p>Contains logic for a shipping method selector component.
+It performs effect and returns props data used to render that component.</p>
+
+<p>This talon performs the following effects:</p>
+
+<ul>
+  <li>Set the shipping form visibility value based on the shipping methods associated with the cart</li>
+</ul>
+
+<p><strong>Kind</strong>: global function</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>props</td>
+      <td><code>Object</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.queries</td>
+      <td><a href="#ShippingMethodsQueries"><code>ShippingMethodsQueries</code></a></td>
+      <td>GraphQL queries for shipping methods</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useShippingMethods</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/useShippingMethods</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="useShippingRadios"></a></p>
+
+<h2 id="useshippingradiosprops--shippingradiostalonprops">useShippingRadios(props) ⇒ <a href="#ShippingRadiosTalonProps"><code>ShippingRadiosTalonProps</code></a></h2>
+<p>Contains logic for a component that renders a radio selector for shipping.
+It performs effects and returns props data used for rendering that component.</p>
+
+<p>This talon performs the following effects:</p>
+
+<ul>
+  <li>Sets the value of the shipping method to a default value if there is no current method selected</li>
+  <li>Manage the updating state of the cart while a shipping method is being applied</li>
+</ul>
+
+<p><strong>Kind</strong>: global function</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>props</td>
+      <td><code>Object</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.setIsCartUpdating</td>
+      <td><code>function</code></td>
+      <td>Function for setting the updating state of the shopping cart</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.selectedShippingMethod</td>
+      <td><code>String</code></td>
+      <td>A serialized string of <carrier-code></carrier-code></td>
+      <td><method-code>, eg. usps</method-code></td>
+      <td>priority.</td>
+    </tr>
+    <tr>
+      <td>props.shippingMethods</td>
+      <td><code>Array.&lt;Object&gt;</code></td>
+      <td>An array of available shipping methods</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.mutations</td>
+      <td><a href="#ShippingRadiosMutations"><code>ShippingRadiosMutations</code></a></td>
+      <td>GraphQL mutations for a shipping radio selector component.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useShippingRadios</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/useShippingRadios</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="CouponCodeMutations"></a></p>
+
+<h2 id="couponcodemutations--object">CouponCodeMutations : <code>Object</code></h2>
+<p>GraphQL mutations for a cart’s coupon code.
+This is a type used by the <a href="#useCouponCode">useCouponCode</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>See</strong>: <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js">CouponCode.js</a>
+for the queries used Venia<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>applyCouponMutation</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Mutation for applying a coupon code to a cart.</td>
+    </tr>
+    <tr>
+      <td>removeCouponMutation</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Mutation for removing a coupon code from a cart.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="CouponCodeQueries"></a></p>
+
+<h2 id="couponcodequeries--object">CouponCodeQueries : <code>Object</code></h2>
+<p>GraphQL queries for a cart’s coupon code.
+This is a type used by the <a href="#useCouponCode">useCouponCode</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>See</strong>: <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/CouponCode/couponCode.js">CouponCode.js</a>
+for the queries used Venia<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>getAppliedCouponsQuery</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Query to fetch the currently applied coupons for a cart.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="CouponCodeTalonProps"></a></p>
+
+<h2 id="couponcodetalonprops--object">CouponCodeTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useCouponCode">useCouponCode</a> talon.
+It provides props data to use when rendering a coupon code component.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>applyingCoupon</td>
+      <td><code>boolean</code></td>
+      <td>True if a coupon is currently being applied. False otherwise.</td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td><code>Object</code></td>
+      <td>Data returned from the <code class="highlighter-rouge">getAppliedCouponsQuery</code>.</td>
+    </tr>
+    <tr>
+      <td>errorMessage</td>
+      <td><code>String</code></td>
+      <td>If GraphQL error occurs, this value is set.</td>
+    </tr>
+    <tr>
+      <td>fetchError</td>
+      <td><code>Object</code></td>
+      <td>The error data object returned by a GraphQL query.</td>
+    </tr>
+    <tr>
+      <td>handleApplyCoupon</td>
+      <td><code>function</code></td>
+      <td>Function to call for handling the application of a coupon code to a cart.</td>
+    </tr>
+    <tr>
+      <td>handleRemoveCoupon</td>
+      <td><code>function</code></td>
+      <td>Function to call for handling the removal of a coupon code from a cart</td>
+    </tr>
+    <tr>
+      <td>removingCoupon</td>
+      <td><code>boolean</code></td>
+      <td>True if a coupon code is currently being removed. False otherwise.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="SelectShippingFields"></a></p>
+
+<h2 id="selectshippingfields--object">SelectShippingFields : <code>Object</code></h2>
+<p>Values for the select input fields on the shipping form.
+This is a prop used by the <a href="#useShippingForm">useShippingForm</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>country</td>
+      <td><code>String</code></td>
+      <td>Country shipping destination</td>
+    </tr>
+    <tr>
+      <td>region</td>
+      <td><code>String</code></td>
+      <td>Country’s region shipping destination</td>
+    </tr>
+    <tr>
+      <td>zip</td>
+      <td><code>String</code></td>
+      <td>Country’s zip code shipping destination</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ShippingFormMutations"></a></p>
+
+<h2 id="shippingformmutations--object">ShippingFormMutations : <code>Object</code></h2>
+<p>GraphQL mutations for the shipping form.
+This is a type used by the <a href="#useShippingForm">useShippingForm</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>See</strong>: <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingForm.js">shippingForm.js</a>
+for the query used in Venia<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>setShippingAddressMutation</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Mutation for setting the shipping address on a cart</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ShippingFormQueries"></a></p>
+
+<h2 id="shippingformqueries--object">ShippingFormQueries : <code>Object</code></h2>
+<p>GraphQL queries for the shipping form.
+This is a type used by the <a href="#useShippingForm">useShippingForm</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>See</strong>: <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingMethods.gql.js">shippingMethods.gql.js</a>
+for the query used in Venia<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>shippingMethodsQuery</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Query for getting data about available shipping methods</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ShippingFormTalonProps"></a></p>
+
+<h2 id="shippingformtalonprops--object">ShippingFormTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useShippingForm">useShippingForm</a> talon.
+It provides props data to use when rendering a shipping form component.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>formErrors</td>
+      <td><code>Array.&lt;Error&gt;</code></td>
+      <td>A list of form errors</td>
+    </tr>
+    <tr>
+      <td>handleOnSubmit</td>
+      <td><code>function</code></td>
+      <td>Callback function to handle form submissions</td>
+    </tr>
+    <tr>
+      <td>handleZipChange</td>
+      <td><code>function</code></td>
+      <td>Callback function to handle a zip code change</td>
+    </tr>
+    <tr>
+      <td>isSetShippingLoading</td>
+      <td><code>boolean</code></td>
+      <td>True if the cart shipping information is being set. False otherwise.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ShippingMethodsQueries"></a></p>
+
+<h2 id="shippingmethodsqueries--object">ShippingMethodsQueries : <code>Object</code></h2>
+<p>GraphQL queries for shipping methods.
+This is a type used in the <a href="#useShippingMethods">useShippingMethods</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>See</strong>: <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/PriceAdjustments/ShippingMethods/shippingMethods.gql.js">shippingMethods.gql.js</a>
+for the queries used in Venia<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>getShippingMethodsQuery</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Query to get the available shipping methods.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ShippingMethodsTalonProps"></a></p>
+
+<h2 id="shippingmethodstalonprops--object">ShippingMethodsTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useShippingMethods">useShippingMethods</a> talon.
+It provides prop data to use when rendering shipping methods.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>hasMethods</td>
+      <td><code>number</code></td>
+      <td>Provides the number of shipping methods available. Can be used as a boolean value since having no shipping methods would return 0.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>isShowingForm</td>
+      <td><code>boolean</code></td>
+      <td>True if the form should be shown. False otherwise.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>selectedShippingFields</td>
+      <td><a href="#SelectShippingFields"><code>SelectShippingFields</code></a></td>
+      <td>Values for the select input fields on the shipping form</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>selectedShippingMethod</td>
+      <td><code>String</code></td>
+      <td>A serialized string of <carrier-code></carrier-code></td>
+      <td><method-code>, eg. usps</method-code></td>
+      <td>priority.</td>
+    </tr>
+    <tr>
+      <td>shippingMethods</td>
+      <td><code>Array.&lt;Object&gt;</code></td>
+      <td>A list of available shipping methods based on the primary shipping address</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>showForm</td>
+      <td><code>function</code></td>
+      <td>A function that sets the <code class="highlighter-rouge">isShowingForm</code> value to true.</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ShippingRadiosMutations"></a></p>
+
+<h2 id="shippingradiosmutations--object">ShippingRadiosMutations : <code>Object</code></h2>
+<p>GraphQL mutations for a shipping radio selector component.
+This is a type used by the <a href="#useShippingRadios">useShippingRadios</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>setShippingMethodMutation</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Mutation for setting the shipping method on a cart.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ShippingRadiosTalonProps"></a></p>
+
+<h2 id="shippingradiostalonprops--object">ShippingRadiosTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useShippingRadios">useShippingRadios</a> talon.
+It provides data to use when rendering a radio selector for shipping methods.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>formattedShippingMethods</td>
+      <td><code>Object</code></td>
+      <td>Shipping method data that has been formatted.</td>
+    </tr>
+    <tr>
+      <td>handleShippingSelection</td>
+      <td><code>function</code></td>
+      <td>Callback function for handling shipping selection form updates.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For implementation details <a href="https://github.com/magento/pwa-studio/blob/develop/packages/peregrine/lib/talons/CartPage/PriceAdjustments/useCouponCode.js"><strong>View Source</strong></a>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="usecouponcode">useCouponCode()</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useCouponCode</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/PriceAdjustments/useCouponCode</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span>
+    <span class="nx">GET_APPLIED_COUPONS</span><span class="p">,</span>
+    <span class="nx">APPLY_COUPON_MUTATION</span><span class="p">,</span>
+    <span class="nx">REMOVE_COUPON_MUTATION</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./myCouponCodeQueries</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">MyCouponCode</span> <span class="o">=</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="kd">const</span> <span class="nx">talonProps</span> <span class="o">=</span> <span class="nx">useCouponCode</span><span class="p">({</span>
+        <span class="na">setIsCartUpdating</span><span class="p">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">setIsCartUpdating</span><span class="p">,</span>
+        <span class="na">mutations</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">applyCouponMutation</span><span class="p">:</span> <span class="nx">APPLY_COUPON_MUTATION</span><span class="p">,</span>
+            <span class="na">removeCouponMutation</span><span class="p">:</span> <span class="nx">REMOVE_COUPON_MUTATION</span>
+        <span class="p">},</span>
+        <span class="na">queries</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">getAppliedCouponsQuery</span><span class="p">:</span> <span class="nx">GET_APPLIED_COUPONS</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="kd">const</span> <span class="p">{</span>
+        <span class="nx">applyingCoupon</span><span class="p">,</span>
+        <span class="nx">data</span><span class="p">,</span>
+        <span class="nx">errorMessage</span><span class="p">,</span>
+        <span class="nx">fetchError</span><span class="p">,</span>
+        <span class="nx">handleApplyCoupon</span><span class="p">,</span>
+        <span class="nx">handleRemoveCoupon</span><span class="p">,</span>
+        <span class="nx">removingCoupon</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="nx">talonProps</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">fetchError</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="dl">'</span><span class="s1">Something went wrong. Refresh and try again.</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="c1">// JSX for rendering a Coupon Code form and applied codes using props from the talon</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyCouponCode</span>
+</code></pre></div></div>
+
+<h3 id="shipping-methods">Shipping Methods</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useShippingMethods</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/useShippingMethods</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useShippingForm</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/useShippingForm</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useShippingRadios</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/PriceAdjustments/ShippingMethods/useShippingRadios</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">GET_SHIPPING_METHODS</span><span class="p">,</span> <span class="nx">SET_SHIPPING_ADDRESS_MUTATION</span><span class="p">,</span> <span class="nx">SET_SHIPPING_METHOD_MUTATION</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./myShippingMethods.gql</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">MyShippingMethods</span> <span class="o">=</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">setIsCartUpdating</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">shippingMethodsProps</span> <span class="o">=</span> <span class="nx">useShippingMethods</span><span class="p">({</span>
+        <span class="na">queries</span><span class="p">:</span> <span class="nx">GET_SHIPPING_METHODS</span>
+    <span class="p">});</span>
+
+    <span class="kd">const</span> <span class="p">{</span>
+        <span class="nx">hasMethods</span><span class="p">,</span>
+        <span class="nx">isShowingForm</span><span class="p">,</span>
+        <span class="nx">selectedShippingFields</span><span class="p">,</span>
+        <span class="nx">selectedShippingMethod</span><span class="p">,</span>
+        <span class="nx">shippingMethods</span><span class="p">,</span>
+        <span class="nx">showForm</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="nx">shippingMethodsProps</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">shippingFormProps</span> <span class="o">=</span> <span class="nx">useShippingForm</span><span class="p">({</span>
+        <span class="na">selectedValues</span><span class="p">:</span> <span class="nx">selectedShippingFields</span><span class="p">,</span>
+        <span class="nx">setIsCartUpdating</span><span class="p">,</span>
+        <span class="na">mutations</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">setShippingAddressMutation</span><span class="p">:</span> <span class="nx">SET_SHIPPING_ADDRESS_MUTATION</span>
+        <span class="p">},</span>
+        <span class="na">queries</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">shippingMethodsQuery</span><span class="p">:</span> <span class="nx">GET_SHIPPING_METHODS</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="kd">const</span> <span class="p">{</span>
+        <span class="nx">formErrors</span><span class="p">,</span>
+        <span class="nx">handleOnSubmit</span><span class="p">,</span>
+        <span class="nx">handleZipChange</span><span class="p">,</span>
+        <span class="nx">isSetShippingLoading</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="nx">shippingFormProps</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">shippingRadioProps</span> <span class="o">=</span> <span class="nx">useShippingRadios</span><span class="p">({</span>
+        <span class="nx">setIsCartUpdating</span><span class="p">,</span>
+        <span class="nx">selectedShippingMethod</span><span class="p">,</span>
+        <span class="nx">shippingMethods</span><span class="p">,</span>
+        <span class="na">mutations</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">setShippingMethodMutation</span><span class="p">:</span> <span class="nx">SET_SHIPPING_METHOD_MUTATION</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="kd">const</span> <span class="p">{</span>
+        <span class="nx">formattedShippingMethods</span><span class="p">,</span>
+        <span class="nx">handleShippingSelection</span>
+    <span class="p">}</span> <span class="o">=</span> <span class="nx">shippingRadioProps</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="c1">// JSX for rendering shipping methods form using props from the shipping methods talons</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyShippingMethods</span>
+</code></pre></div></div>
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Internationalization | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Overview</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/overview/" class="spectrum-SideNav-itemLink  parent">PWA Studio Overview</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/tools-libraries/" class="spectrum-SideNav-itemLink  ">External tools and libraries</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/versioning/" class="spectrum-SideNav-itemLink  ">Versioning strategy</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/upgrading-versions/" class="spectrum-SideNav-itemLink  ">Upgrading versions</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/contribute/" class="spectrum-SideNav-itemLink  ">Contributing to PWA Studio</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/frequently-asked-questions/" class="spectrum-SideNav-itemLink  ">Frequently Asked Questions</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Magento integration</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/magento-compatibility/" class="spectrum-SideNav-itemLink  ">Version compatibility</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/theme-vs-storefront/" class="spectrum-SideNav-itemLink  ">Magento theme vs PWA storefront</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/basic-concepts/" class="spectrum-SideNav-itemLink  parent">Basic concepts</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/app-shell/" class="spectrum-SideNav-itemLink  ">Application shell</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/content-rendering/" class="spectrum-SideNav-itemLink  ">Content rendering</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/css-modules/" class="spectrum-SideNav-itemLink  ">CSS modules</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/graphql/" class="spectrum-SideNav-itemLink  ">GraphQL</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/client-side-caching/" class="spectrum-SideNav-itemLink  ">Client-side caching</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/internationalization/" class="spectrum-SideNav-itemLink  ">Internationalization</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/state-management/" class="spectrum-SideNav-itemLink  ">State management</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/storefront-architecture/" class="spectrum-SideNav-itemLink  parent">PWA Storefront architecture</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/storefront-architecture/runtime/" class="spectrum-SideNav-itemLink  ">Runtime architecture</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/storefront-architecture/buildtime/" class="spectrum-SideNav-itemLink  ">Build-time architecture</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/venia-pwa-concept/" class="spectrum-SideNav-itemLink  parent">Venia</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/setup/" class="spectrum-SideNav-itemLink  ">Venia storefront setup</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/install-sample-data/" class="spectrum-SideNav-itemLink  ">Install Venia sample data</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/project-structure/" class="spectrum-SideNav-itemLink  ">Venia project structure</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/features/modular-components/" class="spectrum-SideNav-itemLink  ">Modular components</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/peregrine/" class="spectrum-SideNav-itemLink  parent">Peregrine</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/talons/" class="spectrum-SideNav-itemLink  ">Talons</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/routing/" class="spectrum-SideNav-itemLink  ">Routing in PWA Studio</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/pwa-buildpack/" class="spectrum-SideNav-itemLink  parent">PWA Buildpack tools</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/configuration-management/" class="spectrum-SideNav-itemLink  ">Configuration management</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/extensibility-framework/" class="spectrum-SideNav-itemLink  ">Extensibility framework</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/scaffolding/" class="spectrum-SideNav-itemLink  ">Scaffolding</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/scaffolding/custom-project-templates/" class="spectrum-SideNav-itemLink  ">Custom project templates</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/troubleshooting/" class="spectrum-SideNav-itemLink  ">Troubleshooting</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/upward/" class="spectrum-SideNav-itemLink  parent">UPWARD</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/upward/reference-implementation/" class="spectrum-SideNav-itemLink  ">Reference implementation</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Internationalization</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/technologies/basic-concepts/internationalization/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /technologies/basic-concepts/internationalization/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>Internationalization (i18n) is a feature that lets you localize content for a culture, region, or language.
+This feature is often associated with localization (l10n), which is the process of transforming content for a specific locale.</p>
+
+<h2 id="internationalization-in-core-magento-versus-pwa-studio">Internationalization in core Magento versus PWA Studio</h2>
+
+<p>The core Magento application includes an i18n feature that provides translated text to the frontend theme.
+This feature uses dictionary files inside language packages to provide translation data for Magento when it renders a page.
+The language packages themselves are Magento extensions the application installs using Composer.</p>
+
+<p>For more information, see the Magento core topic: <a href="https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/translations/xlate.html">Translations overview</a>.</p>
+
+<p>The tight coupling between core Magento’s i18n feature and its frontend theme makes it difficult to use the same translation mechanisms in PWA Studio storefronts.
+Instead, PWA Studio provides its own i18n feature that follows a similar design as the one in core Magento.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>PWA Studio provides a context provider for translations called the <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/App/localeProvider.js"><code class="highlighter-rouge">LocaleProvider</code></a>.
+This context provider contains translation data from dictionary files and supplies them to its child components.</p>
+
+<p>The i18n feature in PWA Studio is an implementation of the <a href="https://formatjs.io/docs/react-intl/"><code class="highlighter-rouge">react-intl</code></a> library.
+The <code class="highlighter-rouge">LocaleProvider</code> component in PWA Studio wraps around the library’s <a href="https://formatjs.io/docs/react-intl/components/#intlprovider"><code class="highlighter-rouge">IntlProvider</code></a> and provides it with translation data.</p>
+
+<p>This library also provides <a href="https://formatjs.io/docs/react-intl/api#formatmessage"><code class="highlighter-rouge">formatMessage()</code></a> and <a href="https://formatjs.io/docs/react-intl/components#formattedmessage"><code class="highlighter-rouge">FormattedMessage</code></a> to localize text in child components under <code class="highlighter-rouge">LocaleProvider</code>.
+You must at least supply values for <code class="highlighter-rouge">id</code> and a <code class="highlighter-rouge">defaultMessage</code> fallback when you use either the function or component.</p>
+
+<p>The following code samples produce the same results:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className=</span><span class="si">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">FormattedMessage</span>
+            <span class="na">id=</span><span class="si">{</span><span class="dl">'</span><span class="s1">component.loremIpsum</span><span class="dl">'</span><span class="si">}</span>
+            <span class="na">defaultMessage=</span><span class="si">{</span><span class="dl">'</span><span class="s1">Lorem Ipsum</span><span class="dl">'</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">translatedText</span> <span class="o">=</span> <span class="nx">formatMessage</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">component.loremIpsum</span><span class="dl">'</span><span class="p">,</span> <span class="na">defaultMessage</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Lorem Ipsum</span><span class="dl">'</span> <span class="p">})</span>
+
+<span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className=</span><span class="si">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">translatedText</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>The i18n feature uses the <code class="highlighter-rouge">id</code> parameter to look up the localized text from the dictionary files, which the feature supplies to the <code class="highlighter-rouge">LocaleProvider</code>.</p>
+
+<h2 id="translation-dictionaries">Translation dictionaries</h2>
+
+<p>Translation dictionary files contain key/value pairs for localized text.
+PWA Studio’s i18n feature uses a similar dictionary approach for translation files as Magento, but
+instead of a CSV format, it uses JSON.</p>
+
+<h3 id="filename-format">Filename format</h3>
+
+<p>Dictionary files must be inside an <code class="highlighter-rouge">i18n</code> directory and use their target locale for their filename.</p>
+
+<p>Instead of the <a href="https://en.wikipedia.org/wiki/IETF_language_tag">standard ISO language tag</a> the filename format follow’s Magento’s convention for specifying locale:
+<code class="highlighter-rouge">&lt;language id in lowercase&gt;_&lt;country id in uppercase&gt;.json</code>.
+For example: <code class="highlighter-rouge">en_US.json</code>, <code class="highlighter-rouge">en_GB.json</code>, <code class="highlighter-rouge">fr_FR.json</code>.</p>
+
+<h3 id="id-formats">ID formats</h3>
+
+<p>The JSON object’s keys act as unique IDs for localized text.
+They map a placeholder string value in components to the actual rendered text.</p>
+
+<p>PWA Studio recommends and uses a <strong>dot notation format</strong> in its components.
+This format uses the component name and descriptor to form the ID value.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"accountMenu.orderHistoryLink"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order History"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"autocomplete.resultSummary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{resultCount} items"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This approach helps identify which component renders the text and provides a unique value for the ID.</p>
+
+<p>However, the i18n feature in PWA Studio does not limit you to the dot notation format.
+For example, in Magento, the original <code class="highlighter-rouge">en_US</code> locale text identifies the translated text in the application.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"About Us"</span><span class="p">:</span><span class="w"> </span><span class="s2">"About Us"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Hi, {name}"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi, {name}"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>PWA Studio’s i18n feature allows you to use this notation in your own components and storefront.
+Both approach have their pros and cons, and developers are free to choose which approach works for them when they develop their own components and storefronts.</p>
+
+<h3 id="message-syntax">Message syntax</h3>
+
+<p>The i18n feature accepts the same <a href="https://formatjs.io/docs/core-concepts/icu-syntax">message syntax</a> as the underlying <code class="highlighter-rouge">react-intl</code> library.
+Along with static text, this syntax supports variables, dates, and even conditional formatting.</p>
+
+<p>To translate text with variables, pass in a mapping object to the <code class="highlighter-rouge">values</code> prop in the <code class="highlighter-rouge">FormattedMessage</code> component.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">FormattedMessage</span>
+        <span class="na">id=</span><span class="s2">"component.greeting"</span>
+        <span class="na">defaultMessage=</span><span class="s2">"Hi, {name}"</span>
+        <span class="na">values=</span><span class="si">{</span><span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Veronica</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">}</span><span class="si">}</span>
+    <span class="p">/&gt;</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>When using the <code class="highlighter-rouge">formatMessage()</code> function, pass in the mapping object as the second parameter.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">formatMessage</span><span class="p">(</span>
+    <span class="p">{</span> <span class="na">id</span><span class="p">:</span><span class="dl">"</span><span class="s2">component.greeting</span><span class="dl">"</span><span class="p">,</span> <span class="nx">defaultMessage</span><span class="o">=</span><span class="dl">"</span><span class="s2">Hi, {name}</span><span class="dl">"</span><span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="nx">currentUser</span><span class="p">.</span><span class="nx">firstname</span> <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>For more details, see the <a href="https://formatjs.io/docs/core-concepts/icu-syntax">message syntax</a> documentation at FormatJS.</p>
+
+<h2 id="language-packages-and-plugins">Language packages and plugins</h2>
+
+<p>Language packages provide translation data for one or more locales.
+They are also used to override the text in the same locale.</p>
+
+<p>Unlike the core Magento application, which install language packages through Composer, PWA Studio storefronts install language packages as NPM dependencies.</p>
+
+<p>An NPM dependency is a language package if it meets the following criteria:</p>
+
+<ul>
+  <li>The package contains an intercept file</li>
+  <li>The intercept file sets the special feature <code class="highlighter-rouge">i18n</code> flag to <code class="highlighter-rouge">true</code> for the package</li>
+  <li>The package contains an <code class="highlighter-rouge">i18n</code> directory</li>
+  <li>The <code class="highlighter-rouge">i18n</code> directory contains a dictionary file with a locale formatted name</li>
+</ul>
+
+<!-- TODO: Create an in-depth tutorial for creating a language package extension -->
+
+<h2 id="build-process">Build process</h2>
+
+<p>To optimize runtime performance, the i18n feature compiles all the translation data during the build process.</p>
+
+<p>The following is a high level summary of the actions the i18n feature takes to compile the translation data:</p>
+
+<ol>
+  <li>Scans all <code class="highlighter-rouge">i18n</code> folders within installed modules that declare <code class="highlighter-rouge">i18n</code> support through the <code class="highlighter-rouge">specialFeatures</code> flag</li>
+  <li>Scans the project’s root directory for an <code class="highlighter-rouge">i18n</code> directory</li>
+  <li>Generates an object with locales as keys that map to an array of files matching that locale</li>
+  <li>
+    <p>Merges the files in the arrays to create a single dictionary object for a locale</p>
+
+    <p><strong>NOTE:</strong> The dictionary files in the project itself are the last files merged and the final overrides for translations.</p>
+  </li>
+  <li>Creates a virtual module from this object that exposes a <code class="highlighter-rouge">__fetchLocaleData__</code> function</li>
+  <li>Generates a dynamic import in the application for the virtual module</li>
+</ol>
+
+<h2 id="runtime-process">Runtime process</h2>
+
+<p>During runtime, the <code class="highlighter-rouge">LocaleProvider</code> component uses the <code class="highlighter-rouge">__fetchLocaleData__</code> function to get the correct translation data for the current locale.</p>
+
+<p>If a components changes the value of the current locale during runtime, the application sends a GraphQL query to verify the new value.
+Even if you install a language package plugin for a locale, you must enable the locale on the backend to use the translations in the storefront UI.</p>
+
+<p>For example, if you use a store switcher and you provide an <code class="highlighter-rouge">i18n/fr_FR.json</code> file, you must enable the French locale in the Magento backend to make the store switcher work.</p>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

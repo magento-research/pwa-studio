@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Modify the Footer component | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item is-selected">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Tutorials</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/" class="spectrum-SideNav-itemLink  parent">Getting Started</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/" class="spectrum-SideNav-itemLink  ">Setup your project</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-structure/" class="spectrum-SideNav-itemLink  ">Explore the project structure</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Basic modifications</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/enable-sass-less-support/" class="spectrum-SideNav-itemLink  ">Enable SASS or LESS support</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/add-a-static-route/" class="spectrum-SideNav-itemLink  ">Add a static route</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/modify-site-footer/" class="spectrum-SideNav-itemLink  ">Modify the site footer</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/intercept-a-target/" class="spectrum-SideNav-itemLink  parent">Target interception</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/modify-talon-results/" class="spectrum-SideNav-itemLink  ">Modify talon results</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/add-new-environment-variable/" class="spectrum-SideNav-itemLink  ">Add a new environment variable</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/change-static-assets-directory/" class="spectrum-SideNav-itemLink  ">Change static assets directory</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/targetables/" class="spectrum-SideNav-itemLink  ">Modify code with Targetables</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/extension-development/" class="spectrum-SideNav-itemLink  parent">Extension development</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/extension-development/taglist/" class="spectrum-SideNav-itemLink  ">Create a tag list extension</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/production-launch-checklist/" class="spectrum-SideNav-itemLink  parent">Production deployments</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/cloud-deploy/" class="spectrum-SideNav-itemLink  ">Deploy to Magento Cloud</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Modify the Footer component</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/tutorials/pwa-studio-fundamentals/modify-site-footer/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /tutorials/pwa-studio-fundamentals/modify-site-footer/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>One way to customize a storefront is to modify its UI components.
+This tutorial provides the steps for modifying Venia’s <strong>Footer</strong> component by adding a link to the existing content.</p>
+
+<p>By the end of this tutorial, you will know how to override different pieces of Venia to add your customizations.</p>
+
+<p class="bs-callout bs-callout-info">This tutorial requires you to have a project set up using the steps provided in the <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/">Project Setup</a> tutorial.</p>
+
+<h2 id="steps-overview">Steps overview</h2>
+
+<p>When modifying any storefront component from the default Venia storefront, follow these basic steps:</p>
+
+<ol>
+  <li>Identify the component you want to update and its render chain</li>
+  <li>Make a copy of the target component and the components in its render chain in your project</li>
+  <li>Update dependencies in your project to use the new copies</li>
+</ol>
+
+<h2 id="identify-the-target-component">Identify the target component</h2>
+
+<p>The first step in modifying anything in the Venia storefront is to identify the component whose content you want to modify.</p>
+
+<h3 id="using-react-devtools">Using React DevTools</h3>
+
+<p><a href="https://reactjs.org/blog/2019/08/15/new-react-devtools.html">React DevTools</a> is a browser plugin for React developers.
+It gives you the ability to navigate and inspect component nodes in the React DOM tree.</p>
+
+<p>After you install React DevTools in your browser, open your storefront and your browser’s web developer tools.</p>
+
+<p class="bs-callout bs-callout-info">For this tutorial, Chrome’s web developer tools are used, but these steps can be generally applied to other browsers.</p>
+
+<p><img src="./images/web-dev-tools.png" alt="Chrome dev tools" /></p>
+
+<p>In Chrome, the React DevTools is accessed through a dropdown on the top right of the developer tools panel.
+Read the React DevTools plugin documentation find out how to access this tool in your browser.</p>
+
+<p><img src="./images/react-dev-tools.png" alt="React DevTools in Chrome" /></p>
+
+<p>Use the React DevTools to select content in the footer element to see which component renders it.
+For this tutorial, select the <strong>Footer</strong> component.</p>
+
+<p><img src="./images/footer-component-selected.png" alt="Footer component selected" /></p>
+
+<h2 id="identify-the-render-chain">Identify the render chain</h2>
+
+<p>The render chain is the path in the React DOM tree that starts in the <strong>App</strong> or a <strong>Root Component</strong> and ends at the target component.
+These are the components you need to copy into your project to make modifications.</p>
+
+<p>Use the React DevTools to navigate the React DOM tree and find the render chain of the target component.
+Ignore React context providers and consumers because they are often just used as a content wrapper.</p>
+
+<p>For this tutorial, the render chain for the Footer component in the Venia storefront is <code class="highlighter-rouge">App -&gt; Main -&gt; Footer</code>.
+You can verify this by looking at the source for the <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/Main/main.js">Main</a> and <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/App/app.js">App</a> components.
+Main imports and renders the Footer component, and App imports and renders the Main component.</p>
+
+<h3 id="root-components">Root components</h3>
+
+<p>Static imported components, such as Header, Footer, and side Navigation, have render chains that begin in <strong>App</strong>, but content that is specific to a route have render chains that begin at a <strong>Root Component</strong>.</p>
+
+<p>Root components are dynamically loaded components associated with a Magento page type or route.
+A list of Venia’s root components can be found in the <a href="https://github.com/magento/pwa-studio/tree/develop/packages/venia-ui/lib/RootComponents">RootComponent</a> directory in the PWA Studio project.</p>
+
+<h2 id="create-component-directories">Create component directories</h2>
+
+<p>If your project does not already have one, create a <code class="highlighter-rouge">components</code> directory under your <code class="highlighter-rouge">src</code> directory.
+This directory will hold your project’s components.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/components
+</code></pre></div></div>
+
+<p>Next, create directories for each component in the render chain.
+These directories will hold copies of the component source code from Venia.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/components/App <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> src/components/Main <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> src/components/Footer
+</code></pre></div></div>
+
+<h2 id="copy-components">Copy components</h2>
+
+<p>Make a copy of the components in the render chain from the <code class="highlighter-rouge">node_modules</code> directory.</p>
+
+<h3 id="copy-app-component">Copy App component</h3>
+
+<p>The App component is the main entry point for the storefront application.
+It imports and renders the Main component, which renders the Footer component.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp </span>node_modules/@magento/venia-ui/lib/components/App/app.js src/components/App
+</code></pre></div></div>
+
+<p>If you look at the <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/App/index.js"><code class="highlighter-rouge">index.js</code> file for Venia’s App component</a>, its default export is not <code class="highlighter-rouge">app.js</code>.
+The default export for this component is <code class="highlighter-rouge">container.js</code>, which is a container for the <code class="highlighter-rouge">app.js</code> module, so copy the <code class="highlighter-rouge">container.js</code> file into your project.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp </span>node_modules/@magento/venia-ui/lib/components/App/container.js src/components/App
+</code></pre></div></div>
+
+<h3 id="copy-main-component">Copy Main component</h3>
+
+<p>The Main component imports and renders the Header, Footer, and route-specific components.
+Copy this component from <code class="highlighter-rouge">node_modules</code> into your project.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp </span>node_modules/@magento/venia-ui/lib/components/Main/main.js src/components/Main
+</code></pre></div></div>
+
+<h3 id="copy-footer-component">Copy Footer component</h3>
+
+<p>The Footer component is the target component you will modify for this tutorial.
+Copy this component from the <code class="highlighter-rouge">node_modules</code> directory into your project.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp </span>node_modules/@magento/venia-ui/lib/components/Footer/footer.js src/components/Footer
+</code></pre></div></div>
+
+<h2 id="add-a-link-to-the-footer">Add a link to the Footer</h2>
+
+<p>Open <code class="highlighter-rouge">src/components/Footer/footer.js</code> and make the following modifications to add a link to the footer element.</p>
+
+<p>Use the Link component to create a link to an internal route defined in the <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/add-a-static-route/">Add a static route tutorial</a>:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    &lt;footer className={classes.root}&gt;
+      &lt;div className={classes.links}&gt;
+<span class="gi">+       &lt;div className={classes.link}&gt;
++         &lt;Link to="/foo"&gt;
++           &lt;span className={classes.label}&gt;Foo Demo Page&lt;/span&gt;
++         &lt;/Link&gt;
++       &lt;/div&gt;
+</span>        {linkGroups}
+      &lt;/div&gt;
+      &lt;div className={classes.callout}&gt;
+        &lt;h3 className={classes.calloutHeading}&gt;{"Follow Us!"}&lt;/h3&gt;
+</code></pre></div></div>
+
+<h2 id="connect-everything-together">Connect everything together</h2>
+
+<p>Some of the <code class="highlighter-rouge">import</code> statements in the copied components use relative paths for dependent components, but these components are not available in your project.
+To use these dependent components without copying them into your project, you must update their import statements to import from Venia.</p>
+
+<h3 id="update-footer-import-statements">Update Footer import statements</h3>
+
+<p>Update the relative imports in <code class="highlighter-rouge">src/components/Footer/footer.js</code>.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- import { mergeClasses } from '../../classify';
+- import defaultClasses from './footer.css';
+- import { DEFAULT_LINKS, LOREM_IPSUM } from "./sampleData";
+- import GET_STORE_CONFIG_DATA from '../../queries/getStoreConfigData.graphql';
+</span><span class="gi">+ import { mergeClasses } from '@magento/venia-ui/lib/classify';
++ import defaultClasses from '@magento/venia-ui/lib/components/Footer/footer.css';
++ import { DEFAULT_LINKS, LOREM_IPSUM } from "@magento/venia-ui/lib/components/Footer/sampleData";
++ import GET_STORE_CONFIG_DATA from '@magento/venia-ui/lib/queries/getStoreConfigData.graphql';
+</span></code></pre></div></div>
+
+<h3 id="export-footer-component">Export Footer component</h3>
+
+<p>Create a <code class="highlighter-rouge">src/components/Footer/index.js</code> file with the following content to set the default component export for the <code class="highlighter-rouge">Footer</code> directory.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span><span class="k">default</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./footer</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h3 id="update-main-import-statements">Update Main import statements</h3>
+
+<p>Update the relative imports in <code class="highlighter-rouge">src/components/Main/main.js</code>.
+Skip updating the Footer import statement to use your project’s modified Footer component.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- import { mergeClasses } from '../../classify';
+</span><span class="gi">+ import { mergeClasses } from '@magento/venia-ui/lib/classify';
+</span>  import Footer from '../Footer';
+<span class="gd">- import Header from '../Header';
+- import defaultClasses from './main.css';
+</span><span class="gi">+ import Header from '@magento/venia-ui/lib/components/Header';
++ import defaultClasses from '@magento/venia-ui/lib/components/Main/main.css';
+</span></code></pre></div></div>
+
+<h3 id="export-main-component">Export Main component</h3>
+
+<p>Create a <code class="highlighter-rouge">src/components/Main/index.js</code> file with the following content to set the default component export for the <code class="highlighter-rouge">Main</code> directory.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span><span class="k">default</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./main</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h3 id="update-app-import-statements">Update App import statements</h3>
+
+<p>Update the relative imports in <code class="highlighter-rouge">src/components/App/app.js</code>.
+Skip updating the Main import statement to use your project’s copy of the Main component.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- import { HeadProvider, StoreTitle } from '../Head';
+</span><span class="gi">+ import { HeadProvider, StoreTitle } from '@magento/venia-ui/lib/components/Head';
+</span>  import Main from '../Main';
+<span class="gd">- import Mask from '../Mask';
+- import MiniCart from '../MiniCart';
+- import Navigation from '../Navigation';
+- import Routes from '../Routes';
+- import ToastContainer from '../ToastContainer';
+- import Icon from '../Icon';
+</span><span class="gi">+ import Mask from '@magento/venia-ui/lib/components/Mask';
++ import MiniCart from '@magento/venia-ui/lib/components/MiniCart';
++ import Navigation from '@magento/venia-ui/lib/components/Navigation';
++ import Routes from '@magento/venia-ui/lib/components/Routes';
++ import ToastContainer from '@magento/venia-ui/lib/components/ToastContainer';
++ import Icon from '@magento/venia-ui/lib/components/Icon';
+</span></code></pre></div></div>
+
+<p>Update the relative import in <code class="highlighter-rouge">src/components/App/container.js</code>.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  import App from './app';
+<span class="gd">- import { useErrorBoundary } from './useErrorBoundary'
+</span><span class="gi">+ import { useErrorBoundary } from '@magento/venia-ui/lib/components/App/useErrorBoundary'
+</span></code></pre></div></div>
+
+<h3 id="export-app-component">Export App component</h3>
+
+<p>Create a <code class="highlighter-rouge">src/components/App/index.js</code> file with the following content to set the default component export for the <code class="highlighter-rouge">App</code> directory.
+Instead of directly exporting the module in <code class="highlighter-rouge">app.js</code> in the <code class="highlighter-rouge">index.js</code> file, it is wrapped inside an <code class="highlighter-rouge">AppContainer</code> component in <code class="highlighter-rouge">container.js</code>.
+This is the default export for the App component.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span><span class="k">default</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./container</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h2 id="import-new-app-component">Import new App component</h2>
+
+<p>Open your project’s <code class="highlighter-rouge">src/index.js</code> file and update the import for the App component to use your custom App component.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- import App, { AppContextProvider } from '@magento/venia-ui/lib/components/App';
+</span><span class="gi">+ import { AppContextProvider } from '@magento/venia-ui/lib/components/App';
++ import App from './components/App';
+</span></code></pre></div></div>
+
+<h2 id="congratulations">Congratulations</h2>
+
+<p>You just customized the Footer component in your storefront project!</p>
+
+<p><img src="./images/foo-footer-link.png" alt="foo footer link" /></p>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

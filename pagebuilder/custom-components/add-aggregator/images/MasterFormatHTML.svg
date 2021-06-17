@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="951px" height="355px" viewBox="0 0 951 355" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        tspan {white-space: pre; word-wrap: normal;}
+        text {white-space: pre; word-wrap: normal;}
+    </style>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E0E0E0" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="37" y="64" width="228" height="24"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E0E0E0" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-4" x="0" y="0" width="111" height="26"></rect>
+    </defs>
+    <g id="MasterFormatHTML" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="951" height="355"></rect>
+        <polygon id="Rectangle" fill="#EEEEEE" points="6 66 37.9463743 66 37.4611508 92.7896129 113 92.7896129 113 112.678193 63.2252126 112.830105 63.2252126 169.36672 62.9646775 299.434023 77.6094009 299.630143 77.5822129 324 48.9279404 324 48.9279404 349 6 349"></polygon>
+        <rect id="Rectangle" fill="#FFDDE2" x="265" y="66" width="166" height="20"></rect>
+        <rect id="Rectangle" fill="#E3C6FD" x="568" y="66" width="333" height="20"></rect>
+        <rect id="Rectangle" fill="#DCF8BD" x="434" y="66" width="131" height="20"></rect>
+        <rect id="Rectangle" fill="#FFFBC5" x="347" y="119" width="119" height="20"></rect>
+        <rect id="Rectangle" fill="#FFFBC5" x="418" y="93" width="437" height="20"></rect>
+        <rect id="Rectangle" fill="#DCF8BD" x="272" y="93" width="137" height="20"></rect>
+        <rect id="Rectangle" fill="#FFE2B1" x="115" y="93" width="157" height="20"></rect>
+        <rect id="Rectangle" fill="#FFE2B1" x="66" y="119" width="130" height="20"></rect>
+        <rect id="Rectangle" fill="#FFE2B1" x="66" y="145" width="158" height="20"></rect>
+        <rect id="Rectangle" fill="#DCF8BD" x="199" y="119" width="141" height="20"></rect>
+        <rect id="Rectangle" fill="#DCF8BD" x="227" y="145" width="166" height="20"></rect>
+        <rect id="Rectangle" fill="#E4F1FF" x="66" y="171" width="327" height="123"></rect>
+        <g id="Rectangle">
+            <use fill="#FFFFFF" xlink:href="#path-2"></use>
+            <rect stroke="#666666" stroke-width="1" stroke-linejoin="square" fill="url(#linearGradient-1)" x="37.5" y="64.5" width="227" height="23"></rect>
+        </g>
+        <g id="Group-7" transform="translate(5.000000, 14.000000)">
+            <g id="Rectangle">
+                <use fill="#FFFFFF" xlink:href="#path-4"></use>
+                <rect stroke="#666666" stroke-width="1" stroke-linejoin="square" fill="url(#linearGradient-3)" x="0.5" y="0.5" width="110" height="25"></rect>
+            </g>
+            <text id="content-type" font-family="Helvetica" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="14" y="17">content type</tspan>
+            </text>
+        </g>
+        <g id="Group-6" transform="translate(242.000000, 14.000000)">
+            <rect id="Rectangle" stroke="#C3C3C3" fill="#FFDDE2" x="0.5" y="0.5" width="110" height="25"></rect>
+            <text id="appearance" font-family="Helvetica" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="14" y="17">appearance</tspan>
+            </text>
+        </g>
+        <g id="Group-5" transform="translate(361.000000, 14.000000)">
+            <rect id="Rectangle" stroke="#C3C3C3" fill="#DCF8BD" x="0.5" y="0.5" width="110" height="25"></rect>
+            <text id="element" font-family="Helvetica" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="14" y="17">element</tspan>
+            </text>
+        </g>
+        <g id="Group-4" transform="translate(479.000000, 14.000000)">
+            <rect id="Rectangle" stroke="#C3C3C3" fill="#E3C6FD" x="0.5" y="0.5" width="110" height="25"></rect>
+            <text id="styles" font-family="Helvetica" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="14" y="17">styles</tspan>
+            </text>
+        </g>
+        <g id="Group-3" transform="translate(598.000000, 14.000000)">
+            <rect id="Rectangle" stroke="#C3C3C3" fill="#FFE2B1" x="0.5" y="0.5" width="110" height="25"></rect>
+            <text id="classes" font-family="Helvetica" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="14" y="17">classes</tspan>
+            </text>
+        </g>
+        <g id="Group" transform="translate(835.000000, 14.000000)">
+            <rect id="Rectangle" stroke="#C3C3C3" fill="#E4F1FF" x="0.5" y="0.5" width="110" height="25"></rect>
+            <text id="html-content" font-family="Helvetica" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="14" y="17">html content</tspan>
+            </text>
+        </g>
+        <g id="Group" transform="translate(716.000000, 14.000000)">
+            <rect id="Rectangle" stroke="#C3C3C3" fill="#FFFBC5" x="0.5" y="0.5" width="110" height="25"></rect>
+            <text id="text" font-family="Helvetica" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="14" y="17">text</tspan>
+            </text>
+        </g>
+        <g id="HTML" transform="translate(10.000000, 68.000000)" fill="#000000" font-family="Helvetica" font-size="14" font-weight="normal" line-spacing="26">
+            <text id="&lt;div-data-content-ty">
+                <tspan x="0" y="14">&lt;div data-content-type="example_quote" data-appearance="default" data-element="main" style="border-style: none; border-width: 1px….more;”&gt;</tspan>
+                <tspan x="0" y="40">       &lt;blockquote class=“quote blue-quote" data-element="quote"&gt;I know where I came from—but where did all you zombies come from?&lt;/blockquote&gt;</tspan>
+                <tspan x="0" y="66">       &lt;div class="quote-author" data-element="author"&gt;Robert A. Heinlein&lt;/div&gt;</tspan>
+                <tspan x="0" y="92">       &lt;div class="quote-description" data-element="description"&gt;</tspan>
+                <tspan x="0" y="118">               &lt;div&gt;</tspan>
+                <tspan x="0" y="144">                   &lt;span style="color: #808080;"&gt;</tspan>
+                <tspan x="0" y="170">                       &lt;em&gt;All You Zombies&lt;/em&gt; (short story)</tspan>
+                <tspan x="0" y="196">                   &lt;/span&gt;</tspan>
+                <tspan x="0" y="222">               &lt;/div&gt;</tspan>
+                <tspan x="0" y="248">       &lt;/div&gt;</tspan>
+                <tspan x="0" y="274">&lt;/div&gt;</tspan>
+            </text>
+        </g>
+        <g id="Group-2" transform="translate(124.000000, 14.000000)">
+            <rect id="Rectangle" stroke="#C3C3C3" fill="#EEEEEE" x="0.5" y="0.5" width="110" height="25"></rect>
+            <text id="structure" font-family="Helvetica" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="14" y="17">structure</tspan>
+            </text>
+        </g>
+        <text id="HTML-content-from-ti" font-family="EncodeSansCondensed-SemiBold, Encode Sans Condensed" font-size="15" font-style="condensed" font-weight="500" line-spacing="20" fill="#BD3C39">
+            <tspan x="638" y="223">HTML content from </tspan>
+            <tspan x="638" y="243">tinyMCE editor used for </tspan>
+            <tspan x="638" y="263">Quote’s description input </tspan>
+        </text>
+        <path id="Line-10" d="M417.2866,233 L431.286437,225.999675 L431.286762,239.999675 L417.2866,233 Z M614.285387,231.903367 L614.287813,233.903366 C613.288412,233.904574 613.288412,233.904574 612.285067,233.905773 L612.282685,231.905774 C613.286009,231.904576 613.286009,231.904576 614.285387,231.903367 Z M610.282081,231.908135 L610.284419,233.908133 C609.286412,233.909296 609.286412,233.909296 608.284562,233.910449 L608.282267,231.910451 C609.284095,231.909298 609.284095,231.909298 610.282081,231.908135 Z M606.283436,231.912723 L606.285688,233.912722 C605.285463,233.913845 605.285463,233.913845 604.281464,233.914959 L604.279252,231.91496 C605.283231,231.913846 605.283231,231.913846 606.283436,231.912723 Z M602.286467,231.917143 L602.288638,233.917141 C601.291585,233.91822 601.291585,233.91822 600.290866,233.91929 L600.288736,231.919291 C601.289435,231.918221 601.289435,231.918221 602.286467,231.917143 Z M598.283157,231.921407 L598.285248,233.921406 C597.287955,233.922445 597.287955,233.922445 596.287074,233.923476 L596.285021,231.923477 C597.285884,231.922447 597.285884,231.922447 598.283157,231.921407 Z M594.284474,231.92551 L594.286488,233.925509 C593.289962,233.926509 593.289962,233.926509 592.28993,233.927501 L592.287953,231.927502 C593.287967,231.92651 593.287967,231.92651 594.284474,231.92551 Z M590.282158,231.929465 L590.284097,233.929464 C589.285235,233.93043 589.285235,233.93043 588.282922,233.931386 L588.28102,231.931387 C589.283314,231.930431 589.283314,231.930431 590.282158,231.929465 Z M586.287355,231.933266 L586.289222,233.933265 C585.289191,233.934196 585.289191,233.934196 584.285771,233.935117 L584.283939,231.935118 C585.287341,231.934196 585.287341,231.934196 586.287355,231.933266 Z M582.281556,231.936935 L582.283353,233.936934 C581.283423,233.937829 581.283423,233.937829 580.280174,233.938716 L580.278411,231.938717 C581.281644,231.93783 581.281644,231.93783 582.281556,231.936935 Z M578.285895,231.940456 L578.287624,233.940455 C577.288973,233.941315 577.288973,233.941315 576.287075,233.942167 L576.28538,231.942168 C577.287261,231.941316 577.287261,231.941316 578.285895,231.940456 Z M574.281438,231.94385 L574.2831,233.94385 C573.283189,233.944678 573.283189,233.944678 572.280084,233.945498 L572.278454,231.945499 C573.281542,231.944679 573.281542,231.944679 574.281438,231.94385 Z M570.289692,231.947104 L570.29129,233.947103 C569.29147,233.9479 569.29147,233.9479 568.288519,233.948688 L568.286952,231.948689 C569.289888,231.9479 569.289888,231.9479 570.289692,231.947104 Z M566.280897,231.950245 L566.282433,233.950244 C565.284245,233.951008 565.284245,233.951008 564.282994,233.951764 L564.281488,231.951765 C565.282725,231.951008 565.282725,231.951008 566.280897,231.950245 Z M562.287143,231.95325 L562.288618,233.95325 L560.2881,233.95471 L560.286654,231.954711 L562.287143,231.95325 Z M558.288671,231.95614 L558.290086,233.95614 L556.291855,233.95754 L556.290468,231.95754 L558.288671,231.95614 Z M554.286332,231.958916 L554.28769,233.958915 L552.288365,233.960259 L552.287035,231.96026 L554.286332,231.958916 Z M550.280974,231.96158 L550.282277,233.961579 L548.27907,233.96287 L548.277795,231.96287 L550.280974,231.96158 Z M546.284315,231.964127 L546.285563,233.964127 L544.282531,233.965363 L544.28131,231.965363 L546.284315,231.964127 Z M542.286493,231.966568 L542.287688,233.966567 L540.289075,233.967748 L540.287906,231.967748 L542.286493,231.966568 Z M538.288334,231.968903 L538.289476,233.968903 L536.28753,233.970034 L536.286413,231.970034 L538.288334,231.968903 Z M534.290653,231.971136 L534.291745,233.971136 L532.291566,233.972215 L532.290499,231.972215 L534.290653,231.971136 Z M530.283024,231.973274 L530.284066,233.973274 L528.28538,233.974303 L528.284362,231.974303 L530.283024,231.973274 Z M526.288639,231.975307 L526.289632,233.975307 L524.287003,233.97629 L524.286033,231.97629 L526.288639,231.975307 Z M522.28573,231.977249 L522.286676,233.977249 L520.286769,233.978184 L520.285845,231.978184 L522.28573,231.977249 Z M518.286329,231.979096 L518.287229,233.979095 L516.286548,233.979985 L516.28567,231.979985 L518.286329,231.979096 Z M514.291222,231.980849 L514.292077,233.980849 L512.293216,233.981693 L512.292383,231.981693 L514.291222,231.980849 Z M510.289512,231.982517 L510.290323,233.982517 L508.292239,233.983317 L508.29145,231.983317 L510.289512,231.982517 Z M506.281716,231.984099 L506.282484,233.984099 L504.281134,233.984857 L504.280387,231.984857 L506.281716,231.984099 Z M502.29204,231.98559 L502.292766,233.98559 L500.293848,233.986305 L500.293142,231.986305 L502.29204,231.98559 Z M498.285709,231.987003 L498.286393,233.987002 L496.285412,233.987677 L496.284748,231.987677 L498.285709,231.987003 Z M494.287003,231.988331 L494.287648,233.988331 L492.285937,233.988966 L492.285313,231.988966 L494.287003,231.988331 Z M490.284579,231.98958 L490.285184,233.98958 L488.286506,233.990175 L488.285921,231.990175 L490.284579,231.98958 Z M486.291115,231.990749 L486.291681,233.990749 L484.29169,233.991305 L484.291143,231.991305 L486.291115,231.990749 Z M482.282828,231.991844 L482.283356,233.991844 L480.282696,233.992363 L480.282187,231.992363 L482.282828,231.991844 Z M478.284651,231.992862 L478.285142,233.992862 L476.285006,233.993343 L476.284534,231.993343 L478.284651,231.992862 Z M474.284893,231.993806 L474.285347,233.993806 L472.28451,233.994251 L472.284074,231.994251 L474.284893,231.993806 Z M470.284038,231.994678 L470.284456,233.994678 L468.284045,233.995087 L468.283645,231.995088 L470.284038,231.994678 Z M466.282568,231.995479 L466.282951,233.995479 L464.281948,233.995854 L464.281583,231.995854 L466.282568,231.995479 Z M462.280963,231.996211 L462.281311,233.996211 L460.281301,233.99655 L460.28097,231.99655 L462.280963,231.996211 Z M458.29244,231.996871 L458.292754,233.996871 L456.293462,233.997178 L456.293164,231.997178 L458.29244,231.996871 Z M454.292066,231.997467 L454.292347,233.997467 L452.292205,233.99774 L452.29194,231.99774 L454.292066,231.997467 Z M450.280077,231.997999 L450.280325,233.997999 L448.28057,233.998239 L448.280338,231.998239 L450.280077,231.997999 Z M446.282658,231.998463 L446.282874,233.998463 L444.282848,233.998672 L444.282648,231.998672 L446.282658,231.998463 Z M442.287452,231.998864 L442.287637,233.998864 L440.287458,233.999041 L440.287289,231.999041 L442.287452,231.998864 Z M438.281793,231.999204 L438.281947,233.999204 L436.281737,233.99935 L436.281598,231.99935 L438.281793,231.999204 Z M434.292319,231.99948 L434.292443,233.99948 L432.292509,233.999597 L432.2924,231.999597 L434.292319,231.99948 Z" fill="#BD3C39" fill-rule="nonzero"></path>
+    </g>
+</svg>

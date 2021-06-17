@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Venia UI Extensibility Targets | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Venia UI API</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Extension points</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/targets/" class="spectrum-SideNav-itemLink  ">Targets</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Application components</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/Button/" class="spectrum-SideNav-itemLink  ">Button</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/ButtonGroup/" class="spectrum-SideNav-itemLink  ">ButtonGroup</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/Logo/" class="spectrum-SideNav-itemLink  ">Logo</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/Mask/" class="spectrum-SideNav-itemLink  ">Mask</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/Portal/" class="spectrum-SideNav-itemLink  ">Portal</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/ProductImageCarousel/" class="spectrum-SideNav-itemLink  ">ProductImageCarousel</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/ToastContainer/" class="spectrum-SideNav-itemLink  ">ToastContainer</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/Trigger/" class="spectrum-SideNav-itemLink  ">Trigger</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Shopping cart components</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/CartPage/" class="spectrum-SideNav-itemLink  ">Cart Page</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/CartPage/GiftCards/" class="spectrum-SideNav-itemLink  ">Gift Cards</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/CartPage/PriceAdjustments/" class="spectrum-SideNav-itemLink  ">Price Adjustments</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/CartPage/PriceSummary/" class="spectrum-SideNav-itemLink  ">Price Summary</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-ui/reference/components/CartPage/ProductListing/" class="spectrum-SideNav-itemLink  ">Product Listing</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Venia UI Extensibility Targets</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/venia-ui/reference/targets/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /venia-ui/reference/targets/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>This page lists the Targets declared in the Venia UI package. Access these in your intercept files by calling <code class="highlighter-rouge">targets.of('@magento/venia-ui')</code> on the TargetProvider object.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* my-custom-interceptors.js */</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">targets</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">veniaTargets</span> <span class="o">=</span> <span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/venia-ui</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>See the <a href="https://github.com/magento-research/pwa-studio-target-experiments">PWA Studio Target Experiments</a> project repository for documented examples of extensions that use PWA Studio’s extensibility framework.</p>
+
+<!--
+The reference doc content is generated automatically from the source code.
+To update this section, update the doc blocks in the source code
+-->
+
+<h2 id="members">Members</h2>
+
+<dl>
+<dt><a href="#richContentRenderers">richContentRenderers</a> : <code>tapable.SyncHook</code></dt>
+<dd><p>Provides access to the list of rendering strategies used by the
+RichContent component.</p>
+<p>This target collects a list of RichContentRenderer modules.
+It builds an array of these renderers, which Venia&#39;s RichContent
+component uses to try and render a block of &quot;rich&quot; content, such
+as HTML.</p>
+<p>Use this target if your backend system uses a customized content
+storage format instead of plain HTML in &quot;rich content&quot; fields such
+as product descriptions and CMS blocks.</p>
+</dd>
+<dt><a href="#routes">routes</a> : <code>tapable.AsyncSeriesWaterfall</code></dt>
+<dd><p>Provides access to Venia&#39;s routing table.</p>
+<p>This target lets you add new routes to your storefronts.
+You can also modify Venia&#39;s existing client-side routes,
+such as cart or checkout URLs.</p>
+<p>NOTE: This target does not include routes controlled by the Magento
+admin, such as CMS or catalog URLs.</p>
+</dd>
+<dt><a href="#checkoutPagePaymentTypes">checkoutPagePaymentTypes</a> : <code>tapable.SyncHook</code></dt>
+<dd><p>Provides access to Venia&#39;s checkout page payment methods</p>
+<p>This target lets you add new checkout page payment to your storefronts.</p>
+</dd>
+<dt><a href="#savedPaymentTypes">savedPaymentTypes</a> : <code>tapable.SyncHook</code></dt>
+<dd><p>Provides access to Venia&#39;s saved payment methods</p>
+<p>This target lets you add new saved payment method to your storefronts.</p>
+</dd>
+<dt><a href="#editablePaymentTypes">editablePaymentTypes</a> : <code>tapable.SyncHook</code></dt>
+<dd><p>Provides access to Venia&#39;s editable payment methods</p>
+<p>This target lets you add new editable payment method to your storefronts.</p>
+</dd>
+<dt><a href="#summaryPagePaymentTypes">summaryPagePaymentTypes</a> : <code>tapable.SyncHook</code></dt>
+<dd><p>Provides access to Venia&#39;s summary page for a payment method.</p>
+<p>This target allows you to add custom payment summary rendering for the summary page in the checkout.</p>
+</dd>
+</dl>
+
+<h2 id="typedefs">Typedefs</h2>
+
+<dl>
+<dt><a href="#rendererInterceptFunction">rendererInterceptFunction</a> : <code>function</code></dt>
+<dd><p>Intercept function signature for the <code>richContentRenderers</code> target.</p>
+<p>Interceptors of <code>richContentRenderers</code> should call <code>.add</code> on the provided <a href="#RichContentRendererList">renderer list</a>.</p>
+</dd>
+<dt><a href="#routesInterceptFunction">routesInterceptFunction</a> ⇒ <code><a href="#RouteDefinition">Array.&lt;RouteDefinition&gt;</a></code></dt>
+<dd><p>Intercept function signature for the <code>routes</code> target.</p>
+<p>Interceptors of <code>routes</code> receive an array of <a href="#RouteDefinition">RouteDefinition</a>
+objects, which Venia will use to generate React Router <code>&lt;Route /&gt;</code> in the
+final bundle.</p>
+<p>Interceptors <strong>must</strong> return an array of RouteDefinitions, either by
+mutating and then returning the array they received, or by returning a new
+array of RouteDefinitions.</p>
+</dd>
+<dt><a href="#RouteDefinition">RouteDefinition</a> : <code>Object</code></dt>
+<dd><p>A route definition object that describes a route in your storefront.</p>
+</dd>
+<dt><a href="#paymentInterceptFunction">paymentInterceptFunction</a> : <code>function</code></dt>
+<dd><p>Intercept function signature for the <code>checkoutPagePaymentTypes</code> target.</p>
+<p>Interceptors of <code>checkoutPagePaymentTypes</code> should call <code>.add</code> on the provided <a href="#CheckoutPaymentTypesDefinition">payment list</a>.</p>
+</dd>
+<dt><a href="#CheckoutPaymentDefinition">CheckoutPaymentDefinition</a> : <code>Object</code></dt>
+<dd><p>A payment definition object that describes a checkout page payment in your storefront.</p>
+</dd>
+<dt><a href="#savedPaymentInterceptFunction">savedPaymentInterceptFunction</a> : <code>function</code></dt>
+<dd><p>Intercept function signature for the <code>savedPaymentTypes</code> target.</p>
+<p>Interceptors of <code>savedPaymentTypes</code> should call <code>.add</code> on the provided <a href="#SavedPaymentTypesDefinition">payment list</a>.</p>
+</dd>
+<dt><a href="#SavedPaymentDefinition">SavedPaymentDefinition</a> : <code>Object</code></dt>
+<dd><p>A payment definition object that describes a saved payment in your storefront.</p>
+</dd>
+<dt><a href="#editablePaymentInterceptFunction">editablePaymentInterceptFunction</a> : <code>function</code></dt>
+<dd><p>Intercept function signature for the <code>editablePaymentTypes</code> target.</p>
+<p>Interceptors of <code>editablePaymentTypes</code> should call <code>.add</code> on the provided <a href="#EditablePaymentTypesDefinition">payment list</a>.</p>
+</dd>
+<dt><a href="#EditablePaymentDefinition">EditablePaymentDefinition</a> : <code>Object</code></dt>
+<dd><p>A payment definition object that describes a saved payment in your storefront.</p>
+</dd>
+</dl>
+
+<h2 id="interfaces">Interfaces</h2>
+
+<dl>
+<dt><a href="#RichContentRenderer">RichContentRenderer</a> : <code>Object</code></dt>
+<dd><p>Rich content renderers for the RichContent component must implement this
+interface. Should be written as an ES Module—a module that exports functions
+with these names, rather than an object with these functions as properties.</p>
+</dd>
+</dl>
+
+<p><a name="RichContentRenderer"></a></p>
+
+<h2 id="richcontentrenderer--object">RichContentRenderer : <code>Object</code></h2>
+<p>Rich content renderers for the RichContent component must implement this
+interface. Should be written as an ES Module—a module that exports functions
+with these names, rather than an object with these functions as properties.</p>
+
+<p><strong>Kind</strong>: global interface<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Component</td>
+      <td><code>React.Component</code></td>
+      <td>The React component that does the actual rendering. It will receive the props passed to the RichContent object, including <code class="highlighter-rouge">html</code>.</td>
+    </tr>
+    <tr>
+      <td>canRender</td>
+      <td><code>function</code></td>
+      <td>Function that receives the content to be rendered as a string, and should return <code class="highlighter-rouge">true</code> if the <code class="highlighter-rouge">Component</code> can understand and render that content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(A renderer that can render any content containing the string "honk")</em></p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PlainHtmlRenderer</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/venia-ui/components/richContent/plainHtmlRenderer</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">GooseRenderer</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">html</span> <span class="o">=</span> <span class="nx">props</span><span class="p">.</span><span class="nx">html</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/honk/gim</span><span class="p">,</span> <span class="dl">'</span><span class="s1">&lt;strong&gt;HONK!🦢&lt;/strong&gt;</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">PlainHtmlRenderer</span> <span class="na">html=</span><span class="si">{</span><span class="nx">html</span><span class="si">}</span> <span class="p">/&gt;;</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">Component</span> <span class="o">=</span> <span class="nx">GooseRenderer</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">canRender</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="sr">/honk/gim</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><a name="richContentRenderers"></a></p>
+
+<h2 id="richcontentrenderers--tapablesynchook">richContentRenderers : <code>tapable.SyncHook</code></h2>
+<p>Provides access to the list of rendering strategies used by the
+RichContent component.</p>
+
+<p>This target collects a list of RichContentRenderer modules.
+It builds an array of these renderers, which Venia’s RichContent
+component uses to try and render a block of “rich” content, such
+as HTML.</p>
+
+<p>Use this target if your backend system uses a customized content
+storage format instead of plain HTML in “rich content” fields such
+as product descriptions and CMS blocks.</p>
+
+<p><strong>Kind</strong>: global variable<br />
+<strong>See</strong></p>
+
+<ul>
+  <li><a href="#rendererInterceptFunction">Intercept function signature</a></li>
+  <li><a href="#RichContentRendererList">RichContentRendererList</a></li>
+  <li><a href="#RichContentRenderer">RichContentRenderer</a></li>
+</ul>
+
+<p><strong>Example</strong> <em>(Add a renderer)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/venia-ui</span><span class="dl">'</span><span class="p">).</span><span class="nx">richContentRenderers</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span>
+  <span class="nx">renderers</span> <span class="o">=&gt;</span> <span class="nx">renderers</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+    <span class="na">componentName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">AdobeXM</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@adobe/xm-components/xm-renderer</span><span class="dl">'</span>
+  <span class="p">})</span>
+<span class="p">);</span>
+</code></pre></div></div>
+<p><a name="routes"></a></p>
+
+<h2 id="routes--tapableasyncserieswaterfall">routes : <code>tapable.AsyncSeriesWaterfall</code></h2>
+<p>Provides access to Venia’s routing table.</p>
+
+<p>This target lets you add new routes to your storefronts.
+You can also modify Venia’s existing client-side routes,
+such as cart or checkout URLs.</p>
+
+<p>NOTE: This target does not include routes controlled by the Magento
+admin, such as CMS or catalog URLs.</p>
+
+<p><strong>Kind</strong>: global variable<br />
+<strong>See</strong></p>
+
+<ul>
+  <li><a href="#routesInterceptFunction">Intercept function signature</a></li>
+  <li><a href="#RouteDefinition">Route definition object</a></li>
+</ul>
+
+<p><strong>Example</strong> <em>(Add a custom route for a blog module)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">veniaTargets</span> <span class="o">=</span> <span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/venia-ui</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">veniaTargets</span><span class="p">.</span><span class="nx">routes</span>
+<span class="nx">routes</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span>
+  <span class="nx">routesArray</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="nx">routesArray</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+         <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Blog</span><span class="dl">'</span><span class="p">,</span>
+         <span class="na">pattern</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/blog/:slug/:id</span><span class="dl">'</span><span class="p">,</span>
+         <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@partner/pwa-studio-blog</span><span class="dl">'</span>
+     <span class="p">});</span>
+     <span class="k">return</span> <span class="nx">routesArray</span><span class="p">;</span>
+  <span class="p">})</span>
+</code></pre></div></div>
+<p><a name="checkoutPagePaymentTypes"></a></p>
+
+<h2 id="checkoutpagepaymenttypes--tapablesynchook">checkoutPagePaymentTypes : <code>tapable.SyncHook</code></h2>
+<p>Provides access to Venia’s checkout page payment methods</p>
+
+<p>This target lets you add new checkout page payment to your storefronts.</p>
+
+<p><strong>Kind</strong>: global variable<br />
+<strong>See</strong></p>
+
+<ul>
+  <li><a href="#paymentInterceptFunction">Intercept function signature</a></li>
+  <li><a href="#CheckoutPaymentTypesDefinition">CheckoutPaymentTypes</a></li>
+  <li><a href="#CheckoutPaymentDefinition">CheckoutPayment definition object</a></li>
+</ul>
+
+<p><strong>Example</strong> <em>(Add a payment)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/venia-ui</span><span class="dl">'</span><span class="p">).</span><span class="nx">checkoutPagePaymentTypes</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span>
+  <span class="nx">checkoutPagePaymentTypes</span> <span class="o">=&gt;</span> <span class="nx">checkoutPagePaymentTypes</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+    <span class="na">paymentCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">braintree</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@magento/braintree_payment</span><span class="dl">'</span>
+  <span class="p">})</span>
+<span class="p">);</span>
+</code></pre></div></div>
+<p><a name="savedPaymentTypes"></a></p>
+
+<h2 id="savedpaymenttypes--tapablesynchook">savedPaymentTypes : <code>tapable.SyncHook</code></h2>
+<p>Provides access to Venia’s saved payment methods</p>
+
+<p>This target lets you add new saved payment method to your storefronts.</p>
+
+<p><strong>Kind</strong>: global variable<br />
+<strong>See</strong></p>
+
+<ul>
+  <li><a href="#savedPaymentInterceptFunction">Intercept function signature</a></li>
+  <li><a href="#SavedPaymentTypesDefinition">SavedPaymentTypes</a></li>
+  <li><a href="#SavedPaymentDefinition">SavedPayment definition object</a></li>
+</ul>
+
+<p><strong>Example</strong> <em>(Add a payment)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/venia-ui</span><span class="dl">'</span><span class="p">).</span><span class="nx">savedPaymentTypes</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span>
+  <span class="nx">savedPaymentTypes</span> <span class="o">=&gt;</span> <span class="nx">savedPaymentTypes</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+    <span class="na">paymentCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">braintree</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@magento/braintree_payment</span><span class="dl">'</span>
+  <span class="p">})</span>
+<span class="p">);</span>
+</code></pre></div></div>
+<p><a name="editablePaymentTypes"></a></p>
+
+<h2 id="editablepaymenttypes--tapablesynchook">editablePaymentTypes : <code>tapable.SyncHook</code></h2>
+<p>Provides access to Venia’s editable payment methods</p>
+
+<p>This target lets you add new editable payment method to your storefronts.</p>
+
+<p><strong>Kind</strong>: global variable<br />
+<strong>See</strong></p>
+
+<ul>
+  <li><a href="#editablePaymentInterceptFunction">Intercept function signature</a></li>
+  <li><a href="#EditabledPaymentTypesDefinition">EditablePaymentTypes</a></li>
+  <li><a href="#EditablePaymentDefinition">EditablePayment definition object</a></li>
+</ul>
+
+<p><strong>Example</strong> <em>(Add a payment)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/venia-ui</span><span class="dl">'</span><span class="p">).</span><span class="nx">editablePaymentTypes</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span>
+  <span class="nx">editablePaymentTypes</span> <span class="o">=&gt;</span> <span class="nx">editablePaymentTypes</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+    <span class="na">paymentCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">braintree</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@magento/braintree_payment</span><span class="dl">'</span>
+  <span class="p">})</span>
+<span class="p">);</span>
+</code></pre></div></div>
+<p><a name="summaryPagePaymentTypes"></a></p>
+
+<h2 id="summarypagepaymenttypes--tapablesynchook">summaryPagePaymentTypes : <code>tapable.SyncHook</code></h2>
+<p>Provides access to Venia’s summary page for a payment method.</p>
+
+<p>This target allows you to add custom payment summary rendering for the summary page in the checkout.</p>
+
+<p><strong>Kind</strong>: global variable<br />
+<strong>See</strong></p>
+
+<ul>
+  <li><a href="summaryPagePaymentTypesInterceptFunction">Intercept function signature</a></li>
+  <li><a href="#SavedPaymentTypesDefinition">EditablePaymentTypes</a></li>
+  <li><a href="#SavedPaymentDefinition">EditablePayment definition object</a></li>
+</ul>
+
+<p><strong>Example</strong> <em>(Add a payment)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/venia-ui</span><span class="dl">'</span><span class="p">).</span><span class="nx">editablePaymentTypes</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span>
+  <span class="nx">editablePaymentTypes</span> <span class="o">=&gt;</span> <span class="nx">editablePaymentTypes</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+    <span class="na">paymentCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">braintree</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@magento/braintree_payment</span><span class="dl">'</span>
+  <span class="p">})</span>
+<span class="p">);</span>
+</code></pre></div></div>
+<p><a name="rendererInterceptFunction"></a></p>
+
+<h2 id="rendererinterceptfunction--function">rendererInterceptFunction : <code>function</code></h2>
+<p>Intercept function signature for the <code class="highlighter-rouge">richContentRenderers</code> target.</p>
+
+<p>Interceptors of <code class="highlighter-rouge">richContentRenderers</code> should call <code class="highlighter-rouge">.add</code> on the provided <a href="#RichContentRendererList">renderer list</a>.</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>renderers</td>
+      <td><code>RichContentRendererList</code></td>
+      <td>The list of renderers registered so far in the build.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="routesInterceptFunction"></a></p>
+
+<h2 id="routesinterceptfunction--arrayltroutedefinitiongt">routesInterceptFunction ⇒ <a href="#RouteDefinition"><code>Array.&lt;RouteDefinition&gt;</code></a></h2>
+<p>Intercept function signature for the <code class="highlighter-rouge">routes</code> target.</p>
+
+<p>Interceptors of <code class="highlighter-rouge">routes</code> receive an array of <a href="#RouteDefinition">RouteDefinition</a>
+objects, which Venia will use to generate React Router <code class="highlighter-rouge">&lt;Route /&gt;</code> in the
+final bundle.</p>
+
+<p>Interceptors <strong>must</strong> return an array of RouteDefinitions, either by
+mutating and then returning the array they received, or by returning a new
+array of RouteDefinitions.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Returns</strong>: <a href="#RouteDefinition"><code>Array.&lt;RouteDefinition&gt;</code></a> - Your function must return the modified array,
+or a new array you have constructed</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>routes</td>
+      <td><a href="#RouteDefinition"><code>Array.&lt;RouteDefinition&gt;</code></a></td>
+      <td>Array of registered routes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">intercept</span> <span class="o">=</span> <span class="nx">routesArray</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="p">[</span>
+       <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Backstop</span><span class="dl">'</span><span class="p">,</span> <span class="na">pattern</span><span class="p">:</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">,</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@my-components/backstop</span><span class="dl">'</span> <span class="p">},</span>
+       <span class="p">...</span><span class="nx">routesArray</span>
+     <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><a name="RouteDefinition"></a></p>
+
+<h2 id="routedefinition--object">RouteDefinition : <code>Object</code></h2>
+<p>A route definition object that describes a route in your storefront.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td><code>string</code></td>
+      <td>Friendly name for the React component</td>
+    </tr>
+    <tr>
+      <td>path</td>
+      <td><code>string</code></td>
+      <td>Resolvable path to the component the   Route component will render</td>
+    </tr>
+    <tr>
+      <td>pattern</td>
+      <td><code>string</code></td>
+      <td>Route pattern. This is used as the   <code class="highlighter-rouge">path</code> prop for the <code class="highlighter-rouge">&lt;Route/&gt;</code> component.</td>
+    </tr>
+    <tr>
+      <td>[exact]</td>
+      <td><code>boolean</code></td>
+      <td>Tells the router whether it should match the route   exactly or not. This property is optional.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(A custom route with a URL parameter)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myCustomRoute</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">MyRoute</span><span class="dl">'</span><span class="p">,</span>
+     <span class="na">pattern</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/my-route/:myRouteParam</span><span class="dl">'</span><span class="p">,</span>
+     <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@my-components/my-route-component</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><a name="paymentInterceptFunction"></a></p>
+
+<h2 id="paymentinterceptfunction--function">paymentInterceptFunction : <code>function</code></h2>
+<p>Intercept function signature for the <code class="highlighter-rouge">checkoutPagePaymentTypes</code> target.</p>
+
+<p>Interceptors of <code class="highlighter-rouge">checkoutPagePaymentTypes</code> should call <code class="highlighter-rouge">.add</code> on the provided <a href="#CheckoutPaymentTypesDefinition">payment list</a>.</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>renderers</td>
+      <td><code>CheckoutPaymentTypesDefinition</code></td>
+      <td>The list of payments registered so far in the build.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="CheckoutPaymentDefinition"></a></p>
+
+<h2 id="checkoutpaymentdefinition--object">CheckoutPaymentDefinition : <code>Object</code></h2>
+<p>A payment definition object that describes a checkout page payment in your storefront.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>paymentCode</td>
+      <td><code>string</code></td>
+      <td>is use to map your payment</td>
+    </tr>
+    <tr>
+      <td>importPath</td>
+      <td><code>string</code></td>
+      <td>Resolvable path to the component the   Route component will render</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(A custom payment method)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myCustomPayment</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">paymentCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cc</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@partner/module/path_to_your_component</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><a name="savedPaymentInterceptFunction"></a></p>
+
+<h2 id="savedpaymentinterceptfunction--function">savedPaymentInterceptFunction : <code>function</code></h2>
+<p>Intercept function signature for the <code class="highlighter-rouge">savedPaymentTypes</code> target.</p>
+
+<p>Interceptors of <code class="highlighter-rouge">savedPaymentTypes</code> should call <code class="highlighter-rouge">.add</code> on the provided <a href="#SavedPaymentTypesDefinition">payment list</a>.</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>renderers</td>
+      <td><code>SavedPaymentTypesDefinition</code></td>
+      <td>The list of saved payments registered so far in the build.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="SavedPaymentDefinition"></a></p>
+
+<h2 id="savedpaymentdefinition--object">SavedPaymentDefinition : <code>Object</code></h2>
+<p>A payment definition object that describes a saved payment in your storefront.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>paymentCode</td>
+      <td><code>string</code></td>
+      <td>is use to map your payment</td>
+    </tr>
+    <tr>
+      <td>importPath</td>
+      <td><code>string</code></td>
+      <td>Resolvable path to the component the   Route component will render</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(A custom payment method)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myCustomPayment</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">paymentCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cc</span><span class="dl">'</span><span class="p">,</span>
+     <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@partner/module/path_to_your_component</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><a name="editablePaymentInterceptFunction"></a></p>
+
+<h2 id="editablepaymentinterceptfunction--function">editablePaymentInterceptFunction : <code>function</code></h2>
+<p>Intercept function signature for the <code class="highlighter-rouge">editablePaymentTypes</code> target.</p>
+
+<p>Interceptors of <code class="highlighter-rouge">editablePaymentTypes</code> should call <code class="highlighter-rouge">.add</code> on the provided <a href="#EditablePaymentTypesDefinition">payment list</a>.</p>
+
+<p><strong>Kind</strong>: global typedef</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>renderers</td>
+      <td><code>EditablePaymentTypesDefinition</code></td>
+      <td>so far in the build.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="EditablePaymentDefinition"></a></p>
+
+<h2 id="editablepaymentdefinition--object">EditablePaymentDefinition : <code>Object</code></h2>
+<p>A payment definition object that describes a saved payment in your storefront.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>paymentCode</td>
+      <td><code>string</code></td>
+      <td>is use to map your payment</td>
+    </tr>
+    <tr>
+      <td>importPath</td>
+      <td><code>string</code></td>
+      <td>Resolvable path to the component the   Route component will render</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(A custom payment method)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myCustomPayment</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="na">paymentCode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cc</span><span class="dl">'</span><span class="p">,</span>
+     <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@partner/module/path_to_your_component</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>For implementation details <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/targets/venia-ui-declare.js"><strong>View Source</strong></a>.
+<a name="RichContentRendererList"></a></p>
+
+<h2 id="richcontentrendererlist">RichContentRendererList</h2>
+<p>Implementation of our ‘richContentRenderers’ target. This will gather
+RichContentRenderer declarations { importPath, componentName } from all
+interceptors, and then tap <code class="highlighter-rouge">builtins.transformModules</code> to inject a module
+transform into the build which is configured to generate an array of modules
+to be imported and then exported.</p>
+
+<p>An instance of this class is made available when you use VeniaUI’s
+<code class="highlighter-rouge">richContentRenderers</code> target.</p>
+
+<p><strong>Kind</strong>: global class<br />
+<a name="RichContentRendererList+add"></a></p>
+
+<h3 id="richcontentrendererlistaddstrategy">richContentRendererList.add(strategy)</h3>
+<p>Add a rendering strategy to the RichContent component.</p>
+
+<p><strong>Kind</strong>: instance method of <a href="#RichContentRendererList"><code>RichContentRendererList</code></a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>strategy</td>
+      <td><code>Object</code></td>
+      <td>Describes the rich content renderer to include</td>
+    </tr>
+    <tr>
+      <td>strategy.importPath</td>
+      <td><code>string</code></td>
+      <td>Import path to the RichContentRenderer module. Should be package-absolute.</td>
+    </tr>
+    <tr>
+      <td>strategy.componentName</td>
+      <td><code>string</code></td>
+      <td>Name that will be given to the imported renderer in generated code. This is used for debugging purposes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For implementation details <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/targets/RichContentRendererList.js"><strong>View Source</strong></a>.</p>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>REST API client | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Peregrine API</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Extension points</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/targets/" class="spectrum-SideNav-itemLink  ">Targets</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/targets/wrappable-talons/" class="spectrum-SideNav-itemLink  ">Wrappable Talons</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Components and utilities</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/item/" class="spectrum-SideNav-itemLink  ">Item</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/items/" class="spectrum-SideNav-itemLink  ">Items</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/list/" class="spectrum-SideNav-itemLink  ">List</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/price/" class="spectrum-SideNav-itemLink  ">Price</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/router/" class="spectrum-SideNav-itemLink  ">Router</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Custom React hooks</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useDropdown/" class="spectrum-SideNav-itemLink  ">useDropdown</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useEventListener/" class="spectrum-SideNav-itemLink  ">useEventListener</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/usePagination/" class="spectrum-SideNav-itemLink  ">usePagination</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useSearchParam/" class="spectrum-SideNav-itemLink  ">useSearchParam</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/toasts/useToasts/" class="spectrum-SideNav-itemLink  ">useToasts</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/toasts/useToastContext/" class="spectrum-SideNav-itemLink  ">useToastContext</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useWindowSize/" class="spectrum-SideNav-itemLink  ">useWindowSize</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Shopping Cart Talons</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/" class="spectrum-SideNav-itemLink  ">Cart Page</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/GiftCards/" class="spectrum-SideNav-itemLink  ">Gift Cards</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/GiftOptions/" class="spectrum-SideNav-itemLink  ">Gift Options</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/PriceAdjustments/" class="spectrum-SideNav-itemLink  ">Price Adjustments</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/PriceSummary/" class="spectrum-SideNav-itemLink  ">Price Summary</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/ProductListing/" class="spectrum-SideNav-itemLink  ">Product Listing</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">REST API client</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/peregrine/reference/rest-api-client/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /peregrine/reference/rest-api-client/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The REST API client utility module provided by Peregrine allows you to work with non-GraphQL web APIs.
+The default implementation is a client that works with the REST API for Magento 2.3 and above.</p>
+
+<h2 id="magento-2-rest-api-client">Magento 2 REST API client</h2>
+
+<p>The Magento 2 REST API client provides a <code class="highlighter-rouge">request()</code> function which places a request to a Magento backend and returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code class="highlighter-rouge">Promise</code></a> as a response.
+This function is similar to the Web standard <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch"><code class="highlighter-rouge">fetch()</code></a> function with a few differences in <a href="#response-handling">response</a> and <a href="#error-handling">error</a> handling.
+It also contains features to support <a href="#multicasting">multicasting</a> and <a href="#rolling-requests">rolling requests</a>.</p>
+
+<p>For basic use cases, use the <code class="highlighter-rouge">request()</code> method.
+For more advanced cases, use the <a href="#the-m2apirequest-class"><code class="highlighter-rouge">M2ApiRequest</code></a> class, which the <code class="highlighter-rouge">request()</code> method wraps.</p>
+
+<h3 id="syntax">Syntax</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">(</span><span class="nx">resourceUrl</span><span class="p">,</span> <span class="nx">opts</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="parameters">Parameters</h4>
+
+<dl>
+  <dt><code class="highlighter-rouge">resourceUrl</code> (<a href="https://developer.mozilla.org/en-US/docs/Web/API/USVString"><code class="highlighter-rouge">UVString</code></a>)</dt>
+  <dd>
+    <p>A <a href="https://devdocs.magento.com/guides/v2.3/rest/list.html">Magento REST endpoint</a>.</p>
+  </dd>
+  <dt><code class="highlighter-rouge">opts</code> (object)</dt>
+  <dd>
+    <p>An options object that can contain all possible <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters">fetch options</a>.</p>
+
+    <p>Additional options:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">parseJSON</code> (boolean): Automatically parse the response into JSON format.
+Defaults to <code class="highlighter-rouge">true</code>.</li>
+      <li><code class="highlighter-rouge">multicast</code> (boolean): Manually set whether a request should use the <a href="#multicasting">multicasting</a> feature.</li>
+    </ul>
+  </dd>
+</dl>
+
+<h4 id="returns">Returns</h4>
+
+<p>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code class="highlighter-rouge">Promise</code></a> object that contains the result of the request. See <a href="#response-handling">response handling</a>.</p>
+
+<h3 id="usage">Usage</h3>
+
+<p>The following example imports the <code class="highlighter-rouge">request()</code> function into another module:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">RestApi</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">request</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">RestApi</span><span class="p">.</span><span class="nx">Magento2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Use the <code class="highlighter-rouge">request()</code> function to place and receive API calls using <code class="highlighter-rouge">async/await</code> syntax:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">displayGuestCartItems</span><span class="p">(</span><span class="nx">cartId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">cartResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">request</span><span class="p">(</span>
+        <span class="s2">`guest-carts/</span><span class="p">${</span><span class="nx">cartId</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">cart</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">cartResponse</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cart</span><span class="p">.</span><span class="nx">items</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Or use the <code class="highlighter-rouge">Promise</code> object directly:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">displayGuestCartItems</span><span class="p">(</span><span class="nx">cartId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">request</span><span class="p">(</span>
+        <span class="s2">`guest-carts/</span><span class="p">${</span><span class="nx">cartId</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(({</span> <span class="nx">items</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">items</span><span class="p">);)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="response-handling">Response handling</h3>
+
+<p>The <code class="highlighter-rouge">request()</code> method returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code class="highlighter-rouge">Promise</code></a> object with a fully parsed REST resource instead of an HTTP response as in the standard <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch"><code class="highlighter-rouge">fetch()</code></a> API.</p>
+
+<p>To make <code class="highlighter-rouge">request()</code> behave like <code class="highlighter-rouge">fetch()</code>, set the value of <code class="highlighter-rouge">parseJSON</code> to <code class="highlighter-rouge">false</code> in the options object.
+This changes the value passed to the <code class="highlighter-rouge">Promise.resolve()</code> function back to a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response"><code class="highlighter-rouge">Response</code></a> object.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">request</span><span class="p">(</span>
+    <span class="s2">`guest-carts/</span><span class="p">${</span><span class="nx">cartId</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">parseJSON</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">}</span>
+<span class="p">).</span><span class="nx">then</span><span class="p">(({</span> <span class="nx">response</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);)</span>
+</code></pre></div></div>
+
+<h3 id="error-handling">Error handling</h3>
+
+<p>Promises returned by <code class="highlighter-rouge">request()</code> are rejected if the server responds with an HTTP error code within the 4xx-5xx range.
+This is different from the standard <code class="highlighter-rouge">fetch()</code> behavior, which ignores HTTP errors so it can resolve the promise and only fails on network connectivity errors.</p>
+
+<p>The Magento REST API uses HTTP error codes to denote failed operations, so
+the <code class="highlighter-rouge">request()</code> method responds to these server-side errors by rejecting them.
+When the server returns an error code, the <code class="highlighter-rouge">request()</code> method builds an error containing metadata for debugging and rejects the <code class="highlighter-rouge">Promise</code>.</p>
+
+<h3 id="multicasting">Multicasting</h3>
+
+<p>The multicasting feature of the Magento 2 REST client collects all successive calls to the <code class="highlighter-rouge">request()</code> method and returns a single request and response that is shared to all method callers.</p>
+
+<p>In any distributed architecture, where applications are built from components with view, behavior, and data fetching strategy, multiple components may request the same resource at the same time. 
+GraphQL clients resolve this by merging GraphQL queries together, dispatching a request as a single call, and distributing the pieces of the GraphQL response to the original callers.
+A direct call using <code class="highlighter-rouge">fetch()</code> or <code class="highlighter-rouge">XMLHttpRequest()</code> does not provide this functionality.</p>
+
+<p>The <code class="highlighter-rouge">request()</code> method makes up for this by using a pattern-matching rule on inflight requests.
+All requests with the same method, path, and body text are considered multicastable by default.
+A clone of the response object is returned if a request meets the following criteria:</p>
+
+<ul>
+  <li>The pattern of the new request matches one that is already in progress, i.e. the network has not loaded the resource yet.</li>
+  <li>No unsafe operations, such as <code class="highlighter-rouge">POST</code>, have occurred to the target resource between the time of the original request and the new request.</li>
+  <li>The request is not a <code class="highlighter-rouge">POST</code> request.
+These requests create and/or modify server state, so it is unsafe to reuse their results.</li>
+</ul>
+
+<h4 id="override-multicast">Override multicast</h4>
+
+<p>The <code class="highlighter-rouge">multicast</code> configuration option forces multicasting to be <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> and bypasses the previously described rules.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// A normally multicast request forced not to multicast</span>
+<span class="nx">request</span><span class="p">(</span><span class="dl">'</span><span class="s1">carts/mine</span><span class="dl">'</span><span class="p">,{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="na">multicast</span><span class="p">:</span> <span class="kc">false</span> <span class="p">});</span>
+
+<span class="c1">// A normally non-multicast request forced to multicast</span>
+<span class="nx">request</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">carts/mine/items</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">cartItem</span><span class="p">,</span>
+        <span class="na">multicast</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="rolling-requests">Rolling requests</h3>
+
+<p>A rolling request is a multicast which overrides and replaces matching, previous multicast requests.
+It helps maintain a fresh resource, such as a shopping cart, and reduces network traffic by aborting outstanding matching requests.</p>
+
+<p>This feature has no effect on non-multicast requests.</p>
+
+<p>To use a rolling request, set the <code class="highlighter-rouge">cache</code> configuration option to <code class="highlighter-rouge">reload</code> or <code class="highlighter-rouge">no-store</code>.</p>
+
+<h3 id="the-m2apirequest-class">The <code class="highlighter-rouge">M2ApiRequest</code> class</h3>
+
+<p>The <code class="highlighter-rouge">request()</code> method is a convenience wrapper on top of the
+<code class="highlighter-rouge">M2ApiRequest</code> class.</p>
+
+<p>Use the <code class="highlighter-rouge">M2ApiRequest</code> class if you want more control over your REST requests.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">RestApi</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">M2ApiRequest</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">RestApi</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">placeCancelable</span><span class="p">(</span><span class="nx">emitter</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">req</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">M2ApiRequest</span><span class="p">(</span>
+        <span class="dl">'</span><span class="s1">some/slow/large/resource</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+    <span class="nx">req</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+    <span class="nx">emitter</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">someevent</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">req</span><span class="p">.</span><span class="nx">abortRequest</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">req</span><span class="p">.</span><span class="nx">getResponse</span><span class="p">();</span> <span class="c1">// AbortError</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="api">API</h4>
+
+<dl>
+  <dt><code class="highlighter-rouge">new M2ApiRequest(resourceUrl, opts)</code></dt>
+  <dd>
+    <p>Creates a new <code class="highlighter-rouge">M2ApiRequest</code> class to a specific <code class="highlighter-rouge">resourceUrl</code> using the configuration values in <code class="highlighter-rouge">opts</code>.
+See <code class="highlighter-rouge">request()</code> method <a href="#parameters">parameters</a>.</p>
+  </dd>
+  <dt><code class="highlighter-rouge">run()</code></dt>
+  <dd>
+    <p>Execute the request.
+This must be run before <code class="highlighter-rouge">getResponse()</code> or <code class="highlighter-rouge">abortRequest()</code> can be called.</p>
+  </dd>
+  <dt><code class="highlighter-rouge">getResponse()</code></dt>
+  <dd>
+    <p>Get the promise for the network operation.
+This method can only be called after <code class="highlighter-rouge">run()</code> executes.
+This method exists so that requests can reuse the promises from other requests.</p>
+
+    <p><strong>Returns:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code class="highlighter-rouge">Promise</code></a> - <code class="highlighter-rouge">Promise</code> object for the result of the request.</p>
+  </dd>
+  <dt><code class="highlighter-rouge">abortRequest()</code></dt>
+  <dd>
+    <p>Abort the network operation.
+Multicasted requests will catch the <code class="highlighter-rouge">AbortError</code> and attempt to reuse a cached request.
+Other requests will pass the <code class="highlighter-rouge">AbortError</code> rejection to the consumer.</p>
+
+    <p><strong>Kind:</strong> Instance method of M2ApiRequest</p>
+  </dd>
+  <dt><code class="highlighter-rouge">isRolling()</code></dt>
+  <dd>
+    <p>Used to determine if a request intends to use the <a href="#rolling-requests">rolling requests</a> feature and override prior requests to the same resource.</p>
+
+    <p><strong>Returns</strong>: boolean - True if the request is rolling. False otherwise.</p>
+  </dd>
+</dl>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Extensibility framework | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Overview</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/overview/" class="spectrum-SideNav-itemLink  parent">PWA Studio Overview</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/tools-libraries/" class="spectrum-SideNav-itemLink  ">External tools and libraries</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/versioning/" class="spectrum-SideNav-itemLink  ">Versioning strategy</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/upgrading-versions/" class="spectrum-SideNav-itemLink  ">Upgrading versions</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/contribute/" class="spectrum-SideNav-itemLink  ">Contributing to PWA Studio</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/frequently-asked-questions/" class="spectrum-SideNav-itemLink  ">Frequently Asked Questions</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Magento integration</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/magento-compatibility/" class="spectrum-SideNav-itemLink  ">Version compatibility</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/theme-vs-storefront/" class="spectrum-SideNav-itemLink  ">Magento theme vs PWA storefront</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/basic-concepts/" class="spectrum-SideNav-itemLink  parent">Basic concepts</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/app-shell/" class="spectrum-SideNav-itemLink  ">Application shell</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/content-rendering/" class="spectrum-SideNav-itemLink  ">Content rendering</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/css-modules/" class="spectrum-SideNav-itemLink  ">CSS modules</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/graphql/" class="spectrum-SideNav-itemLink  ">GraphQL</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/client-side-caching/" class="spectrum-SideNav-itemLink  ">Client-side caching</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/internationalization/" class="spectrum-SideNav-itemLink  ">Internationalization</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/basic-concepts/state-management/" class="spectrum-SideNav-itemLink  ">State management</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/storefront-architecture/" class="spectrum-SideNav-itemLink  parent">PWA Storefront architecture</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/storefront-architecture/runtime/" class="spectrum-SideNav-itemLink  ">Runtime architecture</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/storefront-architecture/buildtime/" class="spectrum-SideNav-itemLink  ">Build-time architecture</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/venia-pwa-concept/" class="spectrum-SideNav-itemLink  parent">Venia</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/setup/" class="spectrum-SideNav-itemLink  ">Venia storefront setup</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/install-sample-data/" class="spectrum-SideNav-itemLink  ">Install Venia sample data</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/project-structure/" class="spectrum-SideNav-itemLink  ">Venia project structure</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/venia-pwa-concept/features/modular-components/" class="spectrum-SideNav-itemLink  ">Modular components</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/peregrine/" class="spectrum-SideNav-itemLink  parent">Peregrine</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/talons/" class="spectrum-SideNav-itemLink  ">Talons</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/routing/" class="spectrum-SideNav-itemLink  ">Routing in PWA Studio</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/pwa-buildpack/" class="spectrum-SideNav-itemLink  parent">PWA Buildpack tools</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/configuration-management/" class="spectrum-SideNav-itemLink  ">Configuration management</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/extensibility-framework/" class="spectrum-SideNav-itemLink  ">Extensibility framework</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/scaffolding/" class="spectrum-SideNav-itemLink  ">Scaffolding</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/scaffolding/custom-project-templates/" class="spectrum-SideNav-itemLink  ">Custom project templates</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/troubleshooting/" class="spectrum-SideNav-itemLink  ">Troubleshooting</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/technologies/upward/" class="spectrum-SideNav-itemLink  parent">UPWARD</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/technologies/upward/reference-implementation/" class="spectrum-SideNav-itemLink  ">Reference implementation</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Extensibility framework</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/pwa-buildpack/extensibility-framework/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /pwa-buildpack/extensibility-framework/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>PWA Studio’s extensibility framework provides the tools you need to customize and extend your storefront without copying over code from the core PWA Studio project.
+The extensibility framework gives developers the ability to:</p>
+
+<ul>
+  <li>Extend the base Venia storefront with minimal core code duplication</li>
+  <li>Create and install extensions for PWA Studio storefronts</li>
+  <li>Create their own extendible modules and storefronts</li>
+</ul>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>The extensibility framework uses a modular approach for modifying application behavior.
+It applies configurations and customizations defined inside extensions you install in the project.</p>
+
+<p><em>Extensions</em> for PWA Studio storefronts are normal NPM packages you install as a project dependency.
+These packages contain instructions that affect the build process and static code output for the generated application bundles.
+By modifying the output code during build time, there is no runtime performance cost associated with changing the storefront behavior.</p>
+
+<p>The following diagram illustrates the general build process for a basic storefront with no extensions and a storefront that installs an extension.</p>
+
+<p><img src="./images/extensibility-overview.svg" alt="extensibility-overview" /></p>
+
+<p>This is different from a <em>plugin architecture</em> where the application detects and dispatches plugins as the front end loads in the browser.
+The more plugins you install with this architecture, the slower the application gets as it becomes bloated with overhead processes.</p>
+
+<h3 id="interceptor-pattern">Interceptor pattern</h3>
+
+<p>The extensibility framework implements an <a href="https://en.wikipedia.org/wiki/Interceptor_pattern">interceptor pattern</a> to allow changes to the build process.
+The interceptor pattern lets a module <strong>C</strong> intercept the flow of logic between module <strong>A</strong> and module <strong>B</strong> and add its own logic.</p>
+
+<p><img src="./images/interceptor-pattern.svg" alt="interceptor-pattern-image" /></p>
+
+<p>In PWA Studio, the points where a module may intercept the normal flow of logic and add their own are <a href="#targets">Targets</a>.
+The framework uses the <a href="https://github.com/magento/pwa-studio/blob/develop/packages/pwa-buildpack/lib/BuildBus/BuildBus.js">BuildBus</a> to gather instructions from each extension’s <a href="#intercept-files">Intercept File</a>.
+These files determine which Targets the extension intercepts and extends during the build process.</p>
+
+<h2 id="targets">Targets</h2>
+
+<p><em>Targets</em> are objects that represent areas in code you can access and intercept.
+These extension points are variants of a simple, common JavaScript pattern called the <a href="https://github.com/webpack/tapable">Tapable hook</a> and share some functionality with NodeJS’s <a href="https://nodejs.org/api/events.html#events_class_eventemitter"><code class="highlighter-rouge">EventEmitter</code> class</a>.</p>
+
+<p>Targets let you choose a code process’s extension point <em>by name</em> and let you run interceptor code when that process executes.
+Unlike <code class="highlighter-rouge">EventEmmitter</code> objects, Targets have defined behavior for how and in what order they run their interceptors.
+How those interceptors change the logic is also a defined behavior for Targets.</p>
+
+<p>Targets are part of a package’s public API along with the modules it exports.
+They provide another layer of customization on top of using plain code composition techniques with modules.</p>
+
+<h3 id="targetproviders">TargetProviders</h3>
+
+<p>A <em>TargetProvider</em> is an object that manages the connections between modules and their Targets.
+This object is available to your module’s <a href="#intercept-files">intercept file</a> and is the API you use to access Targets or declare them.</p>
+
+<p>Each extension receives its own TargetProvider in its intercept and declare files.
+Use this object to declare a module’s own targets, intercept its own targets, or intercept the targets of other extensions.</p>
+
+<h3 id="example">Example</h3>
+
+<p>An example of a Target is the <a href="/pwa-studio/venia-ui/reference/targets/#richContentRenderers"><code class="highlighter-rouge">richContentRenderers</code> target</a> declared by the Venia UI package.
+This Target lets you change the behavior of the <code class="highlighter-rouge">RichContent</code> component across your project by adding a rendering strategy.
+Tapping into this Target gives access to a <code class="highlighter-rouge">richContentRenders</code> list object in your intercept function.
+Calling the <code class="highlighter-rouge">add()</code> function on this object lets you add a custom rendering strategy for your storefront.</p>
+
+<p>The <a href="https://github.com/magento/pwa-studio/blob/develop/packages/pagebuilder/lib/intercept.js">Page Builder extension</a> provides an example of how to intercept this Target.
+It taps the Target and provides an intercept function that adds a custom renderer for any detected Page Builder content.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">targets</span>
+    <span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/venia-ui</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">richContentRenderers</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="nx">richContentRenderers</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">richContentRenderers</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+            <span class="na">componentName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PageBuilder</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">importPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">@magento/pagebuilder</span><span class="dl">'</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="targetables">Targetables</h2>
+
+<p><em>Targetables</em> are objects that represent source files in your project or library.
+Unlike Target objects, which provide API endpoints a module uses in a specific way, Targetable objects give access to the actual source code of the module.</p>
+
+<p>Targetable objects provide functions that let you alter the source code in different ways.
+They are an abstraction on top of <code class="highlighter-rouge">TransformModuleRequest</code> objects, which use built in Babel plugins and Webpack loaders to change the source code.
+These changes get applied during the build process and do not affect the source file on disk.</p>
+
+<h3 id="targetables-in-storefront-projects">Targetables in Storefront projects</h3>
+
+<p>If you are working on a storefront project, you can use Targetables in your local intercept file to make code changes in <em>any file</em> in your project dependencies.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">Targetables</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">targets</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="kd">const</span> <span class="nx">targetables</span> <span class="o">=</span> <span class="nx">Targetables</span><span class="p">.</span><span class="nx">using</span><span class="p">(</span><span class="nx">targets</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">MainComponent</span> <span class="o">=</span> <span class="nx">targetables</span><span class="p">.</span><span class="nx">reactComponent</span><span class="p">(</span>
+      <span class="dl">'</span><span class="s1">@magento/venia-ui/lib/components/Main/main.js</span><span class="dl">'</span>
+  <span class="p">);</span>
+
+  <span class="nx">MainComponent</span><span class="p">.</span><span class="nx">insertAfterJSX</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;Header /&gt;</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">&lt;span&gt;Hello World!&lt;/span&gt;</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This code creates a <code class="highlighter-rouge">MainComponent</code> targetables object from the <code class="highlighter-rouge">main.js</code> source file in one of the project’s dependency.
+It modifies the final code in the bundle using the <code class="highlighter-rouge">insertAfterJSX()</code> function.
+When the application builds and runs in the browser, it shows the <code class="highlighter-rouge">Hello World!</code> message in a <code class="highlighter-rouge">span</code> element inserted after the <code class="highlighter-rouge">Header</code> component.</p>
+
+<h3 id="targetables-in-extensions">Targetables in extensions</h3>
+
+<p>If you are working on a PWA Studio extension, you can use Targetables in your intercept file to add specific Targets that are available to other extensions.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">Targetables</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">targets</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="kd">const</span> <span class="nx">targetables</span> <span class="o">=</span> <span class="nx">Targetables</span><span class="p">.</span><span class="nx">using</span><span class="p">(</span><span class="nx">targets</span><span class="p">);</span>
+
+  <span class="nx">targetables</span><span class="p">.</span><span class="nx">reactComponent</span><span class="p">(</span><span class="dl">'</span><span class="s1">@my/library/Button.js</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="k">async</span> <span class="nx">publish</span><span class="p">(</span><span class="nx">myTargets</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">classnames</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">myTargets</span><span class="p">.</span><span class="nx">buttonClassnames</span><span class="p">.</span><span class="nx">promise</span><span class="p">([]);</span>
+      <span class="nx">classnames</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">name</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">addJSXClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;button&gt;</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This code is a full implementation of an extension point that accesses the source for the extension’s <code class="highlighter-rouge">Button.js</code> module as a Targetable React component.
+It declares <code class="highlighter-rouge">buttonClassnames</code> as an array Target that other extensions can intercept.
+During the build process, it uses the <code class="highlighter-rouge">addJSXClassName()</code> method to add class names from that array to a <code class="highlighter-rouge">&lt;button&gt;</code> element in the code.</p>
+
+<h4 id="extensions-security">Extensions security</h4>
+
+<p>For security reasons, PWA Studio restrict the scope of Targetable modifications in extensions.
+These restrictions limit Targetable modifications to source files within the extension package.
+This prevents third party extensions from making source code changes to a storefront project without the developer’s knowledge.</p>
+
+<h2 id="declare-files">Declare files</h2>
+
+<p>A <em>declare file</em> lists the Targets available for interception in an extension or package.
+During build time, the framework looks for this file using the value set for <code class="highlighter-rouge">pwa-studio.targets.declare</code> in your project’s <code class="highlighter-rouge">package.json</code> file.
+The framework registers the Targets in all the declare files it finds in the project and dependencies before it runs any <a href="#intercept-files">intercept files</a>.
+This guarantees Target availability to any dependent interceptor.</p>
+
+<p>Declare files must export a function that accepts a TargetProvider object as a parameter.
+It provides a <code class="highlighter-rouge">declare()</code> function to register your project’s Targets by providing it a dictionary object,
+which maps a unique name to its Target.</p>
+
+<p>When you register your Target, the dictionary key is the named property a developer uses to access that Target.
+In the Page Builder example, the dictionary key for the rich content renderers Target that Venia UI declares is <code class="highlighter-rouge">richContentRenderers</code>.</p>
+
+<p>The value associated with the key is a variant of a Tapable hook created using one of the class constructors available under the TargetProvider object’s <code class="highlighter-rouge">types</code> property.
+Each class constructor accepts an optional array of strings that represent the list of arguments passed to the <a href="#intercept-functions">intercept function</a>.</p>
+
+<p>The TargetProvider object exposes the same classes as the <a href="https://github.com/webpack/tapable">Tapable</a> package except their names do not end with ‘Hook’.
+This is intentional to avoid confusion with the concept of React Hooks.
+For example, the <code class="highlighter-rouge">SyncWaterfallHook</code> class from Tapable is <code class="highlighter-rouge">SyncWaterfall</code> under the TargetProvider object’s <code class="highlighter-rouge">types</code> property.</p>
+
+<p>See the <a href="https://github.com/webpack/tapable#hook-types">Hook types</a> section of the Tapable documentation to learn about the available hook types.</p>
+
+<h3 id="example-declare-file-content">Example declare file content</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">targets</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">targets</span><span class="p">.</span><span class="nx">declare</span><span class="p">({</span>
+    <span class="na">perfReport</span><span class="p">:</span> <span class="k">new</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">types</span><span class="p">.</span><span class="nx">AsyncParallel</span><span class="p">([</span><span class="dl">'</span><span class="s1">report</span><span class="dl">'</span><span class="p">])</span>
+    <span class="na">socialIcons</span><span class="p">:</span> <span class="k">new</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">types</span><span class="p">.</span><span class="nx">SyncWaterfall</span><span class="p">([</span><span class="dl">'</span><span class="s1">iconlist</span><span class="dl">'</span><span class="p">])</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The example provided declares two Targets that this project or other modules can intercept, a <code class="highlighter-rouge">perfReport</code> Target and a <code class="highlighter-rouge">socialIcons</code> Target.
+Intercept files can access these Targets using <code class="highlighter-rouge">targets.of(&lt;package name&gt;).perfReport</code> and <code class="highlighter-rouge">targets.of(&lt;package name&gt;).socialIcons</code> respectively.</p>
+
+<p>The <code class="highlighter-rouge">perfReport</code> key maps to a Target type that runs its interceptors asynchronously and in parallel.
+This is appropriate for logging and monitoring interceptors that do not affect functionality.</p>
+
+<p>The <code class="highlighter-rouge">socialIcons</code> key maps to a Target type that runs its interceptors synchronously and in subscription order, which passes its return values as arguments to the next interceptor.
+This is appropriate for customizations that must happen in a predictable order.</p>
+
+<p>Both targets passes in a single parameter to their intercept functions, a <code class="highlighter-rouge">report</code> argument and an <code class="highlighter-rouge">iconlist</code> argument.</p>
+
+<h2 id="intercept-files">Intercept files</h2>
+
+<p>The <em>intercept file</em> describes the targets you want to intercept and define or extend.
+During build time, the framework looks for this file using the value for <code class="highlighter-rouge">pwa-studio.targets.intercept</code> in your project’s <code class="highlighter-rouge">package.json</code> file.
+These files execute after all the declare files register their Targets.</p>
+
+<p>Your intercept files must export a function that accepts a TargetProvider object as a parameter.
+This object gives you access to all available Targets in your project that let you make customizations, gather data, change the build itself, or develop and call your own declared targets.
+The TargetProvider object provides an <code class="highlighter-rouge">of()</code> function and an <code class="highlighter-rouge">own</code> property to access Targets in other packages or Targets within its own module respectively.</p>
+
+<p>For more information on how intercept files work, see the tutorial on how to <a href="/pwa-studio/tutorials/intercept-a-target/">Intercept a Target</a>.</p>
+
+<h3 id="example-intercept-file-content">Example intercept file content</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">targets</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="kd">const</span> <span class="nx">builtins</span> <span class="o">=</span> <span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">"</span><span class="s2">@magento/pwa-buildpack</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">builtins</span><span class="p">.</span><span class="nx">specialFeatures</span><span class="p">.</span><span class="nx">tap</span><span class="p">((</span><span class="nx">featuresByModule</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">featuresByModule</span><span class="p">[</span><span class="dl">"</span><span class="s2">my-extension</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">esModules</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The example provided defines an intercept file that intercepts the <code class="highlighter-rouge">specialFeatures</code> target in the <code class="highlighter-rouge">@magento/pwa-buildpack</code> package.
+It adds a webpack configuration for the <code class="highlighter-rouge">my-extension</code> package that lets the build process know that the package uses ES modules.</p>
+
+<h3 id="intercept-functions">Intercept functions</h3>
+
+<p>When you call the <code class="highlighter-rouge">tap()</code> function on a Target, you supply it with an <em>intercept function</em>.
+An intercept function is a callback function that provides the interception logic for a specific Target.
+Calling the <code class="highlighter-rouge">tap()</code> function registers your intercept function with that Target.
+When the framework builds your project, it generates code that calls your intercept function when the project runs the Target code.</p>
+
+<p>The function signature for an intercept function depends on the tapped Target.
+In the Page Builder example, the intercept function signature when you tap the <code class="highlighter-rouge">richContentRenderers</code> target is a function that receives a list object, which lets you add custom rendering strategies.
+Other Targets may require you to return a modified value, use an object with a specific API, or provide a configuration.</p>
+
+<p>Read the reference API on this site or in doc blocks in the source code to learn about the intercept function signatures for each Target.</p>
+
+<h2 id="writing-intercept-and-declare-files">Writing intercept and declare files</h2>
+
+<p>When writing intercept and declare files, keep in mind the following requirements:</p>
+
+<ul>
+  <li>Both files must export a function that accepts a TargetProvider object as a parameter.</li>
+  <li>Both files are CommonJS modules that run in Node.</li>
+  <li>You can create these files anywhere in your project, but you must specify their paths in your <code class="highlighter-rouge">package.json</code> file.</li>
+</ul>
+
+<p>As shown in the previous examples, a common practice when authoring these files involve assigning the TargetProvider object to a <code class="highlighter-rouge">targets</code> variable.</p>
+
+<h2 id="targets-in-pwa-studio-packages">Targets in PWA Studio packages</h2>
+
+<p>When you create a new storefront project using the scaffolding tool, you have access to all the same PWA Studio Targets as the Venia storefront.
+The following is a list of PWA Studio packages that contain Targets.</p>
+
+<dl>
+  <dt><a href="/pwa-studio/pwa-buildpack/reference/targets/">Buildpack</a></dt>
+  <dd>Targets in the Buildpack are low level and generic.
+They are often used as building blocks for more complicated feature Targets.
+You can also find Targets that let you add environment variables or change UPWARD behavior in this package.</dd>
+  <dt><a href="/pwa-studio/peregrine/reference/targets/">Peregrine</a></dt>
+  <dd>Targets in the Peregrine package focus mainly on the set of talons it provides.
+The <code class="highlighter-rouge">talons</code> Target lets you <a href="/pwa-studio/tutorials/intercept-a-target/modify-talon-results/">wrap a Talon</a> with your own module.</dd>
+  <dt><a href="/pwa-studio/venia-ui/reference/targets/">Venia UI</a></dt>
+  <dd>Targets in the Venia UI provide access to the list of items used in the UI components.
+These Targets let you add new routes, rendering strategies, and payment methods.</dd>
+</dl>
+
+<h2 id="extension-examples">Extension examples</h2>
+
+<p>The PWA Studio scaffolding tool also installs extensions on all new storefront projects.
+These extensions use the framework to add useful features on top of the base application.
+They are also examples of what a PWA Studio storefront extension looks like.</p>
+
+<dl>
+  <dt><a href="https://github.com/magento/pwa-studio/tree/develop/packages/extensions/upward-security-headers">@magento/upward-security-headers</a></dt>
+  <dd>This extension adds security headers to UPWARD by tapping into the <code class="highlighter-rouge">transformUpward</code> Target in Buildpack.</dd>
+  <dt><a href="https://github.com/magento/pwa-studio/tree/develop/packages/extensions/venia-sample-language-packs">@magento/venia-sample-language-packs</a></dt>
+  <dd>This extension provides sample translations for PWA Studio’s internationalization feature.</dd>
+</dl>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

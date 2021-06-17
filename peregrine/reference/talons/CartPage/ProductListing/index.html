@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Product Listing Talons | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Peregrine API</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Extension points</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/targets/" class="spectrum-SideNav-itemLink  ">Targets</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/targets/wrappable-talons/" class="spectrum-SideNav-itemLink  ">Wrappable Talons</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Components and utilities</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/item/" class="spectrum-SideNav-itemLink  ">Item</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/items/" class="spectrum-SideNav-itemLink  ">Items</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/list/" class="spectrum-SideNav-itemLink  ">List</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/price/" class="spectrum-SideNav-itemLink  ">Price</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/router/" class="spectrum-SideNav-itemLink  ">Router</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Custom React hooks</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useDropdown/" class="spectrum-SideNav-itemLink  ">useDropdown</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useEventListener/" class="spectrum-SideNav-itemLink  ">useEventListener</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/usePagination/" class="spectrum-SideNav-itemLink  ">usePagination</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useSearchParam/" class="spectrum-SideNav-itemLink  ">useSearchParam</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/toasts/useToasts/" class="spectrum-SideNav-itemLink  ">useToasts</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/toasts/useToastContext/" class="spectrum-SideNav-itemLink  ">useToastContext</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/hooks/useWindowSize/" class="spectrum-SideNav-itemLink  ">useWindowSize</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Shopping Cart Talons</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/" class="spectrum-SideNav-itemLink  ">Cart Page</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/GiftCards/" class="spectrum-SideNav-itemLink  ">Gift Cards</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/GiftOptions/" class="spectrum-SideNav-itemLink  ">Gift Options</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/PriceAdjustments/" class="spectrum-SideNav-itemLink  ">Price Adjustments</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/PriceSummary/" class="spectrum-SideNav-itemLink  ">Price Summary</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/peregrine/reference/talons/CartPage/ProductListing/" class="spectrum-SideNav-itemLink  ">Product Listing</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Product Listing Talons</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/peregrine/reference/talons/CartPage/ProductListing/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /peregrine/reference/talons/CartPage/ProductListing/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>These talons provide logic for components that render products in a shopping cart and forms that update the quantity or configuration for each product.</p>
+
+<!--
+The reference doc content is generated automatically from the source code.
+To update this section, update the doc blocks in the source code
+-->
+
+<h2 id="functions">Functions</h2>
+
+<dl>
+<dt><a href="#useProductListing">useProductListing(props)</a> ⇒ <code><a href="#ProductListingTalonProps">ProductListingTalonProps</a></code></dt>
+<dd><p>This talon contains logic for a component that renders a list of products for a cart.
+It performs effects and returns prop data to render the component on a cart page.</p>
+<p>This talon performs the following effects:</p>
+<ul>
+<li>Fetch product listing data associated with the cart</li>
+<li>Log any GraphQL errors to the console</li>
+</ul>
+</dd>
+<dt><a href="#useProduct">useProduct(props)</a> ⇒ <code><a href="#ProductTalonProps">ProductTalonProps</a></code></dt>
+<dd><p>This talon contains logic for a product component used in a product listing component.
+It performs effects and returns prop data for that component.</p>
+<p>This talon performs the following effects:</p>
+<ul>
+<li>Manage the updating state of the cart while a product is being updated or removed</li>
+</ul>
+</dd>
+<dt><a href="#useQuantity">useQuantity(props)</a> ⇒ <code><a href="#QuantityTalonProps">QuantityTalonProps</a></code></dt>
+<dd><p>This talon contains logic for a product quantity UI component.
+It performs effects and returns prop data for rendering a component that lets you
+modify the quantity of a cart item.</p>
+<p>This talon performs the following effects:</p>
+<ul>
+<li>Updates the state of the quantity field when the initial value changes</li>
+</ul>
+</dd>
+<dt><a href="#useEditModal">useEditModal()</a> ⇒ <code><a href="#EditModalTalonProps">EditModalTalonProps</a></code></dt>
+<dd><p>This talon contains logic for a product edit modal used on a cart page.
+It returns prop data for rendering an interactive modal component.</p>
+</dd>
+<dt><a href="#useProductForm">useProductForm(props)</a> ⇒ <code><a href="#ProductFormTalonProps">ProductFormTalonProps</a></code></dt>
+<dd><p>This talon contains logic for a product edit form.
+It performs effects and returns data for rendering the component inside a modal container.</p>
+<p>This talon performs the following effects:</p>
+<ul>
+<li>Manage the updating state of the cart while form data is being saved</li>
+<li>Set the variant price on a product depending on the product&#39;s options</li>
+</ul>
+</dd>
+</dl>
+
+<h2 id="typedefs">Typedefs</h2>
+
+<dl>
+<dt><a href="#ProductListingQueries">ProductListingQueries</a> : <code>Object</code></dt>
+<dd><p>GraphQL queries for getting product listing data.
+This is a type used in the <a href="#useProductListing">useProductListing</a> talon.</p>
+</dd>
+<dt><a href="#ProductListingTalonProps">ProductListingTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useProductListing">useProductListing</a> talon.
+It provides props data for a component that renders a product list.</p>
+</dd>
+<dt><a href="#ProductMutations">ProductMutations</a> : <code>Object</code></dt>
+<dd><p>GraphQL mutations for a product in a cart.
+This is a type used by the <a href="#useProduct">useProduct</a> talon.</p>
+</dd>
+<dt><a href="#ProductTalonProps">ProductTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useProduct">useProduct</a> talon.
+It provides prop data for rendering a product component on a cart page.</p>
+</dd>
+<dt><a href="#ProductItem">ProductItem</a> : <code>Object</code></dt>
+<dd><p>Data about a product item in the cart.
+This type is used in the <a href="#ProductTalonProps">ProductTalonProps</a> type returned by the <a href="#useProduct">useProduct</a> talon.</p>
+</dd>
+<dt><a href="#QuantityTalonProps">QuantityTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useQuantity">useQuantity</a> talon.
+It provides props data for a quantity UI component.</p>
+</dd>
+<dt><a href="#EditModalTalonProps">EditModalTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useEditModal">useEditModal</a> talon.
+It provides props data for rendering an edit modal component.</p>
+</dd>
+<dt><a href="#ProductFormTalonProps">ProductFormTalonProps</a> : <code>Object</code></dt>
+<dd><p>Object type returned by the <a href="#useProductForm">useProductForm</a> talon.
+It provides props data for a product form UI component inside a modal.</p>
+</dd>
+</dl>
+
+<p><a name="useProductListing"></a></p>
+
+<h2 id="useproductlistingprops--productlistingtalonprops">useProductListing(props) ⇒ <a href="#ProductListingTalonProps"><code>ProductListingTalonProps</code></a></h2>
+<p>This talon contains logic for a component that renders a list of products for a cart.
+It performs effects and returns prop data to render the component on a cart page.</p>
+
+<p>This talon performs the following effects:</p>
+
+<ul>
+  <li>Fetch product listing data associated with the cart</li>
+  <li>Log any GraphQL errors to the console</li>
+</ul>
+
+<p><strong>Kind</strong>: global function</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>props</td>
+      <td><code>Object</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.queries</td>
+      <td><a href="#ProductListingQueries"><code>ProductListingQueries</code></a></td>
+      <td>GraphQL queries for getting product listing data.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useProductListing</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/ProductListing/useProductListing</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="useProduct"></a></p>
+
+<h2 id="useproductprops--producttalonprops">useProduct(props) ⇒ <a href="#ProductTalonProps"><code>ProductTalonProps</code></a></h2>
+<p>This talon contains logic for a product component used in a product listing component.
+It performs effects and returns prop data for that component.</p>
+
+<p>This talon performs the following effects:</p>
+
+<ul>
+  <li>Manage the updating state of the cart while a product is being updated or removed</li>
+</ul>
+
+<p><strong>Kind</strong>: global function</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>props</td>
+      <td><code>Object</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.item</td>
+      <td><a href="#ProductItem"><code>ProductItem</code></a></td>
+      <td>Product item data</td>
+    </tr>
+    <tr>
+      <td>props.operations</td>
+      <td><a href="#ProductMutations"><code>ProductMutations</code></a></td>
+      <td>GraphQL mutations for a product in a cart</td>
+    </tr>
+    <tr>
+      <td>props.setActiveEditItem</td>
+      <td><code>function</code></td>
+      <td>Function for setting the actively editing item</td>
+    </tr>
+    <tr>
+      <td>props.setIsCartUpdating</td>
+      <td><code>function</code></td>
+      <td>Function for setting the updating state of the cart</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useProduct</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/ProductListing/useProduct</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="useQuantity"></a></p>
+
+<h2 id="usequantityprops--quantitytalonprops">useQuantity(props) ⇒ <a href="#QuantityTalonProps"><code>QuantityTalonProps</code></a></h2>
+<p>This talon contains logic for a product quantity UI component.
+It performs effects and returns prop data for rendering a component that lets you
+modify the quantity of a cart item.</p>
+
+<p>This talon performs the following effects:</p>
+
+<ul>
+  <li>Updates the state of the quantity field when the initial value changes</li>
+</ul>
+
+<p><strong>Kind</strong>: global function</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>props</td>
+      <td><code>Object</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.initialValue</td>
+      <td><code>number</code></td>
+      <td>the initial quantity value</td>
+    </tr>
+    <tr>
+      <td>props.min</td>
+      <td><code>number</code></td>
+      <td>the minimum allowed quantity value</td>
+    </tr>
+    <tr>
+      <td>props.onChange</td>
+      <td><code>function</code></td>
+      <td>change handler to invoke when quantity value changes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useQuantity</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/ProductListing/useQuantity</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="useEditModal"></a></p>
+
+<h2 id="useeditmodal--editmodaltalonprops">useEditModal() ⇒ <a href="#EditModalTalonProps"><code>EditModalTalonProps</code></a></h2>
+<p>This talon contains logic for a product edit modal used on a cart page.
+It returns prop data for rendering an interactive modal component.</p>
+
+<p><strong>Kind</strong>: global function<br />
+<strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEditModal</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/useEditModal</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="useProductForm"></a></p>
+
+<h2 id="useproductformprops--productformtalonprops">useProductForm(props) ⇒ <a href="#ProductFormTalonProps"><code>ProductFormTalonProps</code></a></h2>
+<p>This talon contains logic for a product edit form.
+It performs effects and returns data for rendering the component inside a modal container.</p>
+
+<p>This talon performs the following effects:</p>
+
+<ul>
+  <li>Manage the updating state of the cart while form data is being saved</li>
+  <li>Set the variant price on a product depending on the product’s options</li>
+</ul>
+
+<p><strong>Kind</strong>: global function</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>props</td>
+      <td><code>Object</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>props.cartItem</td>
+      <td><code>Object</code></td>
+      <td>The cart item to configure on the form</td>
+    </tr>
+    <tr>
+      <td>props.getConfigurableOptionsQuery</td>
+      <td><code>GraphQLAST</code></td>
+      <td>GraphQL query to get the configurable options for a product.</td>
+    </tr>
+    <tr>
+      <td>props.setIsCartUpdating</td>
+      <td><code>function</code></td>
+      <td>Function for setting the updating state for the shopping cart.</td>
+    </tr>
+    <tr>
+      <td>props.setVariantPrice</td>
+      <td><code>function</code></td>
+      <td>Function for setting the variant price on a product.</td>
+    </tr>
+    <tr>
+      <td>props.updateConfigurableOptionsMutation</td>
+      <td><code>GraphQLAST</code></td>
+      <td>GraphQL mutation for updating the configurable options for a product.</td>
+    </tr>
+    <tr>
+      <td>props.updateQuantityMutation</td>
+      <td><code>GraphQLAST</code></td>
+      <td>GraphQL mutation for updating the quantity of a product in a cart.</td>
+    </tr>
+    <tr>
+      <td>props.setActiveEditItem</td>
+      <td><code>function</code></td>
+      <td>Function for setting the actively editing item.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong> <em>(Importing into your project)</em></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useProductForm</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/ProductListing/EditModal/useProductForm</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p><a name="ProductListingQueries"></a></p>
+
+<h2 id="productlistingqueries--object">ProductListingQueries : <code>Object</code></h2>
+<p>GraphQL queries for getting product listing data.
+This is a type used in the <a href="#useProductListing">useProductListing</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>See</strong>: <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/ProductListing/productListingFragments.js">productListingFragments.js</a>
+for the queries used in Venia<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>getProductListing</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Query to get the product list for a cart</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ProductListingTalonProps"></a></p>
+
+<h2 id="productlistingtalonprops--object">ProductListingTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useProductListing">useProductListing</a> talon.
+It provides props data for a component that renders a product list.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>activeEditItem</td>
+      <td><code>Object</code></td>
+      <td>The product item currently being edited</td>
+    </tr>
+    <tr>
+      <td>isLoading</td>
+      <td><code>boolean</code></td>
+      <td>True if the query to get the product listing is still in progress. False otherwise.</td>
+    </tr>
+    <tr>
+      <td>items</td>
+      <td><code>Array.&lt;Object&gt;</code></td>
+      <td>A list of products in a cart</td>
+    </tr>
+    <tr>
+      <td>setActiveEditItem</td>
+      <td><code>function</code></td>
+      <td>Function for setting the current item to edit</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ProductMutations"></a></p>
+
+<h2 id="productmutations--object">ProductMutations : <code>Object</code></h2>
+<p>GraphQL mutations for a product in a cart.
+This is a type used by the <a href="#useProduct">useProduct</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>See</strong>: <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/lib/components/CartPage/ProductListing/product.js">product.js</a>
+to see the mutations used in Venia<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>removeItemMutation</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Mutation for removing an item in a cart</td>
+    </tr>
+    <tr>
+      <td>updateItemQuantityMutation</td>
+      <td><code>GraphQLAST</code></td>
+      <td>Mutation for updating the item quantity in a cart</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ProductTalonProps"></a></p>
+
+<h2 id="producttalonprops--object">ProductTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useProduct">useProduct</a> talon.
+It provides prop data for rendering a product component on a cart page.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>errorMessage</td>
+      <td><code>String</code></td>
+      <td>Error message from an operation perfored on a cart product.</td>
+    </tr>
+    <tr>
+      <td>handleEditItem</td>
+      <td><code>function</code></td>
+      <td>Function to use for handling when a product is modified.</td>
+    </tr>
+    <tr>
+      <td>handleRemoveFromCart</td>
+      <td><code>function</code></td>
+      <td>Function to use for handling the removal of a cart product.</td>
+    </tr>
+    <tr>
+      <td>handleUpdateItemQuantity</td>
+      <td><code>function</code></td>
+      <td>Function to use for handling updates to the product quantity in a cart.</td>
+    </tr>
+    <tr>
+      <td>isEditable</td>
+      <td><code>boolean</code></td>
+      <td>True if a cart product is editable. False otherwise.</td>
+    </tr>
+    <tr>
+      <td>product</td>
+      <td><a href="#ProductItem"><code>ProductItem</code></a></td>
+      <td>Cart product data</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ProductItem"></a></p>
+
+<h2 id="productitem--object">ProductItem : <code>Object</code></h2>
+<p>Data about a product item in the cart.
+This type is used in the <a href="#ProductTalonProps">ProductTalonProps</a> type returned by the <a href="#useProduct">useProduct</a> talon.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>currency</td>
+      <td><code>String</code></td>
+      <td>The currency associated with the cart product</td>
+    </tr>
+    <tr>
+      <td>image</td>
+      <td><code>String</code></td>
+      <td>The url for the cart product image</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td><code>String</code></td>
+      <td>The name of the product</td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td><code>Array.&lt;Object&gt;</code></td>
+      <td>A list of configurable option objects</td>
+    </tr>
+    <tr>
+      <td>quantity</td>
+      <td><code>number</code></td>
+      <td>The quantity associated with the cart product</td>
+    </tr>
+    <tr>
+      <td>unitPrice</td>
+      <td><code>number</code></td>
+      <td>The product’s unit price</td>
+    </tr>
+    <tr>
+      <td>urlKey</td>
+      <td><code>String</code></td>
+      <td>The product’s url key</td>
+    </tr>
+    <tr>
+      <td>urlSuffix</td>
+      <td><code>String</code></td>
+      <td>The product’s url suffix</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="QuantityTalonProps"></a></p>
+
+<h2 id="quantitytalonprops--object">QuantityTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useQuantity">useQuantity</a> talon.
+It provides props data for a quantity UI component.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>isDecrementDisabled</td>
+      <td><code>boolean</code></td>
+      <td>True if decrementing should be disabled</td>
+    </tr>
+    <tr>
+      <td>isIncrementDisabled</td>
+      <td><code>boolean</code></td>
+      <td>True if incrementing should be disabled</td>
+    </tr>
+    <tr>
+      <td>handleBlur</td>
+      <td><code>function</code></td>
+      <td>Callback function for handling a blur event on a component</td>
+    </tr>
+    <tr>
+      <td>handleDecrement</td>
+      <td><code>function</code></td>
+      <td>Callback function for handling a quantity decrement event</td>
+    </tr>
+    <tr>
+      <td>handleIncrement</td>
+      <td><code>function</code></td>
+      <td>Callback function for handling an increment event</td>
+    </tr>
+    <tr>
+      <td>maskInput</td>
+      <td><code>function</code></td>
+      <td>Function for masking a value when decimal values are allowed</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="EditModalTalonProps"></a></p>
+
+<h2 id="editmodaltalonprops--object">EditModalTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useEditModal">useEditModal</a> talon.
+It provides props data for rendering an edit modal component.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>setVariantPrice</td>
+      <td><code>function</code></td>
+      <td>Function for setting a product’s variant price.</td>
+    </tr>
+    <tr>
+      <td>variantPrice</td>
+      <td><code>Object</code></td>
+      <td>The variant price for a product. See <a href="https://devdocs.magento.com/guides/v2.4/graphql/product/product-interface.html#Money">Money object</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="ProductFormTalonProps"></a></p>
+
+<h2 id="productformtalonprops--object">ProductFormTalonProps : <code>Object</code></h2>
+<p>Object type returned by the <a href="#useProductForm">useProductForm</a> talon.
+It provides props data for a product form UI component inside a modal.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>configItem</td>
+      <td><code>Object</code></td>
+      <td>Cart item to configure</td>
+    </tr>
+    <tr>
+      <td>errors</td>
+      <td><code>Array.&lt;Error&gt;</code></td>
+      <td>An array of form errors resulting from a configuration or quantity value</td>
+    </tr>
+    <tr>
+      <td>handleOptionSelection</td>
+      <td><code>function</code></td>
+      <td>A callback function handling an option selection event</td>
+    </tr>
+    <tr>
+      <td>handleSubmit</td>
+      <td><code>function</code></td>
+      <td>A callback function for handling form submission</td>
+    </tr>
+    <tr>
+      <td>isLoading</td>
+      <td><code>boolean</code></td>
+      <td>True if the form is loading data. False otherwise.</td>
+    </tr>
+    <tr>
+      <td>isSaving</td>
+      <td><code>boolean</code></td>
+      <td>True if the form is saving data. False otherwise.</td>
+    </tr>
+    <tr>
+      <td>isDialogOpen</td>
+      <td><code>boolean</code></td>
+      <td>True if the form is visible. False otherwise.</td>
+    </tr>
+    <tr>
+      <td>handleClose</td>
+      <td><code>function</code></td>
+      <td>A callback function for handling form closing</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For implementation details <a href="https://github.com/magento/pwa-studio/blob/develop/packages/peregrine/lib/talons/CartPage/ProductListing/useProductListing.js"><strong>View Source</strong></a>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="useproductlisting">useProductListing()</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useProductListing</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/CartPage/ProductListing/useProductListing</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">GET_PRODUCT_LISTING</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./myProductListing.gql</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">MyProductListing</span> <span class="o">=</span> <span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">setIsCartUpdating</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">talonProps</span> <span class="o">=</span> <span class="nx">useProductListing</span><span class="p">({</span>
+        <span class="na">queries</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">getProductListing</span><span class="p">:</span> <span class="nx">GET_PRODUCT_LISTING</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">activeEditItem</span><span class="p">,</span> <span class="nx">isLoading</span><span class="p">,</span> <span class="nx">items</span><span class="p">,</span> <span class="nx">setActiveEditItem</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">talonProps</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isLoading</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Loading...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="c1">// JSX that renders the list of products in a cart using the talon props</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MyProductListing</span><span class="p">;</span>
+</code></pre></div></div>
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

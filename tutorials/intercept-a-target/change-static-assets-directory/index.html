@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Change static assets directory | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item is-selected">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Tutorials</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/" class="spectrum-SideNav-itemLink  parent">Getting Started</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/" class="spectrum-SideNav-itemLink  ">Setup your project</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-structure/" class="spectrum-SideNav-itemLink  ">Explore the project structure</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Basic modifications</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/enable-sass-less-support/" class="spectrum-SideNav-itemLink  ">Enable SASS or LESS support</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/add-a-static-route/" class="spectrum-SideNav-itemLink  ">Add a static route</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/modify-site-footer/" class="spectrum-SideNav-itemLink  ">Modify the site footer</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/intercept-a-target/" class="spectrum-SideNav-itemLink  parent">Target interception</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/modify-talon-results/" class="spectrum-SideNav-itemLink  ">Modify talon results</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/add-new-environment-variable/" class="spectrum-SideNav-itemLink  ">Add a new environment variable</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/change-static-assets-directory/" class="spectrum-SideNav-itemLink  ">Change static assets directory</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/targetables/" class="spectrum-SideNav-itemLink  ">Modify code with Targetables</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/extension-development/" class="spectrum-SideNav-itemLink  parent">Extension development</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/extension-development/taglist/" class="spectrum-SideNav-itemLink  ">Create a tag list extension</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/production-launch-checklist/" class="spectrum-SideNav-itemLink  parent">Production deployments</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/cloud-deploy/" class="spectrum-SideNav-itemLink  ">Deploy to Magento Cloud</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Change static assets directory</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/tutorials/intercept-a-target/change-static-assets-directory/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /tutorials/intercept-a-target/change-static-assets-directory/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>When you build a storefront project based on the Venia template, it copies the <a href="https://github.com/magento/pwa-studio/tree/develop/packages/venia-ui/venia-static"><code class="highlighter-rouge">venia-static</code> directory</a> from the <code class="highlighter-rouge">venia-ui</code> package into your <code class="highlighter-rouge">dist</code> directory.
+This directory contains brand-specific files such as icons and the website’s <code class="highlighter-rouge">manifest.json</code> file.
+To use a different set of these files, you will need to create a new static assets directory and copy it into <code class="highlighter-rouge">dist</code> during build time.</p>
+
+<h2 id="tasks-overview">Tasks overview</h2>
+
+<p>In this tutorial, you will:</p>
+
+<ol>
+  <li>Create your own static assets directory</li>
+  <li>Configure Webpack to copy that directory over during the build process</li>
+  <li>Configure the UPWARD server to look for specific files in that directory</li>
+  <li>Build and verify your changes</li>
+</ol>
+
+<h2 id="create-new-static-assets-directory">Create new static assets directory</h2>
+
+<p>In your storefront project’s root directory, run the following command to copy the <code class="highlighter-rouge">venia-static</code> directory from the <code class="highlighter-rouge">venia-ui</code> dependency into a new directory called <code class="highlighter-rouge">my-static-assets</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> <span class="nt">-r</span> node_modules/@magento/venia-ui/venia-static my-static-assets
+</code></pre></div></div>
+
+<p><strong>NOTE:</strong>
+If your project does not have the <code class="highlighter-rouge">node_modules</code> directory, run <code class="highlighter-rouge">yarn install</code>.</p>
+
+<h3 id="update-manifest-file">Update manifest file</h3>
+
+<p>Replace the Venia icons in that directory with your own icons and update the <code class="highlighter-rouge">manifest.json</code> file to reflect those changes:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+<span class="gd">-     "name": "Venia",
+-     "short_name": "Venia",
+</span><span class="gi">+     "name": "My Storefront",
++     "short_name": "Storefront",
+</span>      "start_url": "/",
+      "theme_color": "#1F39FF",
+      "display": "standalone",
+      "background_color": "#fff",
+<span class="gd">-     "description": "Shop the look",
+</span><span class="gi">+     "description": "This is my example storefront",
+</span>      "icons": [
+          {
+<span class="gd">-             "src": "/venia-static/icons/venia_circle_144.png",
+</span><span class="gi">+             "src": "/my-static-assets/icons/my-storefront_144.png",
+</span>              "sizes": "144x144",
+              "type": "image/png"
+          },
+          {
+<span class="gd">-             "src": "/venia-static/icons/venia_circle_192.png",
+</span><span class="gi">+             "src": "/my-static-assets/icons/my-storefront_192.png",
+</span>              "sizes": "192x192",
+              "type": "image/png"
+          },
+          {
+<span class="gd">-             "src": "/venia-static/icons/venia_circle_512.png",
+</span><span class="gi">+             "src": "/my-static-assets/icons/my-storefront_512.png",
+</span>              "sizes": "512x512",
+              "type": "image/png"
+          },
+          {
+<span class="gd">-             "src": "/venia-static/icons/venia_maskable_512.png",
+</span><span class="gi">+             "src": "/my-static-assets/icons/my-storefront_maskable_512.png",
+</span>              "sizes": "512x512",
+              "type": "image/png",
+              "purpose": "maskable"
+          }
+      ]
+  }
+</code></pre></div></div>
+
+<h3 id="update-html-template">Update HTML template</h3>
+
+<p>Your project’s <code class="highlighter-rouge">template.html</code> file also contains references to Venia static assets which you may want to update.
+Edit this file and make the necessary changes to point these references to your new assets.</p>
+
+<p>For example:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- &lt;link rel="apple-touch-icon" href="/venia-static/icons/venia_square_57.png"&gt;
+- &lt;link rel="apple-touch-icon" sizes="180x180" href="/venia-static/icons/apple-touch-icon.png"&gt;
+</span><span class="gi">+ &lt;link rel="apple-touch-icon" href="/my-static-assets/icons/my-storefront_57.png"&gt;
++ &lt;link rel="apple-touch-icon" sizes="180x180" href="/my-static-assets/icons/apple-touch-icon.png"&gt;
+</span></code></pre></div></div>
+
+<h2 id="add-copy-instructions">Add copy instructions</h2>
+
+<p>Now that you have a custom static assets directory in your project, you need to tell the build process to copy this directory into the <code class="highlighter-rouge">dist</code> folder when it runs.
+There are two main ways to do this: creating an entry in your project’s <code class="highlighter-rouge">upward.yml</code> file or modifying the Webpack configuration file.</p>
+
+<h3 id="using-upwardyml-recommended">Using <code class="highlighter-rouge">upward.yml</code> (recommended)</h3>
+
+<p>Open your project’s <code class="highlighter-rouge">upward.yml</code> file and add the following entry:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  status: veniaResponse.status
+  headers: veniaResponse.headers
+  body: veniaResponse.body
+
++ myStaticIncludes:
+<span class="gi">+     resolver: directory
++     directory:
++         resolver: inline
++         inline: './my-static-assets'
+</span></code></pre></div></div>
+
+<p>During the build process, a Buildpack plugin for Webpack looks for valid resource paths in your <code class="highlighter-rouge">upward.yml</code> file and copies them into <code class="highlighter-rouge">dist</code>.
+Even though this object is not used anywhere during runtime, this entry declares the <code class="highlighter-rouge">my-static-assets</code> directory as a resource path to copy into <code class="highlighter-rouge">dist</code>.</p>
+
+<h3 id="using-webpack-directly">Using Webpack directly</h3>
+
+<p>You can also explicitly tell Webpack to copy the static assets directory over using a copy plugin.
+To do this, you need to install the <a href="https://github.com/webpack-contrib/copy-webpack-plugin"><code class="highlighter-rouge">copy-webpack-plugin</code> dependency</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add <span class="nt">--dev</span> copy-webpack-plugin@6.4.1
+</code></pre></div></div>
+
+<p><strong>NOTE:</strong>
+Version 6.4.1 is used here instead of the latest because the current Venia template uses Webpack 4.
+If you updated your storefront project to use Webpack 5, you can use the latest version of the copy plugin.</p>
+
+<h4 id="edit-webpack-configuration">Edit Webpack configuration</h4>
+
+<p>In your project’s <code class="highlighter-rouge">webpack.config.js</code>, add an import statement to the top of the file:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  const HTMLWebpackPlugin = require('html-webpack-plugin');
+<span class="gi">+ const CopyPlugin = require("copy-webpack-plugin");
+</span>
+  module.exports = async env =&gt; {
+</code></pre></div></div>
+
+<p>Append the copy plugin to the <code class="highlighter-rouge">plugin</code> array of the Webpack configuration object:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        new HTMLWebpackPlugin({
+            filename: 'index.html',
+            template: './template.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true
+            }
+        }),
+<span class="gi">+       new CopyPlugin({
++           patterns: [{ from: 'my-static-assets', to: 'my-static-assets' }]
++       })
+</span>    ];
+</code></pre></div></div>
+
+<p>This entry tells Webpack to copy the contents of the <code class="highlighter-rouge">my-static-assets</code> directory into a new <code class="highlighter-rouge">my-static-assets</code> directory in the <code class="highlighter-rouge">dist</code> folder during the build process.</p>
+
+<h2 id="modify-upward-configuration">Modify UPWARD configuration</h2>
+
+<p>Now that the <code class="highlighter-rouge">my-static-assets</code> directory is inside <code class="highlighter-rouge">dist</code>, browsers can access these files under the <code class="highlighter-rouge">/my-static-assets</code> path.
+However, some files, such as <code class="highlighter-rouge">robots.txt</code>, <code class="highlighter-rouge">manifest.json</code>, and <code class="highlighter-rouge">favicon.ico</code>, must be located at the root.
+To serve these files from the root, you must configure the UPWARD server to look in the <code class="highlighter-rouge">my-static-assets</code> directory when it gets a request from these files.</p>
+
+<h3 id="identify-current-rule">Identify current rule</h3>
+
+<p>The <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/upward.yml"><code class="highlighter-rouge">veniaResponse</code> object</a> in the base <code class="highlighter-rouge">upward.yml</code> file contains the <a href="https://github.com/magento/pwa-studio/blob/develop/packages/venia-ui/upward.yml">conditional resolver</a> that tells the server to resolve requests for these files using the <code class="highlighter-rouge">staticFromRoot</code> object.
+According to this object, the current rule for resolving requests for these files is to look for and return them from the <code class="highlighter-rouge">venia-static</code> directory.</p>
+
+<h3 id="update-upward-configuration-using-targets">Update UPWARD configuration using targets</h3>
+
+<p>Since this rule is inside the primary <code class="highlighter-rouge">upward.yml</code> file in the <code class="highlighter-rouge">venia-ui</code> dependency, you cannot make direct edits to this file.
+However, you can use the <a href="/pwa-studio/pwa-buildpack/reference/targets/"><code class="highlighter-rouge">transformUpward</code> Buildpack target</a> to make changes indirectly during the build process.</p>
+
+<p>Open your project’s <code class="highlighter-rouge">local-intercept.js</code> file and replace the content with the following:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">localIntercept</span><span class="p">(</span><span class="nx">targets</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">targets</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">).</span><span class="nx">transformUpward</span><span class="p">.</span><span class="nx">tap</span><span class="p">(</span><span class="nx">def</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">def</span><span class="p">.</span><span class="nx">staticFromRoot</span><span class="p">.</span><span class="nx">inline</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">template</span><span class="p">.</span><span class="nx">inline</span> <span class="o">=</span>
+            <span class="dl">'</span><span class="s1">./my-static-assets/</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">localIntercept</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">transformUpward</code> target converts the base <code class="highlighter-rouge">upward.yml</code> file into a JavaScript object you can modify using an interceptor function.
+The interceptor function in the code sample provided sets the inline mustache template value with one that refers to the new static assets directory.</p>
+
+<p>The build process generates the final <code class="highlighter-rouge">upward.yml</code> configuration under the <code class="highlighter-rouge">dist</code> directory, and the contents of this file is a combination of:</p>
+
+<ul>
+  <li>Content in the base <code class="highlighter-rouge">upward.yml</code> file in the <code class="highlighter-rouge">venia-ui</code> package</li>
+  <li>Modifications to that file using the <code class="highlighter-rouge">transformUpward</code> target</li>
+  <li>Content in your project’s <code class="highlighter-rouge">upward.yml</code> file</li>
+</ul>
+
+<h2 id="build-and-verify">Build and verify</h2>
+
+<p>Use the <code class="highlighter-rouge">build</code> command to create a production build under the <code class="highlighter-rouge">dist</code> directory:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn build
+</code></pre></div></div>
+
+<p>After the build completes, open the <code class="highlighter-rouge">dist</code> directory and verify the following:</p>
+
+<ol>
+  <li>A <code class="highlighter-rouge">my-static-assets</code> folder exists with the same content as the source.</li>
+  <li>The <code class="highlighter-rouge">upward.yml</code> file contains the modifications described in the local intercept file</li>
+</ol>
+
+<p>Use the <code class="highlighter-rouge">start</code> command to start the production server.
+This server runs using the production build inside the <code class="highlighter-rouge">dist</code> directory:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn start
+</code></pre></div></div>
+
+<p>Use your browser to navigate to your application and try to access the <code class="highlighter-rouge">favicon.ico</code> file from the root (<code class="highlighter-rouge">&lt;application URL&gt;/favicon.ico</code>).
+Your browser should return your new icon instead of the default Venia icon.</p>
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

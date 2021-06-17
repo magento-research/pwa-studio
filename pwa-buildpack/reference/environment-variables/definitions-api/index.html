@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Environment variable definition API | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">PWA Buildpack API</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Extension points</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targets/" class="spectrum-SideNav-itemLink  ">Targets</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/definitions-api/" class="spectrum-SideNav-itemLink  ">EnvVarDefinitions</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/transform-requests/" class="spectrum-SideNav-itemLink  ">Transform Requests</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Targetables</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableModule/" class="spectrum-SideNav-itemLink  ">TargetableModule</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModule/" class="spectrum-SideNav-itemLink  ">TargetableESModule</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModuleArray/" class="spectrum-SideNav-itemLink  ">TargetableESModuleArray</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModuleObject/" class="spectrum-SideNav-itemLink  ">TargetableESModuleObject</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableReactComponent/" class="spectrum-SideNav-itemLink  ">TargetableReactComponent</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/TargetableSet/" class="spectrum-SideNav-itemLink  ">TargetableSet</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/targetables/SingleImportStatement/" class="spectrum-SideNav-itemLink  ">SingleImportStatement</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Extension framework</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/extension-framework/" class="spectrum-SideNav-itemLink  ">BuildBus</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/extension-framework/target/" class="spectrum-SideNav-itemLink  ">Target</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/extension-framework/targetprovider/" class="spectrum-SideNav-itemLink  ">TargetProvider</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Command line interface</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/" class="spectrum-SideNav-itemLink  ">Using the CLI</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/create-custom-origin/" class="spectrum-SideNav-itemLink  ">Create custom origin</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/create-env-file/" class="spectrum-SideNav-itemLink  ">Create environment file</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/create-project/" class="spectrum-SideNav-itemLink  ">Create project</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/load-env/" class="spectrum-SideNav-itemLink  ">Load environment file</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Developer utilities</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/load-env/#programmatic-api" class="spectrum-SideNav-itemLink  ">loadEnvironment</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/load-env/#programmatic-api" class="spectrum-SideNav-itemLink  ">createDotEnvFile</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/definitions-api/" class="spectrum-SideNav-itemLink  ">getEnvVarDefinitions</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Webpack tools</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/configure-webpack" class="spectrum-SideNav-itemLink  ">configureWebpack</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/magento-resolver/" class="spectrum-SideNav-itemLink  ">MagentoResolver</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/root-components-plugin/" class="spectrum-SideNav-itemLink  ">MagentoRootComponentsPlugin</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/pwa-dev-server/" class="spectrum-SideNav-itemLink  ">PWADevServer</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/serviceworker-plugin/" class="spectrum-SideNav-itemLink  ">ServiceWorkerPlugin</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Environment configuration</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/definitions-api/" class="spectrum-SideNav-itemLink  ">Variable definition API</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/core-definitions/" class="spectrum-SideNav-itemLink  ">Core variable definitions</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Environment variable definition API</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/pwa-buildpack/reference/environment-variables/definitions-api/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /pwa-buildpack/reference/environment-variables/definitions-api/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<!--
+The reference doc content is generated automatically from the source code.
+To update this section, update the doc blocks in the source code
+-->
+
+<h2 id="modules">Modules</h2>
+
+<dl>
+<dt><a href="#module_Buildpack/Utilities">Buildpack/Utilities</a></dt>
+<dd></dd>
+</dl>
+
+<h2 id="typedefs">Typedefs</h2>
+
+<dl>
+<dt><a href="#EnvVarDefinitions">EnvVarDefinitions</a> : <code>Object</code></dt>
+<dd><p>Defines the global settings of the project as a list of typed environment variables.
+Includes a set of changes made to the environment variables in recent versions, to aid with migration and upgrades.</p>
+<p><code>EnvVarDefinitions</code> are used by <a href="http://pwastudio.io/pwa-buildpack/reference/buildpack-cli/load-env/#loadenvironmentdirorenv-logger"><code>loadEnvironment()</code></a>
+to validate the currently defined values in the environment.</p>
+<p><code>EnvVarDefinitions</code> are also used by <a href="http://pwastudio.io/pwa-buildpack/reference/buildpack-cli/create-env-file/#createdotenvfiledirectory-options"><code>createDotEnvFile()</code></a>
+to generate an extensively commented <code>.env</code> file for a project.</p>
+</dd>
+<dt><a href="#EnvVarDefsSection">EnvVarDefsSection</a> : <code>Object</code></dt>
+<dd><p>A list of related definitions concerning a particular functional area.</p>
+<p>All defined variable names under a particular functional area should have the same prefix, to help namespace and organize configuration.
+For instance, all variable names in the &quot;Custom local origin&quot; section begin with <code>CUSTOM_ORIGIN_</code>.</p>
+</dd>
+<dt><a href="#EnvVarDefinition">EnvVarDefinition</a> : <code>Object</code></dt>
+<dd><p>A definition of an environment variable that will be used somewhere else in the project, in the backend and/or the frontend.</p>
+<p>Must define a name, type and description. Optionally, may define a <code>default</code> which is set implicitly, an <code>example</code> for documentation,
+and/or an array of <code>choices</code> to limit the valid values.</p>
+<p>The recommended way to access the current environment values in build scripts and interceptors is through the
+<a href="http://pwastudio.io/pwa-buildpack/reference/buildpack-cli/load-env/#configuration-object">Configuration</a>
+object returned by <a href="http://pwastudio.io/pwa-buildpack/reference/buildpack-cli/load-env/#loadenvironmentdirorenv-logger"><code>loadEnvironment()</code></a>.</p>
+<p><strong>Note:</strong> Any build environment will have hundreds of environment variables <em>set</em>, most of which are unrelated to the build process.
+Any environment variable during the build is accessible via <code>process.env</code> in NodeJS.
+However, only the variables defined by <code>EnvVarDefinition</code> entries will be available in the frontend, via the <a href="https://webpack.js.org/plugins/environment-plugin/">Webpack EnvironmentPlugin</a>.</p>
+</dd>
+<dt><a href="#EnvVarDefsChange">EnvVarDefsChange</a> : <code>Object</code></dt>
+<dd><p>Describes a recent change to a particular environment variable.
+Can indicate that the environment variable was <em>removed</em> or <em>renamed</em>.
+Change objects can log informative warnings to developers to help with migration.
+They may also be used to make <code>loadEnvironment()</code> support the legacy name of a renamed variable.</p>
+</dd>
+</dl>
+
+<p><a name="module_Buildpack/Utilities"></a></p>
+
+<h2 id="buildpackutilities">Buildpack/Utilities</h2>
+<p><a name="EnvVarDefinitions"></a></p>
+
+<h2 id="envvardefinitions--object">EnvVarDefinitions : <code>Object</code></h2>
+<p>Defines the global settings of the project as a list of typed environment variables.
+Includes a set of changes made to the environment variables in recent versions, to aid with migration and upgrades.</p>
+
+<p><code class="highlighter-rouge">EnvVarDefinitions</code> are used by <a href="http://pwastudio.io/pwa-buildpack/reference/buildpack-cli/load-env/#loadenvironmentdirorenv-logger"><code class="highlighter-rouge">loadEnvironment()</code></a>
+to validate the currently defined values in the environment.</p>
+
+<p><code class="highlighter-rouge">EnvVarDefinitions</code> are also used by <a href="http://pwastudio.io/pwa-buildpack/reference/buildpack-cli/create-env-file/#createdotenvfiledirectory-options"><code class="highlighter-rouge">createDotEnvFile()</code></a>
+to generate an extensively commented <code class="highlighter-rouge">.env</code> file for a project.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sections</td>
+      <td><a href="#EnvVarDefsSection"><code>Array.&lt;EnvVarDefsSection&gt;</code></a></td>
+      <td>List of sections, or sub-lists of definitions grouped under a title.</td>
+    </tr>
+    <tr>
+      <td>changes</td>
+      <td><a href="#EnvVarDefsChange"><code>Array.&lt;EnvVarDefsChange&gt;</code></a></td>
+      <td>List of changes, or objects describing a recent change to a definition.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="EnvVarDefsSection"></a></p>
+
+<h2 id="envvardefssection--object">EnvVarDefsSection : <code>Object</code></h2>
+<p>A list of related definitions concerning a particular functional area.</p>
+
+<p>All defined variable names under a particular functional area should have the same prefix, to help namespace and organize configuration.
+For instance, all variable names in the “Custom local origin” section begin with <code class="highlighter-rouge">CUSTOM_ORIGIN_</code>.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td><code>String</code></td>
+      <td>Title of the section, describing the functional area of the included variables.</td>
+    </tr>
+    <tr>
+      <td>variables</td>
+      <td><a href="#EnvVarDefinition"><code>Array.&lt;EnvVarDefinition&gt;</code></a></td>
+      <td>List of variable definitions.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="EnvVarDefinition"></a></p>
+
+<h2 id="envvardefinition--object">EnvVarDefinition : <code>Object</code></h2>
+<p>A definition of an environment variable that will be used somewhere else in the project, in the backend and/or the frontend.</p>
+
+<p>Must define a name, type and description. Optionally, may define a <code class="highlighter-rouge">default</code> which is set implicitly, an <code class="highlighter-rouge">example</code> for documentation,
+and/or an array of <code class="highlighter-rouge">choices</code> to limit the valid values.</p>
+
+<p>The recommended way to access the current environment values in build scripts and interceptors is through the
+<a href="http://pwastudio.io/pwa-buildpack/reference/buildpack-cli/load-env/#configuration-object">Configuration</a>
+object returned by <a href="http://pwastudio.io/pwa-buildpack/reference/buildpack-cli/load-env/#loadenvironmentdirorenv-logger"><code class="highlighter-rouge">loadEnvironment()</code></a>.</p>
+
+<p><strong>Note:</strong> Any build environment will have hundreds of environment variables <em>set</em>, most of which are unrelated to the build process.
+Any environment variable during the build is accessible via <code class="highlighter-rouge">process.env</code> in NodeJS.
+However, only the variables defined by <code class="highlighter-rouge">EnvVarDefinition</code> entries will be available in the frontend, via the <a href="https://webpack.js.org/plugins/environment-plugin/">Webpack EnvironmentPlugin</a>.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td><code>String</code></td>
+      <td>Name of the environment variable. Must be in SCREAMING_SNAKE_CASE and contain only alphanumeric characters.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td><code>String</code></td>
+      <td>Type of the environment variable. Can be any type supported by the <a href="https://www.npmjs.com/package/envalid#validator-types">envalid</a> library.</td>
+    </tr>
+    <tr>
+      <td>desc</td>
+      <td><code>String</code></td>
+      <td>Human-readable description of what the environment variable does.</td>
+    </tr>
+    <tr>
+      <td>[choices]</td>
+      <td><code>Array</code></td>
+      <td>An array of acceptable answers. All values in the array must be of the type specified in <code class="highlighter-rouge">type</code>.</td>
+    </tr>
+    <tr>
+      <td>default</td>
+      <td><code>String</code></td>
+      <td>Default value if the variable is not set in the environment.</td>
+    </tr>
+    <tr>
+      <td>example</td>
+      <td><code>String</code></td>
+      <td>Example value which will be displayed in inline documentation in the <code class="highlighter-rouge">.env</code> file.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a name="EnvVarDefsChange"></a></p>
+
+<h2 id="envvardefschange--object">EnvVarDefsChange : <code>Object</code></h2>
+<p>Describes a recent change to a particular environment variable.
+Can indicate that the environment variable was <em>removed</em> or <em>renamed</em>.
+Change objects can log informative warnings to developers to help with migration.
+They may also be used to make <code class="highlighter-rouge">loadEnvironment()</code> support the legacy name of a renamed variable.</p>
+
+<p><strong>Kind</strong>: global typedef<br />
+<strong>Properties</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td><code>String</code></td>
+      <td><code class="highlighter-rouge">removed</code> or <code class="highlighter-rouge">renamed</code></td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td><code>String</code></td>
+      <td>Name of the EnvVarDefinition that was recently changed. If the change is a rename, this must be the <em>old</em> variable name.</td>
+    </tr>
+    <tr>
+      <td>reason</td>
+      <td><code>String</code></td>
+      <td>Reason given for the change. Will be logged as a warning.</td>
+    </tr>
+    <tr>
+      <td>dateChanged</td>
+      <td><code>String</code> | <code>number</code></td>
+      <td>Date that the change was released, in ISO-8601 format (or any format parseable by JavaScript <code class="highlighter-rouge">Date()</code>.)</td>
+    </tr>
+    <tr>
+      <td>[warnForDays]</td>
+      <td><code>number</code></td>
+      <td>Number of days after <code class="highlighter-rouge">dateChanged</code> to log a warning if the removed or renamed variable is still set in the environment. Default, and maximum, is 180 days.</td>
+    </tr>
+    <tr>
+      <td>[update]</td>
+      <td><code>String</code></td>
+      <td>New name of the variable. Required when the change is a rename.</td>
+    </tr>
+    <tr>
+      <td>[supportLegacy]</td>
+      <td><code>boolean</code></td>
+      <td>If the change is a rename, set this to <code class="highlighter-rouge">true</code> to support the old name (while logging a warning). If the old name is set and the new name is not, <code class="highlighter-rouge">loadEnvironment</code> will set the new variable name to the value of the old one.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For implementation details <a href="https://github.com/magento/pwa-studio/blob/develop/packages/pwa-buildpack/lib/Utilities/getEnvVarDefinitions.js"><strong>View Source</strong></a>.</p>
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

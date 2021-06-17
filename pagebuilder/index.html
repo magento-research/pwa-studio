@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Page Builder to PWA integration | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item ">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Page Builder</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item is-selected">
+            
+            <a href="/pwa-studio/pagebuilder/" class="spectrum-SideNav-itemLink  ">Integration</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/pagebuilder/known-limitations/" class="spectrum-SideNav-itemLink  ">Known limitations</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Creating custom components</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/overview/" class="spectrum-SideNav-itemLink  ">Overview</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/setup-component/" class="spectrum-SideNav-itemLink  ">Set up component</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/add-aggregator/" class="spectrum-SideNav-itemLink  ">Add aggregator</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/add-stylesheet/" class="spectrum-SideNav-itemLink  ">Add stylesheet</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/add-component/" class="spectrum-SideNav-itemLink  ">Add component</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/custom-components/debugging/" class="spectrum-SideNav-itemLink  ">Debugging tips</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/pagebuilder/utility-functions/" class="spectrum-SideNav-itemLink  ">Utility functions</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Components</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/banner/" class="spectrum-SideNav-itemLink  ">Banner</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/block/" class="spectrum-SideNav-itemLink  ">Block</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/buttons/" class="spectrum-SideNav-itemLink  ">Buttons</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/column/" class="spectrum-SideNav-itemLink  ">Column</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/divider/" class="spectrum-SideNav-itemLink  ">Divider</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/heading/" class="spectrum-SideNav-itemLink  ">Heading</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/html/" class="spectrum-SideNav-itemLink  ">HTML Code</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/image/" class="spectrum-SideNav-itemLink  ">Image</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/map/" class="spectrum-SideNav-itemLink  ">Map</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/products/" class="spectrum-SideNav-itemLink  ">Products</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/row/" class="spectrum-SideNav-itemLink  ">Row</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/slider/" class="spectrum-SideNav-itemLink  ">Slider</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/tabs/" class="spectrum-SideNav-itemLink  ">Tabs</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/text/" class="spectrum-SideNav-itemLink  ">Text</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/pagebuilder/components/video/" class="spectrum-SideNav-itemLink  ">Video</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Page Builder to PWA integration</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/pagebuilder/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /pagebuilder/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p class="bs-callout-info">The Page Builder integration to PWA Studio is only compatible with Magento Commerce 2.3.4+. A GraphQL change within Magento Commerce 2.3.4 was necessary in order to integrate the Page Builder Products content type into PWA Studio.</p>
+
+<h2 id="integration-overview">Integration overview</h2>
+
+<p>At the highest level, the Page Builder integration into PWA Studio simply ensures that CMS Pages built in Magento Commerce with <em>native</em> Page Builder content types are rendered correctly within PWA Studio apps.</p>
+
+<div style="position: relative; overflow: hidden; padding-top: 56.25%; border: 1px solid #ccc;">
+   <iframe style="position: absolute; top:0; left:0; width: 100%; height:100%; border: 0;" title="Adobe Video Publishing Cloud Player" src="https://video.tv.adobe.com/v/31598t1/?enable10seconds=on&amp;hidetitle=true&amp;quality=9&amp;speedcontrol=on" frameborder="2" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" scrolling="no"></iframe>
+</div>
+
+<hr />
+
+<p>The diagram below shows how the PWA Studio makes a request to the Magento Commerce backend to retrieve a CMS page for processing. The Page Builder integration framework processes the original Page Builder HTML and returns a group of React components that faithfully reproduces the Page Builder content for display in a PWA Studio app.</p>
+
+<p><img src="images/PageBuilderBigPicture1.svg" alt="Page Builder Integration Big Picture" /></p>
+
+<ol>
+  <li>
+    <p>The Page Builder integration framework processes Page Builder content types within a CMS Page: Rows, Headings, Banners, Sliders, and so on.</p>
+  </li>
+  <li>
+    <p>A set of equivalent content type React components – Row, Heading, Banner, Slider, Text and so on – are populated with the content and style properties from the original Page Builder content types so they can be displayed correctly within PWA Studio app storefronts.</p>
+  </li>
+</ol>
+
+<h2 id="custom-content-types">Custom content types</h2>
+
+<p>If you only used Page Builder’s 15 native content types (Dynamic Blocks are not supported), your Page Builder pages are automatically rendered within a PWA Studio app. No development work is necessary.</p>
+
+<p>However, if you use one or more of your own custom Page Builder content types within your CMS pages (for example, a <a href="https://devdocs.magento.com/page-builder/docs/create-custom-content-type/overview.html">Quote-Testimonial content type</a>), you will need to create your own equivalent Page Builder React component and integrate it within the framework. Otherwise, your custom content type will not appear on the storefront within a PWA Studio app. That area of your page will simply be blank.</p>
+
+<p class="bs-callout-info">To develop and integrate your own custom content type components into your PWA Studio app, follow our <a href="/pwa-studio/pagebuilder/custom-components/overview/">Creating custom components</a> tutorial.</p>
+
+<p><img src="images/PageBuilderIntegration.svg" alt="Page Builder Integration Overview" /></p>
+
+<h2 id="framework-components">Framework components</h2>
+
+<p>As part of the Page Builder integration to PWA Studio, we implemented a framework that converts Page Builder’s master format (HTML) into a structured format that works in React and PWA Studio. The following video describes the components of this framework, followed by detailed descriptions of each.</p>
+
+<div style="position: relative; overflow: hidden; padding-top: 56.25%; border: 1px solid #ccc;">
+   <iframe style="position: absolute; top:0; left:0; width: 100%; height:100%; border: 0;" title="Adobe Video Publishing Cloud Player" src="https://video.tv.adobe.com/v/31597t1/?enable10seconds=on&amp;hidetitle=true&amp;quality=9&amp;speedcontrol=on" frameborder="2" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" scrolling="no"></iframe>
+</div>
+
+<hr />
+
+<p>The Page Builder integration framework processes content as outlined here:</p>
+
+<ol>
+  <li>
+    <p>The framework receives Page Builder content types in the original HTML format (<strong>RichContent</strong> and <strong>PageBuilder</strong> components)</p>
+  </li>
+  <li>
+    <p>The framework extracts the content and properties from each content type’s HTML (<strong>Master Format parser</strong>, <strong>config function</strong>, and <strong>property aggregators</strong>)</p>
+  </li>
+  <li>
+    <p>It retrieves the equivalent content type React components for those content types (<strong>ContentTypeFactory</strong>, <strong>config function</strong>, and <strong>content type components</strong>)</p>
+  </li>
+  <li>
+    <p>It populates those React components with the content and style properties from the original content types (<strong>ContentTypeFactory and content type components</strong>)</p>
+  </li>
+  <li>
+    <p>And finally, it returns those components for display in a PWA Studio app (<strong>PageBuilder</strong> and <strong>RichContent</strong> components)</p>
+  </li>
+</ol>
+
+<p>A description of each component in the framework follows.</p>
+
+<h3 id="richcontent">RichContent</h3>
+<p>The <code class="highlighter-rouge">&lt;RichContent /&gt;</code> component provides the entry point into the Page Builder PWA framework. It determines whether the HTML passed by the PWA Studio app contains Page Builder content. If it does, the HTML is sent to the <code class="highlighter-rouge">&lt;PageBuilder /&gt;</code> component for processing. If not, the HTML is sent directly to the PWA Studio app for display.</p>
+
+<h3 id="pagebuilder">PageBuilder</h3>
+
+<p>The <code class="highlighter-rouge">&lt;PageBuilder /&gt;</code> component (not to be confused with the individual Page Builder React components) directs the parsing of the master format HTML as well as retrieving, populating, and returning the equivalent React components back to the Venia app.</p>
+
+<h3 id="master-format-parser">Master Format parser</h3>
+
+<p>The master format parser (<code class="highlighter-rouge">parseStorageHtml()</code>) decomposes the master format HTML into the content type HTML fragments (HTMLElements) that compose the master format. The parser sends the content type HTML to the correct property aggregator (<code class="highlighter-rouge">configAggregator</code>) using the configuration object.</p>
+
+<h3 id="config-function">Config function</h3>
+
+<p><em>Integration point</em>. The configuration function (<code class="highlighter-rouge">getContentTypeConfig()</code>) provides an interface for retrieving a content type’s <em>property aggregator</em> and its corresponding <em>content type component</em>. The configuration object also provides the integration point for your own custom content type components. See <a href="/pwa-studio/pagebuilder/custom-components/setup-component/">Set up component</a> for details.</p>
+
+<h3 id="property-aggregator">Property aggregator</h3>
+
+<p><em>Integration point</em>. The property aggregator for a content type (example: <code class="highlighter-rouge">bannerConfigAggregator</code>) is a function that retrieves both content and style properties from the content type’s HTML. Aggregators typically use both DOM properties and several provided framework utility functions to retrieve these properties and write them to flat property objects used to populate the content type React components. For each of your custom content types, you will need to create your own property aggregator. See <a href="/pwa-studio/pagebuilder/custom-components/add-aggregator/">Add aggregator</a> for details.</p>
+
+<h3 id="content-type-component">Content type component</h3>
+
+<p><em>Integration point</em>. The content type component is a React component that is equivalent to a Page Builder content type. There are 15 content type components within PWA Studio: Row, Column, Tabs, Banners, Sliders, and so on. Each content type component is populated with the original content and style properties from the content type to faithfully represent your Page Builder content within a PWA Studio app like Venia. For each of your custom content types, you will need to create the equivalent content type React component . See <a href="/pwa-studio/pagebuilder/custom-components/add-component/">Add component</a> for details.</p>
+
+<h3 id="contenttypefactory">ContentTypeFactory</h3>
+
+<p>The <code class="highlighter-rouge">&lt;ContentTypeFactory /&gt;</code> component parses a property object tree to retrieve the equivalent React component for each content type property object it finds. It then populates these components and sends them back to the PWA Studio app as a composite React element displayed to the end user.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>The framework executes on the client side to ensure compatibility with the various hosting options available for Magento Commerce. The following video and subsequent flow diagram describes how the parts of the framework combine to render Page Builder components within the Venia app.</p>
+
+<div style="position: relative; overflow: hidden; padding-top: 56.25%; border: 1px solid #ccc;">
+   <iframe style="position: absolute; top:0; left:0; width: 100%; height:100%; border: 0;" title="Adobe Video Publishing Cloud Player" src="https://video.tv.adobe.com/v/31596t2/?enable10seconds=on&amp;hidetitle=true&amp;quality=9&amp;speedcontrol=on" frameborder="2" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" scrolling="no"></iframe>
+</div>
+
+<hr />
+
+<p>The following diagram describes the same process shown in the video, followed by detailed explanations of each step in the process.</p>
+
+<p><img src="images/PageBuilderIntegrationDetails.svg" alt="Page Builder Integration Details" /></p>
+
+<ol>
+  <li>
+    <p>The <strong>Venia app</strong> sends a GraphQL query to get the user’s requested page. This requested page comes from the <code class="highlighter-rouge">content</code> field of <code class="highlighter-rouge">cms_pages</code> table in Magento’s database. The content returned is an HTML string with Page Builder meta data. We call this HTML string the master format, which is passed to the <code class="highlighter-rouge">&lt;RichContent /&gt;</code> component for initial processing.</p>
+  </li>
+  <li>
+    <p>The <strong>RichContent</strong> component determines if the HTML string contains Page Builder content, using simple pattern recognition. If the HTML does not include Page Builder content, it is returned to Venia and rendered as plain HTML. If the HTML does include Page Builder content, the HTML string (which we can now define as a master format) is passed to the <code class="highlighter-rouge">&lt;PageBuilder /&gt;</code> framework component, which starts the process of matching the content types within the master format to their equivalent PWA Studio React components.</p>
+  </li>
+  <li>
+    <p>The <strong>PageBuilder</strong> framework component passes the master format to the framework’s parser function called <code class="highlighter-rouge">parseStorageHTML()</code>.</p>
+  </li>
+  <li>
+    <p>The <strong>parser</strong> function parses the master format HTML recursively to decompose all the Page Builder content types into their own <code class="highlighter-rouge">HTMLElement</code> strings for further processing. When the parser finds a content type, it uses the framework’s config function to access that content type’s property aggregator. The aggregator retrieves content and styles from the <code class="highlighter-rouge">HTMLElement</code> and writes them to a flat object (used later to hydrate the content type component).</p>
+
+    <p class="bs-callout-info">Each Page Builder content type has its own corresponding property aggregator. For example, the Heading content type (rendered in the master format as HTML) has a Heading aggregator (<code class="highlighter-rouge">headingConfigAggregator</code>), which converts the Heading’s HTML properties to a flat object with those same properties. The parser does this for each content type it finds in the master format: uses the <code class="highlighter-rouge">getContentTypeConfig()</code> function to find and run the content type’s property aggregator, which returns an object with both the content and the style properties for that content type. All CMS pages built with Page Builder have at least two content types: a Row content type and at least one other content type contained within that Row, such as a Banner.</p>
+  </li>
+  <li>
+    <p>When the <strong>parser</strong> function finishes processing all the content types within the master format, it returns a property object tree for those content types back to the <code class="highlighter-rouge">&lt;PageBuilder /&gt;</code> component.</p>
+  </li>
+  <li>
+    <p>The <strong>PageBuilder</strong> framework component passes the property object tree to the framework’s <code class="highlighter-rouge">&lt;ContentTypeFactory /&gt;</code> component for further processing.</p>
+  </li>
+  <li>
+    <p>Much like in step 4 with the parser, the framework’s <strong>ContentTypeFactory</strong> component retrieves the equivalent React component for each content type property object it finds within the object tree.</p>
+  </li>
+  <li>
+    <p>The <strong>ContentTypeFactory</strong> populates those React components with the property values retrieved from each content type’s property aggregator.</p>
+  </li>
+  <li>
+    <p>And finally, the <strong>PageBuilder</strong> framework component returns a composite React element with all the Page Builder content type components needed to render the original Page Builder content within a PWA Studio app.</p>
+  </li>
+</ol>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

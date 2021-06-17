@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Create a tag list extension | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item is-selected">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Tutorials</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/" class="spectrum-SideNav-itemLink  parent">Getting Started</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/" class="spectrum-SideNav-itemLink  ">Setup your project</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-structure/" class="spectrum-SideNav-itemLink  ">Explore the project structure</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Basic modifications</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/enable-sass-less-support/" class="spectrum-SideNav-itemLink  ">Enable SASS or LESS support</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/add-a-static-route/" class="spectrum-SideNav-itemLink  ">Add a static route</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/modify-site-footer/" class="spectrum-SideNav-itemLink  ">Modify the site footer</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/intercept-a-target/" class="spectrum-SideNav-itemLink  parent">Target interception</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/modify-talon-results/" class="spectrum-SideNav-itemLink  ">Modify talon results</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/add-new-environment-variable/" class="spectrum-SideNav-itemLink  ">Add a new environment variable</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/change-static-assets-directory/" class="spectrum-SideNav-itemLink  ">Change static assets directory</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/targetables/" class="spectrum-SideNav-itemLink  ">Modify code with Targetables</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/extension-development/" class="spectrum-SideNav-itemLink  parent">Extension development</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/tutorials/extension-development/taglist/" class="spectrum-SideNav-itemLink  ">Create a tag list extension</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/production-launch-checklist/" class="spectrum-SideNav-itemLink  parent">Production deployments</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/cloud-deploy/" class="spectrum-SideNav-itemLink  ">Deploy to Magento Cloud</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Create a tag list extension</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/tutorials/extension-development/taglist/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /tutorials/extension-development/taglist/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>A tag list is a group of tags associated with a product.
+This tutorial provides steps for creating and installing an extension that displays a tag list on the product details page in a Venia-based storefront.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you start this tutorial, make sure you have a storefront project set up using the steps outlined in the <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/">Setup your project</a> topic.
+This is the storefront you will use to install your extension in this tutorial.</p>
+
+<h2 id="set-up-the-extension-project">Set up the extension project</h2>
+
+<p>Create a folder anywhere in your system and run Yarn’s project creation script.
+The script starts an interactive questionnaire that helps you fill out your project’s <code class="highlighter-rouge">package.json</code> file.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>tagList <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">cd </span>tagList <span class="o">&amp;&amp;</span> <span class="se">\</span>
+yarn init
+</code></pre></div></div>
+
+<p>After answering the questions, the yarn CLI creates a <code class="highlighter-rouge">package.json</code> file that looks like the following:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tagList"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A tag list extension for a PWA Studio storefront"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="create-taglist-component-files">Create TagList component files</h2>
+
+<p>The core purpose of this extension is to provide a React component that renders a list of tags.
+Use the following command to create a directory and the files that define this component.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/TagList <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">touch </span>src/Taglist/index.js <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">touch </span>src/Taglist/tag.js <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">touch </span>src/Taglist/tag.css <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">touch </span>src/Taglist/tagList.js <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">touch </span>src/Taglist/tagList.css
+</code></pre></div></div>
+
+<h3 id="indexjs"><code class="highlighter-rouge">index.js</code></h3>
+
+<p>Exporting modules from your component’s <code class="highlighter-rouge">index.js</code> file is a common standard in a React project.
+It lets another component import the tag list component using the <code class="highlighter-rouge">TagList</code> directory name.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* src/TagList/index.js */</span>
+
+<span class="k">export</span> <span class="p">{</span><span class="k">default</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./tagList</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h3 id="tagjs-and-tagcss"><code class="highlighter-rouge">tag.js</code> and <code class="highlighter-rouge">tag.css</code></h3>
+
+<p>The <code class="highlighter-rouge">tag.js</code> and <code class="highlighter-rouge">tag.css</code> files define a Tag component that renders a single tag in the tag list.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* src/TagList/tag.js */</span>
+
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Button</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/venia-ui/lib/components/Button</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Link</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@magento/venia-ui/lib/drivers</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="nx">classes</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./tag.css</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">categoryUrlSuffix</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">.html</span><span class="dl">'</span>
+
+<span class="c1">// This is a component responsible for rendering a single tag</span>
+<span class="kd">const</span> <span class="nx">Tag</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Destructures the props object into variables</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">value</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">url_path</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`/</span><span class="p">${</span><span class="nx">url_path</span><span class="p">}${</span><span class="nx">categoryUrlSuffix</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">buttonClasses</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">root_lowPriority</span><span class="p">:</span> <span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="p">,</span>
+        <span class="na">content</span><span class="p">:</span> <span class="nx">classes</span><span class="p">.</span><span class="nx">content</span>
+    <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">Link</span> <span class="na">className=</span><span class="si">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">link</span><span class="si">}</span> <span class="na">to=</span><span class="si">{</span><span class="nx">url</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Button</span> <span class="na">classes=</span><span class="si">{</span><span class="nx">buttonClasses</span><span class="si">}</span> <span class="na">priority=</span><span class="s2">"low"</span> <span class="na">type=</span><span class="s2">"button"</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="nx">name</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nc">Button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Make this function the default exported of this module</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Tag</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* src/TagList.tag.css */</span>
+
+<span class="nc">.root</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="nb">solid</span> <span class="m">1px</span> <span class="m">#2680eb</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">3px</span> <span class="m">9px</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">6px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.content</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#2680eb</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">0.875rem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="taglistjs-and-taglistcss"><code class="highlighter-rouge">tagList.js</code> and <code class="highlighter-rouge">tagList.css</code></h3>
+
+<p>The <code class="highlighter-rouge">tagList.js</code> and <code class="highlighter-rouge">tagList.css</code> files define the main TagList component this package provides.
+It accepts a <code class="highlighter-rouge">categoriesListData</code> object as a prop and renders the data as a tag list.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* src/TagList/tagList.js */</span>
+
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Tag</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./tag</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="nx">classes</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./tagList.css</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">TagList</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Destructures the props object into variables</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">categoriesListData</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">categories</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">categoriesListData</span><span class="p">;</span>
+
+  <span class="c1">// Returns nothing if there are no categories</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">categories</span><span class="p">){</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Converts the array of tag strings into an array of Tag components</span>
+  <span class="kd">const</span> <span class="nx">tagList</span> <span class="o">=</span> <span class="nx">categories</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">category</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nc">Tag</span> <span class="na">key=</span><span class="si">{</span><span class="nx">category</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span> <span class="na">value=</span><span class="si">{</span><span class="nx">category</span><span class="si">}</span> <span class="p">/&gt;;</span>
+  <span class="p">});</span>
+
+  <span class="c1">// Returns the list of Tag components inside a div container</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className=</span><span class="si">{</span><span class="nx">classes</span><span class="p">.</span><span class="nx">root</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">tagList</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">TagList</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* src/TagList/tagList.css */</span>
+
+<span class="nc">.root</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">flex-wrap</span><span class="p">:</span> <span class="n">wrap</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="add-taglist-component-dependencies">Add TagList component dependencies</h3>
+
+<p>The TagList component requires third party libraries, such as React, to render the correct HTML.
+Since your package is an extension, you should list these as peer dependencies in your <code class="highlighter-rouge">package.json</code> file.
+This safeguards against including more than one copy of the same dependency in the storefront project and final build.</p>
+
+<p>Use the following command to add the TagList component dependencies as peer dependencies:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add <span class="nt">--peer</span> react @magento/venia-ui
+</code></pre></div></div>
+
+<p>This command creates a new <code class="highlighter-rouge">peerDependencies</code> entry in your <code class="highlighter-rouge">package.json</code> file that lists these dependencies.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    "name": "tagList",
+    "version": "1.0.0",
+    "description": "A tag list extension for a PWA Studio storefront",
+    "main": "index.js",
+<span class="gd">-   "license": "MIT"
+</span><span class="gi">+   "license": "MIT",
++   "peerDependencies": {
++     "@magento/venia-ui": "^6.0.1",
++     "react": "^17.0.1"
++   }
+</span>  }
+</code></pre></div></div>
+
+<h3 id="export-taglist-in-extension">Export TagList in extension</h3>
+
+<p>Your extension needs to export the TagList component in your project’s main entry point to let other developers import it in their code.
+The default main entry point for Node packages is the <code class="highlighter-rouge">index.js</code> file, so create this file using the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>index.js
+</code></pre></div></div>
+
+<p>Edit the file and add the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="p">{</span> <span class="k">default</span> <span class="k">as</span> <span class="nx">TagList</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./src/TagList</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Now, other developers can import the TagList component in their own projects using the following syntax:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">TagList</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">tagList</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h2 id="create-data-fetch-hook">Create data fetch hook</h2>
+
+<p>The TagList component requires data the <a href="https://github.com/magento/pwa-studio/blob/develop/packages/peregrine/lib/talons/RootComponents/Product/productDetailFragment.gql.js">ProductDetailsFragment</a> does not provide, so
+you need to create a data fetch hook.
+The data fetch hook is a custom React hook that sends a GraphQL query requesting the product categories for a product.</p>
+
+<p>Run the following command to create this file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/hooks <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">touch </span>src/hooks/useProductCategoriesList.js
+</code></pre></div></div>
+
+<p>Edit the file and add the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* src/hooks/useProductCategoriesList.js */</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useMemo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@apollo/client</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">gql</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">graphql-tag</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// GraphQL query to fetch a list of categories for a product</span>
+<span class="kd">const</span> <span class="nx">GET_PRODUCT_CATEGORIES</span> <span class="o">=</span> <span class="nx">gql</span><span class="s2">`
+  query getProductCategories($urlKey: String!) {
+    products(filter: { url_key: { eq: $urlKey } }) {
+      items {
+        categories {
+          name
+          url_path
+        }
+      }
+    }
+  }
+`</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">useProductCategoriesList</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">urlKey</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">loading</span><span class="p">,</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="nx">GET_PRODUCT_CATEGORIES</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">fetchPolicy</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cache-and-network</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">nextFetchPolicy</span><span class="p">:</span> <span class="dl">"</span><span class="s2">cache-first</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">variables</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">urlKey</span><span class="p">:</span> <span class="nx">urlKey</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="kd">const</span> <span class="nx">categories</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">categories</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">data</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">error</span><span class="p">,</span>
+    <span class="na">isLoading</span><span class="p">:</span> <span class="nx">loading</span><span class="p">,</span>
+    <span class="nx">categories</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">useProductCategoriesList</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>This file requires two new dependencies, <code class="highlighter-rouge">@apollo/client</code> and <code class="highlighter-rouge">graphql-tag</code>.
+Run the following command to add these as peer dependencies to the <code class="highlighter-rouge">package.json</code> file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add <span class="nt">--peer</span> @apollo/client graphql-tag
+</code></pre></div></div>
+
+<h2 id="create-wrapper-file">Create wrapper file</h2>
+
+<p>A wrapper file exports an interceptor that wraps a module in another file.
+An interceptor module has access to the original module and the parameters it receives.
+This lets the interceptor module run the original code along with its own custom logic that can change the incoming parameters or outgoing return value.</p>
+
+<p>For this extension, create a wrapper file for the <code class="highlighter-rouge">useProductFullDetails()</code> hook that calls the data fetch hook you created in a previous step and adds the result to its return value.</p>
+
+<p>First, create this file with the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> src/targets/ <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">touch </span>src/targets/wrapper.js
+</code></pre></div></div>
+
+<p>Edit this file and add the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">useProductCategoriesList</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../hooks/useProductCategoriesList</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">original</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span> <span class="nx">useProductFullDetails</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="p">...</span><span class="nx">restArgs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">product</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+    <span class="c1">// Run the data fetch hook</span>
+    <span class="kd">const</span> <span class="nx">categoriesListData</span> <span class="o">=</span> <span class="nx">useProductCategoriesList</span><span class="p">({</span>
+      <span class="na">urlKey</span><span class="p">:</span> <span class="nx">product</span><span class="p">.</span><span class="nx">url_key</span><span class="p">,</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Run the original, wrapped function</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">productDetails</span><span class="p">,</span> <span class="p">...</span><span class="nx">defaultReturnData</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">original</span><span class="p">(</span>
+      <span class="nx">props</span><span class="p">,</span>
+      <span class="p">...</span><span class="nx">restArgs</span>
+    <span class="p">);</span>
+
+    <span class="c1">// Add the new data to the data returned by the original function</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="p">...</span><span class="nx">defaultReturnData</span><span class="p">,</span>
+      <span class="na">productDetails</span><span class="p">:</span> <span class="p">{</span>
+        <span class="p">...</span><span class="nx">productDetails</span><span class="p">,</span>
+        <span class="na">categoriesListData</span><span class="p">:</span> <span class="nx">categoriesListData</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="define-intercept-file">Define intercept file</h2>
+
+<p>The intercept file is where you directly interact with Target objects to apply customizations.
+In this extension, the intercept file tells the build process to use Webpack loaders for ES Modules and CSS Modules.
+Without these intructions, the build process will not know how to load the files in this extension.</p>
+
+<p>Create this file using the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">touch </span>src/targets/intercept.js
+</code></pre></div></div>
+
+<p>Edit this file and add the following content:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">(</span><span class="nx">targets</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">Targetables</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="kd">const</span> <span class="nx">targetables</span> <span class="o">=</span> <span class="nx">Targetables</span><span class="p">.</span><span class="nx">using</span><span class="p">(</span><span class="nx">targets</span><span class="p">);</span>
+
+    <span class="nx">targetables</span><span class="p">.</span><span class="nx">setSpecialFeatures</span><span class="p">(</span><span class="dl">'</span><span class="s1">esModules</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">cssModules</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>This script uses <code class="highlighter-rouge">@magento/pwa-buildpack</code>, so you need to add this library as a dependency.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add <span class="nt">--peer</span> @magento/pwa-buildpack
+</code></pre></div></div>
+
+<p>Next, edit your <code class="highlighter-rouge">package.json</code> file to point to the location of this extension’s intercept file:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  {
+    "name": "tagList",
+    "version": "1.0.0",
+    "description": "A tag list extension for a PWA Studio storefront",
+    "main": "index.js",
+    "license": "MIT",
+    "peerDependencies": {
+      "@apollo/client": "^3.3.11",
+      "@magento/pwa-buildpack": "^8.0.1",
+      "@magento/venia-ui": "^6.0.1",
+      "graphql-tag": "^2.11.0",
+      "react": "^17.0.1"
+<span class="gi">+   },
++   "pwa-studio": {
++     "targets": {
++       "intercept": "src/targets/intercept"
++     }
+</span>    }
+  }
+
+</code></pre></div></div>
+
+<h2 id="install-extension-locally">Install extension locally</h2>
+
+<p>Navigate to your storefront project directory and use the <code class="highlighter-rouge">yarn add file:/path/to/local/folder</code> syntax for the <code class="highlighter-rouge">yarn add</code> CLI to install your extension locally.</p>
+
+<p>For example:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add <span class="nt">--dev</span> file:../extensions/tagList
+</code></pre></div></div>
+
+<p>This adds a new entry under <code class="highlighter-rouge">devDependencies</code> in your storefront project’s <code class="highlighter-rouge">package.json</code> file that looks like the following:</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    "style-loader": "~0.23.1",
+<span class="gi">+   "tagList": "file:../extensions/tagList",
+</span>    "terser-webpack-plugin": "~1.2.3",
+</code></pre></div></div>
+
+<h2 id="intercept-venia-ui-components">Intercept Venia UI components</h2>
+
+<p>All scaffolded projects come with an intercept file called <code class="highlighter-rouge">local-intercept.js</code>.
+This file lets you use <a href="/pwa-studio/pwa-buildpack/extensibility-framework/">Targets and Targetables</a> to make modifications to the Venia application code without copying over the source file.</p>
+
+<p>Edit this file so it looks like the following:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* local-intercept.js */</span>
+
+<span class="c1">// Import the Targetables manager</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">Targetables</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">@magento/pwa-buildpack</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">localIntercept</span><span class="p">(</span><span class="nx">targets</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Create a bound Targetable factory</span>
+    <span class="kd">const</span> <span class="nx">targetables</span> <span class="o">=</span> <span class="nx">Targetables</span><span class="p">.</span><span class="nx">using</span><span class="p">(</span><span class="nx">targets</span><span class="p">);</span>
+
+    <span class="c1">// Create a React component targetable linked to the productFullDetail.js file</span>
+    <span class="kd">const</span> <span class="nx">ProductDetails</span> <span class="o">=</span> <span class="nx">targetables</span><span class="p">.</span><span class="nx">reactComponent</span><span class="p">(</span>
+        <span class="dl">'</span><span class="s1">@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.js</span><span class="dl">'</span>
+    <span class="p">);</span>
+
+    <span class="c1">// Add an import statement to the productFullDetail.js file and</span>
+    <span class="c1">// return the SingleImportStatement object</span>
+    <span class="kd">const</span> <span class="nx">TagList</span> <span class="o">=</span> <span class="nx">ProductDetails</span><span class="p">.</span><span class="nx">addImport</span><span class="p">(</span><span class="dl">"</span><span class="s2">{TagList} from 'tagList'</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="c1">// Insert the TagList component after the product description and pass in the</span>
+    <span class="c1">// new categoriesListData object added to the useProductFullDetails() hook</span>
+    <span class="nx">ProductDetails</span><span class="p">.</span><span class="nx">insertAfterJSX</span><span class="p">(</span>
+        <span class="dl">'</span><span class="s1">&lt;RichText content={productDetails.description} /&gt;</span><span class="dl">'</span><span class="p">,</span>
+        <span class="s2">`&lt;</span><span class="p">${</span><span class="nx">TagList</span><span class="p">}</span><span class="s2"> categoriesListData={productDetails.categoriesListData} /&gt;`</span>
+    <span class="p">);</span>
+    
+    <span class="c1">// Create an ES Module targetable linked to the useProductFullDetail.js file</span>
+    <span class="kd">const</span> <span class="nx">useProductFullDetails</span> <span class="o">=</span> <span class="nx">targetables</span><span class="p">.</span><span class="nx">esModule</span><span class="p">(</span>
+        <span class="dl">'</span><span class="s1">@magento/peregrine/lib/talons/ProductFullDetail/useProductFullDetail.js</span><span class="dl">'</span>
+    <span class="p">);</span>
+
+    <span class="c1">// Wrap the useProductFullDetail hook with your extension's wrapper file</span>
+    <span class="nx">useProductFullDetails</span><span class="p">.</span><span class="nx">wrapWithFile</span><span class="p">(</span>
+        <span class="dl">'</span><span class="s1">useProductFullDetail</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">tagList/src/targets/wrapper</span><span class="dl">'</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">localIntercept</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="congratulations">Congratulations</h2>
+
+<p>You created a tag list extension and installed it in your development server!</p>
+
+<p>Now, when you start your storefront application and navigate to a product page, you will see a list of tags associated with that product.</p>
+
+<h2 id="live-example">Live example</h2>
+
+<p>You can see this extension running live in this <a href="https://codesandbox.io/s/github/magento-devdocs/pwa-studio-code-sandbox/tree/taglist-extension-tutorial/">CodeSandbox instance</a> or you can check out the source repository in the <a href="https://github.com/magento-devdocs/pwa-studio-code-sandbox/tree/taglist-extension-tutorial"><code class="highlighter-rouge">taglist-extension-tutorial</code></a> branch in the <strong>magento-devdocs/pwa-studio-code-sandbox</strong> GitHub project.</p>
+
+<iframe src="https://codesandbox.io/embed/github/magento-devdocs/pwa-studio-code-sandbox/tree/taglist-extension-tutorial/?fontsize=12&amp;hidenavigation=1&amp;module=%2Fextensions%2FtagList%2Fpackage.json&amp;moduleview=1&amp;theme=dark" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="dev-sandbox" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+

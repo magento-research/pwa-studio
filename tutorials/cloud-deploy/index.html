@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento Cloud deployment | Magento PWA Documentation</title>
+	<meta name="description" content="Everything you need to build a Magento PWA.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="/pwa-studio/assets/css/app.css?ver=14" />
+	<link rel="stylesheet" href="/pwa-studio/assets/css/print.css?ver=14" media="print"/>
+	<script src="//assets.adobedtm.com/a7d65461e54e/f87b70cb627a/launch-b042bff6c581.min.js" async></script>
+
+	<link rel="stylesheet" href="/pwa-studio/builds/css/main.css" />
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script>
+  var baseUrl = "/pwa-studio";
+  var algolia = {
+    id : "E642SEDTHL",
+    index: "pwa-devdocs",
+    key: "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+
+  var indices = [
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://pwastudio.io"
+    },
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facets: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "Commerce User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" data-proofer-ignore href="/pwa-studio/">
+      <img class="logo-image" src="/pwa-studio/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Adobe</span>
+      <span class="site-logo">Magento PWA Docs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation -->
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Overview</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/overview/">PWA Studio overview</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/frequently-asked-questions/">Frequently Asked Questions</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/storefront-architecture/">Storefront architecture</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/basic-concepts/">Basic concepts</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/">Peregrine</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-pwa-concept/">Venia storefront concept</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/technologies/upward/">UPWARD</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="menuitem spectrum-Tabs-item is-selected">
+    <a class="spectrum-Tabs-itemLabel" href="/pwa-studio/tutorials/">Tutorials</a>
+  </li>
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">API Reference</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pwa-buildpack/reference/buildpack-cli/">PWA Buildpack</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/peregrine/reference/targets/">Peregrine API</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/venia-ui/reference/targets/">Venia UI API</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+  
+  <li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Integrations</span>
+    <div class="nav-popup spectrum-Popover">
+      <ul class="spectrum-Menu">
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/pagebuilder/">Page Builder</a>
+        </li> 
+        
+        <li class="spectrum-Menu-item" role="menuitem">
+          <a class="spectrum-Menu-itemLabel" href="/pwa-studio/product-recs/">Product Recommendations</a>
+        </li> 
+        
+      </ul>
+    </div>
+  </li>
+
+  
+
+</ul>
+
+    </div>
+
+    <div class="nav-actions">
+        
+        
+
+
+        
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce Developer Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="/pwa-studio/search/"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+</nav><!-- .site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+    <button class="toc-toggler">Table of Contents</button>
+    <div class="sidebar-wrapper">
+
+      
+
+
+
+
+
+
+<div class="menu-section">
+    <div class="toc-entry">
+        <h4 class="guide-title">Tutorials</h4>
+    </div>
+
+    <ul class="table-of-contents spectrum-SideNav spectrum-SideNav--multiLevel" >
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/" class="spectrum-SideNav-itemLink  parent">Getting Started</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/" class="spectrum-SideNav-itemLink  ">Setup your project</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-structure/" class="spectrum-SideNav-itemLink  ">Explore the project structure</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <span class="spectrum-SideNav-itemLink">Basic modifications</span>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/enable-sass-less-support/" class="spectrum-SideNav-itemLink  ">Enable SASS or LESS support</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/add-a-static-route/" class="spectrum-SideNav-itemLink  ">Add a static route</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/modify-site-footer/" class="spectrum-SideNav-itemLink  ">Modify the site footer</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/intercept-a-target/" class="spectrum-SideNav-itemLink  parent">Target interception</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/modify-talon-results/" class="spectrum-SideNav-itemLink  ">Modify talon results</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/add-new-environment-variable/" class="spectrum-SideNav-itemLink  ">Add a new environment variable</a>
+                    
+                </li>
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/intercept-a-target/change-static-assets-directory/" class="spectrum-SideNav-itemLink  ">Change static assets directory</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/targetables/" class="spectrum-SideNav-itemLink  ">Modify code with Targetables</a>
+            
+
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/extension-development/" class="spectrum-SideNav-itemLink  parent">Extension development</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item ">
+                    
+                    <a href="/pwa-studio/tutorials/extension-development/taglist/" class="spectrum-SideNav-itemLink  ">Create a tag list extension</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+        <li class="spectrum-SideNav-item ">
+            
+            <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/production-launch-checklist/" class="spectrum-SideNav-itemLink  parent">Production deployments</a>
+            
+
+            
+            <ul class="spectrum-SideNav">
+            
+                <li class="spectrum-SideNav-item is-selected">
+                    
+                    <a href="/pwa-studio/tutorials/cloud-deploy/" class="spectrum-SideNav-itemLink  ">Deploy to Magento Cloud</a>
+                    
+                </li>
+            
+            </ul>
+            
+        </li>
+    
+    </ul>
+</div>
+
+
+
+    </div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+	
+	<h1 class="page-title">Magento Cloud deployment</h1>
+
+	
+	
+	<div class="github-links spectrum-ButtonGroup"><div class="github-link spectrum-ButtonGroup-item">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/tree/develop/pwa-devdocs/src/tutorials/cloud-deploy/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="/pwa-studio/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue spectrum-ButtonGroup-item">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/pwa-studio/issues/new?title=Feedback on page: /tutorials/cloud-deploy/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="/pwa-studio/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p><a href="https://devdocs.magento.com/cloud/bk-cloud.html">Magento Commerce Cloud</a> is a managed, automated hosting platform for the Magento Commerce software.
+You can use this platform to host your storefront code by installing packages developed specifically to connect your storefront with Magento on the same server.</p>
+
+<p>This tutorial provides the general steps for adding your storefront onto your Magento Commerce Cloud project and setting it as the front end application.
+By the end of this tutorial, you will have a Cloud project setup that includes your storefront project’s code bundles.
+You can use this setup to update and deploy your storefront project in Magento Commerce Cloud.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you follow this tutorial, you should be familiar with Cloud’s <a href="https://devdocs.magento.com/cloud/architecture/starter-develop-deploy-workflow.html">Starter workflow</a> or <a href="https://devdocs.magento.com/cloud/architecture/pro-develop-deploy-workflow.html">Pro workflow</a> depending on your plan.
+Make sure you complete the <a href="https://devdocs.magento.com/cloud/onboarding/onboarding-tasks.html">Cloud onboarding tasks</a> to avoid account or access issues.</p>
+
+<p>Verify that your Magento instance is <a href="/pwa-studio/technologies/magento-compatibility/">compatible</a> with the PWA Studio version you use in your storefront project.</p>
+
+<p>This tutorial requires the following tools:</p>
+
+<ul>
+  <li><a href="https://devdocs.magento.com/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a></li>
+  <li>Git</li>
+  <li><a href="https://getcomposer.org/">Composer</a></li>
+  <li>Yarn or NPM (depends on your storefront project configuration)</li>
+</ul>
+
+<p>If you need to do more advanced Cloud tasks, see the <a href="https://devdocs.magento.com/cloud/requirements/cloud-requirements.html">Cloud technologies and requirements</a> for the full list of tools you need to fully manage the rest of your Cloud project.</p>
+
+<p>You also need an existing storefront project to do this tutorial.
+Follow the instructions on the <a href="/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/">Project setup</a> page to set up your storefront project using the scaffolding tool.</p>
+
+<h2 id="tasks-overview">Tasks overview</h2>
+
+<ol>
+  <li>Clone your Cloud project</li>
+  <li>Add required Magento extensions</li>
+  <li>Set environment variables</li>
+  <li>Build your storefront application</li>
+  <li>Add your storefront project code</li>
+  <li>Deploy changes</li>
+</ol>
+
+<h2 id="clone-your-cloud-project">Clone your Cloud project</h2>
+
+<p>Use the Magento Cloud CLI tool to login and clone your Cloud project.</p>
+
+<p>Run the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud
+</code></pre></div></div>
+
+<p>If this is your first time running this command, the tool takes you through the login process.
+After you login or when you run this command again, it presents a table of all the projects you have permission to access.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your projects are:
++---------------+------------------+---------------------------------------------------+
+| ID            | Title            | URL                                               |
++---------------+------------------+---------------------------------------------------+
+| yswqmrbknvqjz | My Magento Store | https://us-4.magento.cloud/projects/yswqmrbknvqjz |
++---------------+------------------+---------------------------------------------------+
+</code></pre></div></div>
+
+<p>Find the Cloud project you want to add your storefront to and use the Magento Cloud CLI to clone the project by specifying its ID.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud get yswqmrbknvqjz
+</code></pre></div></div>
+
+<p>This command creates a project directory and initializes the Git repository associated with your Cloud project.
+Depending on your access permissions for the default environment, this directory may appear empty.</p>
+
+<p>Navigate to the project directory and use the Magento Cloud CLI to list the environments for this project.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
+</code></pre></div></div>
+
+<p>This command displays a table of environments which lists their ID, Title, and Status.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your environments are:
++----------------------+----------------------+-------------+
+| ID                   | Title                | Status      |
++----------------------+----------------------+-------------+
+| production<span class="k">*</span>          | Production           | Active      |
+| staging              | Staging              | Active      |
+| myStorefront-develop | myStorefront-develop | In progress |
+|    myStorefront-cicd | myStorefront-cicd    | Active      |
++----------------------+----------------------+-------------+
+<span class="k">*</span> - Indicates the current environment
+</code></pre></div></div>
+
+<p>Use the Magento Cloud CLI to checkout the environment where you want to add your storefront code, such as the <code class="highlighter-rouge">staging</code> environment.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud checkout staging
+</code></pre></div></div>
+
+<h2 id="add-required-magento-extensions">Add required Magento extensions</h2>
+
+<p>Magento Cloud does not support node processes, so you cannot use UPWARD-JS to serve your storefront project.
+You must use the <a href="https://github.com/magento/magento2-upward-connector">magento2-upward-connector</a> module with <a href="https://github.com/magento/upward-php">UPWARD-PHP</a> to deploy your storefront in Magento Cloud.</p>
+
+<p>Use the <code class="highlighter-rouge">composer</code> CLI command to add the magento2-upward-connector module to the Magento installation:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/module-upward-connector
+</code></pre></div></div>
+
+<p>This command modifies the <code class="highlighter-rouge">composer.json</code> file and adds the package entry to the <code class="highlighter-rouge">require</code> section of the <code class="highlighter-rouge">composer.json</code> file.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"magento/module-upward-connector": "^1.1.2"
+</code></pre></div></div>
+
+<p class="bs-callout bs-callout-info">UPWARD-PHP is a dependency of the magento2-upward-connector, so
+you do not need to add it manually to your project.</p>
+
+<h2 id="set-environment-variables">Set environment variables</h2>
+
+<p>PWA Studio storefronts require you to set the following <a href="/pwa-studio/pwa-buildpack/reference/environment-variables/core-definitions/">environment variables</a> in your project for the build and runtime processes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Buildtime</th>
+      <th>Runtime</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">CONFIG__DEFAULT__WEB__UPWARD__PATH</code></td>
+      <td> </td>
+      <td><i class="material-icons green">check_box</i></td>
+      <td>Absolute path to UPWARD YAML configuration</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">NODE_ENV</code></td>
+      <td><i class="material-icons green">check_box</i></td>
+      <td><i class="material-icons green">check_box</i></td>
+      <td>Specifies the node environment type</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">MAGENTO_BACKEND_URL</code></td>
+      <td><i class="material-icons green">check_box</i></td>
+      <td><i class="material-icons green">check_box</i></td>
+      <td>URL of your Magento backend</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">CHECKOUT_BRAINTREE_TOKEN</code></td>
+      <td><i class="material-icons green">check_box</i></td>
+      <td> </td>
+      <td>Braintree token associated with your Magento backend</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">MAGENTO_BACKEND_EDITION</code></td>
+      <td><i class="material-icons green">check_box</i></td>
+      <td> </td>
+      <td>Must be <code class="highlighter-rouge">EE</code> since Cloud only supports Magento Enterprise Edition</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">IMAGE_OPTIMIZING_ORIGIN</code></td>
+      <td><i class="material-icons green">check_box</i></td>
+      <td> </td>
+      <td>Origin to use for images in the UI</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="set-runtime-variables">Set runtime variables</h3>
+
+<p>To set your Cloud project’s runtime variables, edit the <a href="https://devdocs.magento.com/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file and add entries to the <code class="highlighter-rouge">variables.env</code> section.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>variables:
+    env:
+        CONFIG__DEFAULT__WEB__UPWARD__PATH: "/app/pmu35riuj7btw_stg/pwa/upward.yml"
+        NODE_ENV: "production"
+        MAGENTO_BACKEND_URL: "https://[your-cloud-url-here]/"
+</code></pre></div></div>
+
+<h3 id="set-buildtime-variables">Set buildtime variables</h3>
+
+<p>To set your environment variables for buildtime, navigate or open a new terminal to <em>your storefront project</em> and edit the <code class="highlighter-rouge">.env</code> file.
+Your <code class="highlighter-rouge">.env</code> file should have entries that look like the following:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NODE_ENV=production
+MAGENTO_BACKEND_URL=https://[your-cloud-url-here]/
+CHECKOUT_BRAINTREE_TOKEN=&lt;generated token from Braintree&gt;
+MAGENTO_BACKEND_EDITION=EE
+IMAGE_OPTIMIZING_ORIGIN=backend
+ENABLE_EXPRESS_SERVER_COMPRESSION=false
+</code></pre></div></div>
+
+<h3 id="finding-the-correct-upward-path-value">Finding the correct UPWARD path value</h3>
+
+<p>The <code class="highlighter-rouge">CONFIG_DEFAULT_WEB_UPWARD_PATH</code> variable specifies the <em>absolute</em> path to the UPWARD configuration file in the deployed Cloud instance.
+If this value is incorrect or not set, the Magento 2 UPWARD connector extension cannot serve your storefront application and your frontend appears broken.</p>
+
+<p>In the previous example, <code class="highlighter-rouge">/app/pmu35riuj7btw_stg/</code> is the Magento application root directory on the deployed instance.
+This value is different for each environment in your Cloud project, so you must configure each of your project environments with the path specific to each instance.
+To find the correct root directory path for an environment, <a href="https://devdocs.magento.com/cloud/env/environments-ssh.html">SSH</a> into the remote server and use the <code class="highlighter-rouge">pwd</code> command to find the Magento application root directory.</p>
+
+<h2 id="build-your-storefront-application">Build your storefront application</h2>
+
+<p>In <em>your storefront project</em> directory, use <code class="highlighter-rouge">yarn</code> or <code class="highlighter-rouge">npm</code> to install project dependencies and run the project’s build command.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn <span class="nb">install</span> <span class="o">&amp;&amp;</span>
+yarn build
+</code></pre></div></div>
+
+<p>These commands install project dependencies and runs the build process, which creates a <code class="highlighter-rouge">dist</code> folder that contains code bundles for your storefront application.
+It also copies over the static assets your application needs from your project into this folder.</p>
+
+<h2 id="add-your-storefront-project-code">Add your storefront project code</h2>
+
+<p><em>In your Cloud project</em>, create a <code class="highlighter-rouge">pwa</code> folder and copy into it the content inside your storefront project’s <code class="highlighter-rouge">dist</code> folder.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>pwa <span class="o">&amp;&amp;</span> <span class="nb">cp</span> <span class="nt">-r</span> &lt;path to your storefront project&gt;/dist/<span class="k">*</span> pwa
+</code></pre></div></div>
+
+<p>If you are updating your existing storefront code, you must delete the content inside the <code class="highlighter-rouge">pwa</code> directory before you copy the new <code class="highlighter-rouge">dist</code> content to avoid keeping the old bundles the application no longer uses.</p>
+
+<h2 id="deploy-changes">Deploy changes</h2>
+
+<p>At this point in the tutorial, your Cloud project should have changes in the following files and directories:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">.magento.app.yaml</code></li>
+  <li><code class="highlighter-rouge">composer.json</code></li>
+  <li><code class="highlighter-rouge">composer.lock</code></li>
+  <li><code class="highlighter-rouge">pwa</code></li>
+</ul>
+
+<p>Edit your Cloud project’s <code class="highlighter-rouge">.gitignore</code> file and add the following entries to track the <code class="highlighter-rouge">pwa</code> directory in git:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!/pwa
+!/pwa/**
+</code></pre></div></div>
+
+<p>Use the Git CLI tool to stage, commit, and push these changes to your Cloud project.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span> <span class="o">&amp;&amp;</span>
+git commit <span class="nt">-m</span> <span class="s2">"Added storefront file bundles"</span> <span class="o">&amp;&amp;</span>
+git push origin
+</code></pre></div></div>
+
+<p>After you push changes to your Cloud project, the remote build process runs and deploys a live instance of your site to the Magento Commerce Cloud service.</p>
+
+<h3 id="merging-environments">Merging environments</h3>
+
+<p>The Cloud topic on how to <a href="https://devdocs.magento.com/cloud/live/stage-prod-live.html">Deploy your store</a> provides more details on the deployment process.
+It also includes instructions for merging environment branches, such as integration to staging or staging to production.</p>
+
+<p>If your workflow involves merging environment branches,
+you must rebuild your application bundle with the correct environment variables before you push your changes to the Magento Cloud service because
+variables, such as <code class="highlighter-rouge">CONFIG__DEFAULT__WEB__UPWARD__PATH</code> and <code class="highlighter-rouge">MAGENTO_BACKEND_URL</code>, can vary between these environments.</p>
+
+
+			</main>
+			<footer class="content-footer">
+				
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="https://magentocommeng.slack.com/messages/C71HNKYS2">#pwa Slack channel</a></li>
+</ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2021 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/pwa-studio/assets/js/app.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/editions.min.js?ver=14"></script>
+<script src="/pwa-studio/assets/js/page-updated.min.js?ver=14"></script>
+
+<script src="/pwa-studio/builds/js/index.bundle.js"></script>
+
+</body>
+</html>
+
