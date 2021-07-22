@@ -423,6 +423,6 @@
     "wishlistPage.headingText": "{count, plural, one {Favorites List} other {Favorites Lists}}",
     "wishlistPage.wishlistDisabledMessage": "The wishlist is not currently available.",
     "wishlist.itemCountOpen": "Showing {currentCount} of {count} items in this list",
-    "wishlist.itemCountClosed": "You have {count} items in this list",
+    "wishlist.itemCountClosed": "You have {count} {count, plural, one {item} other {items}} in this list",
     "wishlist.loadMore": "Load More"
 }

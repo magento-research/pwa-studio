@@ -51,8 +51,11 @@ const Wishlist = props => {
               )
             : formatMessage(
                   {
-                      id: 'wishlist.itemCountClose',
-                      defaultMessage: 'You have {count} items in this list'
+                      id: 'wishlist.itemCountClosed',
+                      defaultMessage: `You have {count} {count, plural,
+                        one {item}
+                        other {items}
+                      } in this list`
                   },
                   { count: itemsCount }
               );

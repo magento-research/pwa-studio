@@ -7,6 +7,7 @@
 }
 
 .header {
+    align-items: center;
     display: grid;
     grid-auto-flow: column;
     justify-content: space-between;
@@ -35,11 +36,6 @@
     grid-auto-flow: column;
 }
 
-.itemsCountContainer {
-    align-items: center;
-    display: grid;
-}
-
 .content_hidden {
     display: none;
 }
@@ -55,9 +51,14 @@
     min-width: 20rem;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
     .root {
         padding: 1.5rem;
+    }
+
+    .header {
+        grid-template-rows: 1fr 1fr;
+        row-gap: 0.5rem;
     }
 
     .nameContainer {
@@ -65,6 +66,11 @@
     }
 
     .buttonsContainer {
-        align-items: flex-start;
+        justify-self: end;
+    }
+
+    .itemsCountContainer {
+        grid-column-end: span 2;
+        justify-self: center;
     }
 }
