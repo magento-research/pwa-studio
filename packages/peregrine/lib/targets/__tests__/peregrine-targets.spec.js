@@ -65,6 +65,7 @@ test('exposes all hooks and targets', async () => {
           hooks.useAwaitQuery.wrapWith() wraps export "useAwaitQuery" from "useAwaitQuery.js"
           hooks.useCarousel.wrapWith() wraps export "useCarousel" from "useCarousel.js"
           hooks.useCustomerWishlistSkus.useCustomerWishlistSkus.wrapWith() wraps export "useCustomerWishlistSkus" from "useCustomerWishlistSkus/useCustomerWishlistSkus.js"
+          hooks.useDetectScrollWidth.wrapWith() wraps export "useDetectScrollWidth" from "useDetectScrollWidth.js"
           hooks.useDropdown.wrapWith() wraps export "useDropdown" from "useDropdown.js"
           hooks.useEventListener.wrapWith() wraps export "useEventListener" from "useEventListener.js"
           hooks.usePagination.wrapWith() wraps export "usePagination" from "usePagination.js"

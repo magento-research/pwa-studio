@@ -103,7 +103,10 @@ const Image = props => {
         const LinkComponent = linkProps.to ? Link : 'a';
 
         return (
-            <figure style={figureStyles} className={cssClasses.join(' ')}>
+            <figure
+                style={figureStyles}
+                className={[classes.root, ...cssClasses].join(' ')}
+            >
                 <LinkComponent
                     {...linkProps}
                     {...(openInNewTab ? { target: '_blank' } : '')}
@@ -114,7 +117,10 @@ const Image = props => {
         );
     } else {
         return (
-            <figure style={figureStyles} className={cssClasses.join(' ')}>
+            <figure
+                style={figureStyles}
+                className={[classes.root, ...cssClasses].join(' ')}
+            >
                 {PictureFragment}
             </figure>
         );
@@ -153,6 +159,7 @@ const Image = props => {
  */
 Image.propTypes = {
     classes: shape({
+        root: string,
         img: string
     }),
     desktopImage: string,

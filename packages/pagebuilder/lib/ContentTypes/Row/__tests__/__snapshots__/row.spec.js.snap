@@ -2,17 +2,19 @@
 
 exports[`render full-bleed row 1`] = `
 <div
-  className="root"
+  className="fullBleed root"
   style={
     Object {
+      "--pbRowMarginLeft": "10px",
+      "--pbRowMarginRight": "10px",
       "backgroundColor": undefined,
       "border": undefined,
       "borderColor": undefined,
       "borderRadius": undefined,
       "borderWidth": undefined,
       "marginBottom": undefined,
-      "marginLeft": undefined,
-      "marginRight": undefined,
+      "marginLeft": null,
+      "marginRight": null,
       "marginTop": undefined,
       "minHeight": undefined,
       "paddingBottom": undefined,
@@ -25,39 +27,70 @@ exports[`render full-bleed row 1`] = `
 />
 `;
 
-exports[`render row with all props configured 1`] = `
+exports[`render full-width row 1`] = `
 <div
-  className="root test-class"
+  className="fullBleed root"
   style={
     Object {
-      "backgroundAttachment": "fixed",
-      "backgroundColor": "red",
-      "backgroundImage": "url(desktop.jpg)",
-      "backgroundPosition": "center center",
-      "backgroundRepeat": "repeat",
-      "backgroundSize": "contain",
-      "border": "solid",
-      "borderColor": "red",
-      "borderRadius": "15px",
-      "borderWidth": "10px",
-      "display": "flex",
-      "flexDirection": "column",
-      "justifyContent": "center",
-      "marginBottom": "10px",
-      "marginLeft": "10px",
-      "marginRight": "10px",
-      "marginTop": "10px",
-      "minHeight": "200px",
-      "paddingBottom": "10px",
-      "paddingLeft": "10px",
-      "paddingRight": "10px",
-      "paddingTop": "10px",
-      "textAlign": "right",
+      "--pbRowMarginLeft": "10px",
+      "--pbRowMarginRight": "10px",
+      "backgroundColor": undefined,
+      "border": undefined,
+      "borderColor": undefined,
+      "borderRadius": undefined,
+      "borderWidth": undefined,
+      "marginBottom": undefined,
+      "marginLeft": null,
+      "marginRight": null,
+      "marginTop": undefined,
+      "minHeight": undefined,
+      "paddingBottom": undefined,
+      "paddingLeft": undefined,
+      "paddingRight": undefined,
+      "paddingTop": undefined,
+      "textAlign": undefined,
     }
   }
 >
   <div
     className="contained"
+  />
+</div>
+`;
+
+exports[`render row with all props configured 1`] = `
+<div
+  className="contained test-class"
+>
+  <div
+    className="inner"
+    style={
+      Object {
+        "backgroundAttachment": "fixed",
+        "backgroundColor": "red",
+        "backgroundImage": "url(desktop.jpg)",
+        "backgroundPosition": "center center",
+        "backgroundRepeat": "repeat",
+        "backgroundSize": "contain",
+        "border": "solid",
+        "borderColor": "red",
+        "borderRadius": "15px",
+        "borderWidth": "10px",
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "marginBottom": "10px",
+        "marginLeft": "10px",
+        "marginRight": "10px",
+        "marginTop": "10px",
+        "minHeight": "200px",
+        "paddingBottom": "10px",
+        "paddingLeft": "10px",
+        "paddingRight": "10px",
+        "paddingTop": "10px",
+        "textAlign": "right",
+      }
+    }
   />
 </div>
 `;

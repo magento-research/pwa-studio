@@ -1,13 +1,21 @@
 .root {
     --leftViewportElement: 0;
+    --scrollBarWidth: var(--global-scrollbar-width, 0px);
 }
 
 .contained {
     composes: root;
     margin-left: auto !important;
     margin-right: auto !important;
-    max-width: 1280px;
+    max-width: var(--venia-global-maxWidth, 1280px);
     width: 100%;
+}
+
+.fullBleed {
+    composes: root;
+    width: calc(100vw - var(--scrollBarWidth));
+    transform: translateX(-50%);
+    margin-left: 50%;
 }
 
 .videoOverlay {

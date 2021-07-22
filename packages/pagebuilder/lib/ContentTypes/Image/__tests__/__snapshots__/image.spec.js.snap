@@ -2,7 +2,7 @@
 
 exports[`renders a Image component 1`] = `
 <figure
-  className=""
+  className="root"
   style={
     Object {
       "marginBottom": undefined,
@@ -39,7 +39,7 @@ exports[`renders a Image component 1`] = `
 
 exports[`renders a Image component with all props configured 1`] = `
 <figure
-  className="test-class"
+  className="root test-class"
   style={
     Object {
       "marginBottom": "10px",
@@ -88,7 +88,7 @@ exports[`renders a Image component with all props configured 1`] = `
 
 exports[`renders a Image component with openInNewTab set to false 1`] = `
 <figure
-  className=""
+  className="root"
   style={
     Object {
       "marginBottom": undefined,
