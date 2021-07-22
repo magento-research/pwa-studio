@@ -95,6 +95,7 @@ const PaymentMethods = props => {
     return (
         <div className={classes.root}>
             <RadioGroup
+                classes={{ root: classes.radio_group }}
                 field="selectedPaymentMethod"
                 initialValue={initialSelectedMethod}
             >

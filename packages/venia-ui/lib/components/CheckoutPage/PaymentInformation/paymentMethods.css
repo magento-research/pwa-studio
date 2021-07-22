@@ -1,6 +1,11 @@
 .root {
     display: grid;
     padding: 2rem;
+    padding-bottom: 1rem;
+}
+
+.radio_group {
+    display: grid;
 }
 
 .payment_method {
