@@ -1,6 +1,6 @@
 {
   "name": "@magento/venia-concept",
-  "version": "10.0.0",
+  "version": "11.0.0-alpha.3",
   "publishConfig": {
     "access": "public"
   },
@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/magento/pwa-studio/tree/master/packages/venia-concept#readme",
   "dependencies": {
-    "@magento/pwa-buildpack": "~9.0.0"
+    "@magento/pwa-buildpack": "10.0.0-alpha.3"
   },
   "devDependencies": {
     "@adobe/apollo-link-mutation-queue": "~1.0.2",
@@ -51,10 +51,10 @@
     "@babel/runtime": "~7.4.2",
     "@magento/babel-preset-peregrine": "~1.1.0",
     "@magento/eslint-config": "~1.5.0",
-    "@magento/pagebuilder": "~5.0.0",
-    "@magento/peregrine": "~10.0.0",
-    "@magento/upward-security-headers": "~1.0.3",
-    "@magento/venia-ui": "~7.0.0",
+    "@magento/pagebuilder": "6.0.0-alpha.3",
+    "@magento/peregrine": "11.0.0-alpha.3",
+    "@magento/upward-security-headers": "1.0.4-alpha.3",
+    "@magento/venia-ui": "8.0.0-alpha.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.1",
     "@storybook/react": "~6.1.14",
     "@wojtekmaj/enzyme-adapter-react-17": "~0.4.1",

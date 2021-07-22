@@ -1,335 +1,362 @@
-<!-- 
-
-TODO: Include the following items in future release notes to help with version upgrades
-
-  * A table of the new versions published for individual packages
-  * List of updated template files
-  * Any updates to environmental variables
-
--->
-# Release 10.0.0
+# Release 11.0.0
 
 **NOTE:**
-_This changelog only contains release notes for PWA Studio and Venia 10.0.0._
+_This changelog only contains release notes for PWA Studio and Venia 11.0.0._
 _For older release notes, see [PWA Studio releases][]._
 
 ## Table of contents
 
--   [What's new in 10.0.0](#whats-new-in-1000)
+-   [What's new in 11.0.0](#whats-new-in-1100)
 -   [Pull requests merged in this release](#pull-requests-merged-in-this-release)
 -   [Known issues](#known-issues)
 -   [Upgrading from a previous version](#upgrading-from-a-previous-version)
 
-## What's new in 10.0.0
+## What's new in 11.0.0
 
-PWA Studio 10.0.0 contains new features, refactors, bug fixes, and various improvements.
-This version is compatible with **Magento 2.4.2**.
+PWA Studio 11.0.0 contains new features, refactors, bug fixes, and various improvements.
+This version is compatible with **Magento 2.4.3**.
 
-### Build report tool
+### Wish List
 
-The build report tool is a Buildpack CLI command that returns information about a storefront setup and development environment.
-This feature makes it easier to provide information when reporting issues or for general debugging purposes.
+Started in PWA Studio 9.0.0 with basic features and functionality, Wish List is feature complete in this release and implemented in the Venia storefront template.
+This feature gives shoppers the ability to create and manage lists of items they may want to purchase in the future using Wish List specific components and logic.
 
-The following command is now available for newly scaffolded projects:
+The following Wish List features have been implemented in this release:
 
-```sh
-yarn build:report
-```
+- Add an item to a wish list from the product page
+- Add an item to a wish list from the category page
+- Add an item to a wish list from the cart page
+- Add an item to the cart from a wish list
+- Support for multiple wish lists
+- Edit the name and visibility of a wish list
 
-[![Image from Gyazo](https://i.gyazo.com/960b390007953778d67d298bd27b4886.png)](https://gyazo.com/960b390007953778d67d298bd27b4886)
+#### Pull Requests
 
-### Check or Money Order payments
+| Description                                                                                                | PR        |
+| ---------------------------------------------------------------------------------------------------------- | --------- |
+| Removed the use of mock data for Wish List and connected to real GraphQL data                              | [#3041][] |
+| Implemented adding an item to a Wish List from the product page                                            | [#3048][] |
+| Implemented the ability to edit a Wish List's name and visibility                                          | [#3049][] |
+| Implemented adding an item to a Wish List from the category page                                           | [#3105][] |
+| Fixed a Wish List bug that prevented you from removing a product if the Wish List had 2 or more products   | [#3121][] |
+| Implemented adding an item to a Wish List from the cart                                                    | [#3130][] |
+| Implemented adding an item to the cart from a Wish List                                                    | [#3170][] |
+| Created a re-usable hook for Wish List logic for re-use in various components                              | [#3182][] |
+| Fixed a Wish List bug that allowed users to collapse the Wish List section when it only had a single entry | [#3184][] |
+| Implemented adding an item from the cart to multiple wishlists                                             | [#3207][] |
+| Added message to display when the Wish List is empty                                                       | [#3228][] |
+| Fixed a Wish List bug in the Create Wish List dialog that prevented users from creating a new Wish List    | [#3242][] |
+| Cleaned up Multi Wish List code                                                                            | [#3246][] |
+| Created a single Wish List button component to use throughout the application                              | [#3249][] |
 
-A PWA Studio extension that allows check or money order payments is now available thanks to the contribution of community member [Lars Roettig][].
-If the Magento backend has the **Check or Money Order** option enabled, this extension lets storefront customers use this payment option.
+[#3242]: https://github.com/magento/pwa-studio/pull/3242
+[#3184]: https://github.com/magento/pwa-studio/pull/3184
+[#3249]: https://github.com/magento/pwa-studio/pull/3249
+[#3228]: https://github.com/magento/pwa-studio/pull/3228
+[#3182]: https://github.com/magento/pwa-studio/pull/3182
+[#3121]: https://github.com/magento/pwa-studio/pull/3121
+[#3207]: https://github.com/magento/pwa-studio/pull/3207
+[#3170]: https://github.com/magento/pwa-studio/pull/3170
+[#3130]: https://github.com/magento/pwa-studio/pull/3130
+[#3105]: https://github.com/magento/pwa-studio/pull/3105
+[#3048]: https://github.com/magento/pwa-studio/pull/3048
+[#3041]: https://github.com/magento/pwa-studio/pull/3041
+[#3049]: https://github.com/magento/pwa-studio/pull/3049
+[#3246]: https://github.com/magento/pwa-studio/pull/3246
+### Virtual Product types
 
-Storefront developers can install this extension to add the new payment feature instead of writing custom frontend code to support this feature.
-Extension developers can view the extension's [source code][] to learn how to implement their own payment methods extension.
+This release contains initial work to support Virtual Product types.
+In this initial implementation, you can browse and view Virtual Product types in your storefront, but
+you will not be able to add these types to the cart.
 
-**NOTE:**
-_Currently, the data for `Make Check Payable to` and `Send Check to` is static because data from the Admin is not available from the GraphQL endpoint in Magento 2.4.2._
+#### Pull Requests
 
-![Check or Money Order payment](https://user-images.githubusercontent.com/40405790/110977749-22296200-8328-11eb-89e2-4a0116a55647.png)
+| Description                                                   | PR        |
+| ------------------------------------------------------------- | --------- |
+| Implemented ability to browse and view Virtual Products types | [#3052][] |
 
-[Lars Roettig]: https://github.com/larsroettig
-[source code]: https://github.com/magento/pwa-studio/tree/develop/packages/extensions/venia-sample-payments-checkmo
+[#3052]: https://github.com/magento/pwa-studio/pull/3052
 
-### Custom scaffolding template
+### Extensible payment methods
 
-The Buildpack scaffolding tool for creating new projects now lets you specify a custom template and version.
-This feature lets you create a storefront project based on a non-Venia template or use a pre-release version of the Venia template.
+Two new extensions points for the Venia UI package have been added in this release.
+The [`editablePaymentTypes`][] target lets you add new editable payment methods to your storefronts, and
+the [`summaryPagePaymentTypes`][] target lets you add a custom payment summary in the checkout summary page.
 
-![Custom scaffolding template](https://user-images.githubusercontent.com/4692281/112341120-25f5a680-8c8f-11eb-9174-122dcc1eb5c4.png)
+[`editablepaymenttypes`]: https://magento.github.io/pwa-studio/venia-ui/reference/targets/#editablepaymenttypes--tapablesynchook
+[`summarypagepaymenttypes`]: https://magento.github.io/pwa-studio/venia-ui/reference/targets/#summarypagepaymenttypes--tapablesynchook
 
-### MegaMenu component
+#### Pull Requests
 
-A MegaMenu component is now available in the Venia UI library thanks to the contribution of community member [Marcin Kwiatkowski][].
-This component displays product categories and subcategories defined in the Magento backend.
+| Description                                                 | PR        |
+| ----------------------------------------------------------- | --------- |
+| Refactored payment methods and created new extension points | [#3103][] |
 
-![MegaMenu component](https://user-images.githubusercontent.com/11998249/104089828-473f1d00-5272-11eb-900f-b7e11d9a532b.png)
+[#3103]: https://github.com/magento/pwa-studio/pull/3103
 
-[Marcin Kwiatkowski]: https://github.com/Frodigo
+### Accessibility
 
-### Store switcher
+Keyboard focus and navigation now work as expected on the layered navigation UI feature.
+With the Filter modal open, users can press the `Tab` key to navigate across filter items such as "Price" and "Color".
+On filter items, the user can press `Space` to open and navigate through the options with `Tab`.
+Options are toggled using the `Space` key.
 
-The Venia UI library now provides components that support multiple store views.
-These components let customers switch between the different store views defined in the Magento backend.
+| Description                                                     | PR        |
+| --------------------------------------------------------------- | --------- |
+| Added keyboard focus and adjusted the way tab order should work | [#3034][] |
 
-These components also support grouped store views if available from Magento.
+[#3034]: https://github.com/magento/pwa-studio/pull/3034
 
-![](https://i.gyazo.com/8ed1bfeb749823013695e4eb930d2e81.png)
+### Layered Navigation
 
-### Improved performance
+To help deliver a better customer experience, filtering products by their attributes on the product listing page has been optimized for desktop views.
+The changes included in this release focuses on improving how the user interacts with the layered navigation feature when filtering products.
+For example, filter options can be neatly collapsed and the product listing is automatically updated whenever the user selects a filter option.
 
-This release improves the performance of the Venia storefront and its underlying components.
-These improvements include:
+#### Pull Requests
 
-- Enabling text compression for the UPWARD-JS server
-- Removing unused JavaScript in Venia
-- Investigating and improving render blocking and response in Venia
+| Description                                                        | PR        |
+| ------------------------------------------------------------------ | --------- |
+| Optimized the layered navigation feature for the desktop           | [#3137][] |
 
-### Increased test coverage
+[#3137]: https://github.com/magento/pwa-studio/pull/3137
 
-Our continued commitment to stability and quality has seen an increase in overall unit test code coverage.
+### Performance and optimization updates
 
-Coverage as reported by [coveralls.io][]:
+This release also contains a configuration change for UPWARD so that it can use the `gzip` content encoding for HTML requests.
 
-Current coverage (10.0.0): **85.685%**
+#### Pull Requests
 
-Previous coverage (9.0.1): **84.19%**
+| Description                                                        | PR        |
+| ------------------------------------------------------------------ | --------- |
+| Configured UPWARD to use `gzip` content encoding for HTML requests | [#3255][] |
 
-[coveralls.io]: <https://coveralls.io/github/magento/pwa-studio>
+[#3255]: https://github.com/magento/pwa-studio/pull/3255
 
-## Pull requests merged in this release
+### Documentation updates
 
-### Venia (storefront and visual component library)
+Since the last release, the documentation site has published new topics and updated an existing topic.
 
-| Description                                                                                       | Change type | PR        |
-| ------------------------------------------------------------------------------------------------- | ----------- | --------- |
-| Added MegeMenu feature and components                                                             | **Feature** | [#2932][] |
-| Added ability to lazy Load/trim unused bytes in main routes                                       | **Feature** | [#2988][] |
-| Implemented Check or Money Order payment feature                                                  | **Feature** | [#2969][] |
-| Added support for Configurable Product Image setting in the backend                               | **Feature** | [#2958][] |
-| Created Store Switcher Groups components                                                          | **Feature** | [#2956][] |
-| Added ability to remove saved payment methods                                                     | **Feature** | [#2943][] |
-| Created ErrorView components                                                                      | **Feature** | [#2936][] |
-| Created Debugging Reporter feature                                                                | **Feature** | [#2910][] |
-| Added link click handler inside of GalleryItem                                                    | **Feature** | [#3053][] |
-| Excluded `venia-ui/lib/components/Checkout` from Coverage Report                                  | **Update**  | [#3023][] |
-| Increased test coverage for `venia-ui/lib/components/CreateAccountPage`                           | **Update**  | [#3021][] |
-| Increased test coverage in `venia-ui/lib/components/CheckoutPage`                                 | **Update**  | [#3018][] |
-| Created Venia UI App related tests                                                                | **Update**  | [#3015][] |
-| Removed "Home Page" from Title                                                                    | **Update**  | [#3012][] |
-| Increased test coverage in `venia-ui/lib/components/MagentoRoute`                                 | **Update**  | [#3006][] |
-| Increased test coverage in `venia-ui/lib/components/Main`                                         | **Update**  | [#3004][] |
-| Removed data from all persisted Apollo caches                                                     | **Update**  | [#2992][] |
-| Investigated and improved render/blocking in Venia                                                | **Update**  | [#2952][] |
-| Fixed mini cart not updating when logged in user has the same simple product already added        | **Bugfix**  | [#2996][] |
-| Fixed CMS header line height                                                                      | **Bugfix**  | [#3032][] |
-| Fixed bug where default Toasts do not fall back to using the DEFAULT_TIMEOUT                      | **Bugfix**  | [#2982][] |
-| Fixed a bug where dialog component would not reset fields on close after submitting               | **Bugfix**  | [#2960][] |
-| Set a fixed minimum height on the main page                                                       | **Bugfix**  | [#2942][] |
-| Added a page level error and disabled checkout button when there are no available payment methods | **Bugfix**  | [#2873][] |
+#### New topics
 
-### Peregrine library
+- [Upgrading versions](https://magento.github.io/pwa-studio/technologies/upgrading-versions/)
+- [Change static assets directory](https://magento.github.io/pwa-studio/tutorials/intercept-a-target/change-static-assets-directory/)
+- [Extension development](https://magento.github.io/pwa-studio/tutorials/extension-development/)
+- [Modify code with Targetables](https://magento.github.io/pwa-studio/tutorials/targetables/)
+- Targetable API reference
+  - [`TargetableModule`](https://magento.github.io/pwa-studio/pwa-buildpack/reference/targetables/TargetableModule/)
+  - [`TargetableESModule`](https://magento.github.io/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModule/)
+  - [`TargetableESModuleArray`](https://magento.github.io/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModuleArray/)
+  - [`TargetableESModuleObject`](https://magento.github.io/pwa-studio/pwa-buildpack/reference/targetables/TargetableESModuleObject/)
+  - [`TargetableReactComponent`](https://magento.github.io/pwa-studio/pwa-buildpack/reference/targetables/TargetableReactComponent/)
+  - [`TargetableSet`](https://magento.github.io/pwa-studio/pwa-buildpack/reference/targetables/TargetableSet/)
+  - [`SingleImportStatement`](https://magento.github.io/pwa-studio/pwa-buildpack/reference/targetables/SingleImportStatement/)
 
-| Description                                                                               | Change type  | PR        |
-| ----------------------------------------------------------------------------------------- | ------------ | --------- |
-| Added middleware to schedule sign-out                                                     | **Feature**  | [#2904][] |
-| Added support for Product URL and Category URL Settings                                   | **Feature**  | [#2895][] |
-| Increased test coverage for `packages/peregrine/lib/talons/CheckoutPage`                  | **Update**   | [#3024][] |
-| Increase test coverage in `peregrine/lib/talons/SignIn`                                   | **Update**   | [#2998][] |
-| Updated Media Url generation logic to use store code header with a default fallback value | **Update**   | [#2941][] |
-| Moved Price Summary GraphQL fragment into Peregrine                                       | **Refactor** | [#3007][] |
-| Refactor comment on cmsPage talon to reflect why we compare against default string        | **Refactor** | [#3062][] |
-| Cleaned up an invalid function reference in billing address                               | **Refactor** | [#3065][] |
+#### Updated topics
 
-### Build tools
+- [PWA Studio Overview](https://magento.github.io/pwa-studio/technologies/overview/)
 
-| Description                                                            | Change type | PR        |
-| ---------------------------------------------------------------------- | ----------- | --------- |
-| Added ability to use custom template for scaffolding                   | **Feature** | [#3025][] |
-| Added option to use custom https certificates with buildpack           | **Feature** | [#2946][] |
-| Updated compile time logic to fetch store name from the GraphQL server | **Update**  | [#3019][] |
-| Fixed command escaping in the `create-pwa` shell command               | **Bugfix**  | [#3022][] |
+#### Pull Requests
 
-### UPWARD
+| Description                                                                                                            | PR        |
+| ---------------------------------------------------------------------------------------------------------------------- | --------- |
+| Published a new topic that provides guidance and best practices for upgrading to new versions                          | [#3231][] |
+| Published a new tutorial that shows how you can change the static assets directory used in your project                | [#3219][] |
+| Reorganize and refactor the navigation for the Overview sections                                                       | [#2926][] |
+| Published a new topic that provides general guidance for extension development                                         | [#2995][] |
+| Published a new tutorial that provides general guidance for working with Targetables along with a set of API reference | [#2966][] |
+| Updated the TargetableModule.spliceSource() example and added debugging tips                                           | [#3168][] |
+| Fixed a code sample error on the TargetableReactComponent page                                                         | [#3202][] |
 
-| Description                                                     | Change type | PR        |
-| --------------------------------------------------------------- | ----------- | --------- |
-| Added support for express server compression middleware.        | **Feature** | [#2980][] |
-| Added ability to allow `blob` types for UPWARD security headers | **Feature** | [#2985][] |
-| Added the xfwd option to the proxyMiddleware                    | **Feature** | [#2986][] |
+[#3231]: https://github.com/magento/pwa-studio/pull/3231
+[#3219]: https://github.com/magento/pwa-studio/pull/3219
+[#2926]: https://github.com/magento/pwa-studio/pull/2926
+[#2995]: https://github.com/magento/pwa-studio/pull/2995
+[#2966]: https://github.com/magento/pwa-studio/pull/2966
+[#3202]: https://github.com/magento/pwa-studio/pull/3202
+[#3168]: https://github.com/magento/pwa-studio/pull/3168
 
-### Extensions
+### Bug fixes
 
-| Description                                           | Change type | PR        |
-| ----------------------------------------------------- | ----------- | --------- |
-| Added a null check for element styling in PageBuilder | **Update**  | [#3016][] |
+The following bugs have been fixed in 11.0.0.
 
-### Documentation
+| Description                                                                                                         | PR        |
+| ------------------------------------------------------------------------------------------------------------------- | --------- |
+| Braintree error related to the use of UK addresses                                                                  | [#3251][] |
+| GraphQL bug related to line comments inside the query                                                               | [#3196][] |
+| Bug in the filter modal where certain icons would not be visible                                                    | [#3171][] |
+| Checkout bug that prevented you from changing your billing address when you pay with Check/Money Order              | [#3239][] |
+| Project bug that prevented the installation of dependencies                                                         | [#3106][] |
+| Scaffolding bug where the `DEBUG_PROJECT_CREATION` flag does not exclude optional extension packages                | [#3086][] |
+| Checkout bug that prevented validation of region codes across different countries                                   | [#3133][] |
+| Checkout bug that prevented you from placing another order after the initial order was declined                     | [#3091][] |
+| Scaffolding bug that prevented the `yarn build:dev` command working                                                 | [#3047][] |
+| Checkout bug where the mobile view of the checkout page would not scroll to the appropriate spot after each step    | [#3055][] |
+| Checkout page bug where it would not pick up the region code provided in the cart page under specific circumstances | [#3093][] |
+| Service worker bug related to URL origin for the service worker itself                                              | [#3191][] |
+| Sidebar menu bug related to filtering                                                                               | [#3210][] |
+| Routing bug when a user navigates to the `/undefined` route                                                         | [#3230][] |
+| Carousel bug showing duplicate thumbnails                                                                           | [#3186][] |
+| Toast component bug where it did not use the font-family token                                                      | [#3164][] |
+| CMS page bug where stale content would never get updated                                                            | [#3131][] |
+| Category sort bug where the default backend sort order would not be used                                            | [#3125][] |
+| Search page bug where the browser back button would not work                                                        | [#3119][] |
+| Babel JSX plugin dependency mismatch                                                                                | [#3098][] |
+| Category page bug where the browser back button would not work                                                      | [#3078][] |
+| Shipping Information form bug where guests would get stuck in the 'Loading Regions...' state                        | [#3142][] |
 
-| Description                                     | Change type       | PR        |
-| ----------------------------------------------- | ----------------- | --------- |
-| Published a new tag list extension tutorial     | **Documentation** | [#3044][] |
-| Published new topic about extension development | **Documentation** | [#2995][] |
-| Published new topic about Targetables           | **Documentation** | [#2966][] |
-| Updated code sample in documentation            | **Update**        | [#2938][] |
-| Updated getting started section in docs         | **Update**        | [#2926][] |
-| Updated "Modify talon results" tutorial         | **Bugfix**        | [#3039][] |
-| Fixed broken link in doc topic                  | **Bugfix**        | [#3002][] |
+[#3251]: https://github.com/magento/pwa-studio/pull/3251
+[#3196]: https://github.com/magento/pwa-studio/pull/3196
+[#3171]: https://github.com/magento/pwa-studio/pull/3171
+[#3239]: https://github.com/magento/pwa-studio/pull/3239
+[#3106]: https://github.com/magento/pwa-studio/pull/3106
+[#3086]: https://github.com/magento/pwa-studio/pull/3086
+[#3133]: https://github.com/magento/pwa-studio/pull/3133
+[#3091]: https://github.com/magento/pwa-studio/pull/3091
+[#3047]: https://github.com/magento/pwa-studio/pull/3047
+[#3055]: https://github.com/magento/pwa-studio/pull/3055
+[#3093]: https://github.com/magento/pwa-studio/pull/3093
+[#3191]: https://github.com/magento/pwa-studio/pull/3191
+[#3210]: https://github.com/magento/pwa-studio/pull/3210
+[#3230]: https://github.com/magento/pwa-studio/pull/3230
+[#3186]: https://github.com/magento/pwa-studio/pull/3186
+[#3164]: https://github.com/magento/pwa-studio/pull/3164
+[#3131]: https://github.com/magento/pwa-studio/pull/3131
+[#3125]: https://github.com/magento/pwa-studio/pull/3125
+[#3119]: https://github.com/magento/pwa-studio/pull/3119
+[#3098]: https://github.com/magento/pwa-studio/pull/3098
+[#3078]: https://github.com/magento/pwa-studio/pull/3078
+[#3142]: https://github.com/magento/pwa-studio/pull/3142
 
-### Misc
+### Cypress tests
 
-| Description                                  | Change type | PR        |
-| -------------------------------------------- | ----------- | --------- |
-| Removed auto-assign logic for new docs issue | **Update**  | [#3040][] |
-| Upgraded workbox to v6                       | **Update**  | [#2983][] |
-| Added coveralls badge back to the README     | **Update**  | [#2978][] |
-| Upgraded React to v17                        | **Update**  | [#2962][] |
-| Enabled singleton style tag                  | **Update**  | [#2906][] |
-| Updated prettier config                      | **Update**  | [#2900][] |
-| Removed cyclic dependencies                  | **Bugfix**  | [#2967][] |
+[Cypress](https://www.cypress.io/) is an end-to-end testing suite written in JavaScript.
+This release adds this framework to the PWA Studio project to increase testing automation and reduce the time spent on manual testing.
+This will enable the team to release new versions faster and more often.
+
+Integration tests for PageBuilder and the new Wish List feature are included in this release.
+These tests are part of Venia's integration tests.
+If you want to use these tests in your own CICD pipeline, they can be found in [this directory][].
+
+[this directory]: https://github.com/magento/pwa-studio/tree/v11.0.0/venia-integration-tests/src/tests/integrationTests/pageBuilder
+
+#### Pull Requests
+
+| Description                                   | PR        |
+| --------------------------------------------- | --------- |
+| Configured the project to use Cypress         | [#3082][] |
+| Added the Cypress Visual Testing plugin       | [#3136][] |
+| Added tests for the Wish List feature         | [#3146][] |
+| Added tests for PageBuilder banner component  | [#3178][] |
+| Added tests for PageBuilder buttons           | [#3194][] |
+| Added tests for PageBuilder images            | [#3195][] |
+| Added tests for multiple Wish Lists           | [#3218][] |
+| Updated the Cypress tests directory structure | [#3253][] |
+
+[#3082]: https://github.com/magento/pwa-studio/pull/3082
+[#3136]: https://github.com/magento/pwa-studio/pull/3136
+[#3146]: https://github.com/magento/pwa-studio/pull/3146
+[#3178]: https://github.com/magento/pwa-studio/pull/3178
+[#3194]: https://github.com/magento/pwa-studio/pull/3194
+[#3218]: https://github.com/magento/pwa-studio/pull/3218
+[#3253]: https://github.com/magento/pwa-studio/pull/3253
+[#3195]: https://github.com/magento/pwa-studio/pull/3195
+
+### Refactors
+
+| Description                                                                            | PR                  |
+| -------------------------------------------------------------------------------------- | ------------------- |
+| Moved the `graphql-cli-validate-magento-pwa-queries` package into the `@magento` scope | [#3198]             |
+| Remove `window` references from Venia                                                  | [#2991][] [#3087][] |
+| Refactored the **Add to Cart** feature to use the generic `AddProductsToCart` mutation | [#3092]             |
+| Removed the Adobe Client Data Layer by default for scaffolded projects                 | [#3215]             |
+
+[#3198]: https://github.com/magento/pwa-studio/pull/3198
+[#2991]: https://github.com/magento/pwa-studio/pull/2991
+[#3087]: https://github.com/magento/pwa-studio/pull/3087
+[#3092]: https://github.com/magento/pwa-studio/pull/3092
+[#3215]: https://github.com/magento/pwa-studio/pull/3215
 
 ## Known issues
 
-- If you are using Multi-Source Inventory(MSI), a GraphQL issue prevents users from adding a configurable product to the shopping cart on non-default store views.
-  This issue is fixed in Magento's `2.4-develop` branch, and should be available in the next Magento release.
-- Prerender feature is unable to cache HTML on Fastly enabled environments.
 - The `yarn watch` process may run out of memory if left running for an extended amount of time.
   If an error occurs because of this, restart the watcher.
-- Navigating to the Venia storefront produces `TypeError: Failed to fetch` in the console.
-  This is a [Workbox issue][] caused by the service worker when it requests the `index.html` route.
-  This has no impact on Venia functionality but will be fixed in the next release when the Workbox dependency is updated.
-
-  [workbox issue]: https://github.com/GoogleChrome/workbox/pull/2777
 
 ## Upgrading from a previous version
 
-The method for updating to 10.0.0 from a previous version depends on how PWA Studio is incorporated into your project.
-The following are common use cases we have identified and how to update the project code.
+Use the steps outlined in this section to update your [scaffolded project][] from 10.0.0 to 11.0.0.
+See [Upgrading versions][] for more information about upgrading between PWA Studio versions.
 
-### Scaffolded project
+[scaffolded project]: https://magento.github.io/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/
+[upgrading versions]: https://magento.github.io/pwa-studio/technologies/upgrading-versions/
 
-Using the [scaffolding tool][] is the recommended method for starting a new storefront project.
-This tool generates a copy of the storefront project defined in the [Venia concept][] package.
+### Update dependencies
 
-#### Upgrade method: Update dependencies and manual merge
+Open your `package.json` file and update the PWA Studio package dependencies to the versions associated with this release.
+The following table lists the latest versions of each package as of 11.0.0.
+Versions that are in **bold** indicate a version change for this release.
 
-Since scaffolded projects consume PWA Studio libraries as dependencies, you just need to update your PWA Studio dependencies in your `package.json` file to use the released version.
+**Note:**
+Your project may not depend on some of the packages listed on this table.
 
-After that, install the new dependencies using the install command:
+| Package                         | Latest version |
+| ------------------------------- | -------------- |
+| `babel-preset-peregrine`        | 1.1.0          |
+| `create-pwa`                    | **1.3.1**      |
+| `upward-security-headers`       | **1.0.4**      |
+| `venia-adobe-data-layer`        | **1.0.1**      |
+| `venia-sample-backends`         | **0.0.4**      |
+| `venia-sample-language-packs`   | **0.0.4**      |
+| `venia-sample-payments-checkmo` | **0.0.2**      |
+| `pagebuilder`                   | **6.0.0**      |
+| `peregrine`                     | **11.0.0**     |
+| `pwa-buildpack`                 | **10.0.0**     |
+| `upward-js`                     | 5.1.0          |
+| `upward-spec`                   | 5.0.0          |
+| `venia-concept`                 | **11.0.0**     |
+| `venia-ui`                      | **8.0.0**      |
+| `magento2-upward-connector`     | 1.2.0          |
+| `upward-php`                    | 1.1.5          |
 
-```sh
-yarn install
+### Update template files
+
+The following template files contain updates in 11.0.0:
+
+- [.eslintrc.js](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/.eslintrc.js)
+- [.gitignore](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/.gitignore)
+- [.graphqlconfig](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/.grpahqlconfig)
+- [package.json](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/package.json)
+- [src/.storybook/config.js](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/src/.storybook/config.js)
+- [src/.storybook/webpack.config.js](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/src/.storybook/webpack.config.js)
+- [src/ServiceWorker/registerRoutes.js](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/src/ServiceWorker/registerRoutes.js)
+- [src/drivers.js](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/src/drivers.js)
+- [src/index.js](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/src/index.js)
+- [src/registerSW.js](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/src/registerSW.js)
+- [webpack.config.js](https://github.com/magento/pwa-studio/blob/v11.0.0/packages/venia-concept/webpack.config.js)
+
+If you did not make any modifications to these files, you can copy and paste the new content over your old template files in your project.
+If you made modifications to these files in your project, you will have to manually apply the changes by using `git diff` on the PWA Studio repository or by using a [diff tool][].
+
+[diff tool]: https://marketplace.visualstudio.com/search?term=diff&target=VSCode&category=All%20categories&sortBy=Relevance
+
+### New environment variables
+
+The following environment variable has been added in this release:
+
+```json
+{
+    "name": "Default Country",
+    "variables": [
+        {
+            "name": "DEFAULT_COUNTRY_CODE",
+            "type": "str",
+            "desc": "Specify the default country to be selected in forms containing country field such as address books and shipping information forms.",
+            "default": "US"
+        }
+    ]
+},
 ```
 
-or
-
-```sh
-npm install
-```
-
-If you need to update other project files, such as configuration and build scripts,
-you need to use a diff tool to compare your projects files with those of [Venia concept][].
-This will help determine what changes you need to manually copy into your project files.
-
-[scaffolding tool]: http://pwastudio.io/pwa-buildpack/scaffolding/
-[venia concept]: https://github.com/magento/pwa-studio/tree/master/packages/venia-concept
-
-### PWA Studio fork
-
-Many PWA Studio users have forked the PWA Studio Git repository.
-Even though their codebase may have diverged a great deal from the current codebase, there is still a Git relationship.
-
-#### Upgrade method: Update using Git
-
-_Pull_ and _Merge_ the changes from the upstream repository using Git.
-Most of the conflicts will be in components that we have fully refactored.
-
-We recommend merging the library code we changed and updating component calls with any new prop signatures introduced in this version.
-
-### Manual code copies
-
-Some PWA Studio users have copied parts of the code into their own projects.
-This is similar to the Git workflow, but without the merging tools Git provides.
-
-#### Upgrade method: Manual copy updates
-
-Updating this code involves manually copying updates for the code they use.
-New code may also need to be copied over if the updated code depends on it.
-
-This method can be a chore, and we hope that some of the features in 5.0.0+ will help these users migrate to a package management approach.
-
-### NPM packages
-
-Some users have imported the PWA Studio libraries using NPM.
-This is the easiest way to work with the released versions of PWA Studio.
-
-#### Upgrade method: Update `package.json`
-
-To upgrade to the latest version (currently 10.0.0), simply call `yarn add` on each of the `@magento` packages. This will both update `package.json` in your project, as well as install the latest versions.
-
-Sample command:
-
-```
-yarn add @magento/eslint-config @magento/pagebuilder @magento/peregrine @magento/pwa-buildpack @magento/upward-js @magento/venia-ui
-```
+Update the environment variables in your development, staging, or production environments if the default value does not apply to your project.
 
 [pwa studio releases]: https://github.com/magento/pwa-studio/releases
-
-[#3044]: https://github.com/magento/pwa-studio/pull/3044
-[#3040]: https://github.com/magento/pwa-studio/pull/3040
-[#3039]: https://github.com/magento/pwa-studio/pull/3039
-[#3032]: https://github.com/magento/pwa-studio/pull/3032
-[#3025]: https://github.com/magento/pwa-studio/pull/3025
-[#3024]: https://github.com/magento/pwa-studio/pull/3024
-[#3023]: https://github.com/magento/pwa-studio/pull/3023
-[#3022]: https://github.com/magento/pwa-studio/pull/3022
-[#3021]: https://github.com/magento/pwa-studio/pull/3021
-[#3019]: https://github.com/magento/pwa-studio/pull/3019
-[#3018]: https://github.com/magento/pwa-studio/pull/3018
-[#3016]: https://github.com/magento/pwa-studio/pull/3016
-[#3015]: https://github.com/magento/pwa-studio/pull/3015
-[#3012]: https://github.com/magento/pwa-studio/pull/3012
-[#3011]: https://github.com/magento/pwa-studio/pull/3011
-[#3007]: https://github.com/magento/pwa-studio/pull/3007
-[#3006]: https://github.com/magento/pwa-studio/pull/3006
-[#3004]: https://github.com/magento/pwa-studio/pull/3004
-[#3002]: https://github.com/magento/pwa-studio/pull/3002
-[#2998]: https://github.com/magento/pwa-studio/pull/2998
-[#2996]: https://github.com/magento/pwa-studio/pull/2996
-[#2995]: https://github.com/magento/pwa-studio/pull/2995
-[#2992]: https://github.com/magento/pwa-studio/pull/2992
-[#2988]: https://github.com/magento/pwa-studio/pull/2988
-[#2985]: https://github.com/magento/pwa-studio/pull/2985
-[#2983]: https://github.com/magento/pwa-studio/pull/2983
-[#2982]: https://github.com/magento/pwa-studio/pull/2982
-[#2980]: https://github.com/magento/pwa-studio/pull/2980
-[#2978]: https://github.com/magento/pwa-studio/pull/2978
-[#2969]: https://github.com/magento/pwa-studio/pull/2969
-[#2967]: https://github.com/magento/pwa-studio/pull/2967
-[#2966]: https://github.com/magento/pwa-studio/pull/2966
-[#2962]: https://github.com/magento/pwa-studio/pull/2962
-[#2960]: https://github.com/magento/pwa-studio/pull/2960
-[#2958]: https://github.com/magento/pwa-studio/pull/2958
-[#2956]: https://github.com/magento/pwa-studio/pull/2956
-[#2952]: https://github.com/magento/pwa-studio/pull/2952
-[#2946]: https://github.com/magento/pwa-studio/pull/2946
-[#2943]: https://github.com/magento/pwa-studio/pull/2943
-[#2942]: https://github.com/magento/pwa-studio/pull/2942
-[#2941]: https://github.com/magento/pwa-studio/pull/2941
-[#2938]: https://github.com/magento/pwa-studio/pull/2938
-[#2936]: https://github.com/magento/pwa-studio/pull/2936
-[#2926]: https://github.com/magento/pwa-studio/pull/2926
-[#2910]: https://github.com/magento/pwa-studio/pull/2910
-[#2906]: https://github.com/magento/pwa-studio/pull/2906
-[#2904]: https://github.com/magento/pwa-studio/pull/2904
-[#2900]: https://github.com/magento/pwa-studio/pull/2900
-[#2895]: https://github.com/magento/pwa-studio/pull/2895
-[#2873]: https://github.com/magento/pwa-studio/pull/2873
-[#2986]: https://github.com/magento/pwa-studio/pull/2986
-[#3062]: https://github.com/magento/pwa-studio/pull/3062
-[#2932]: https://github.com/magento/pwa-studio/pull/2932
-[#3053]: https://github.com/magento/pwa-studio/pull/3053
-[#3065]: https://github.com/magento/pwa-studio/pull/3065

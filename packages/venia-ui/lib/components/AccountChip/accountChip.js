@@ -41,7 +41,7 @@ const AccountChip = props => {
     } else {
         if (!isLoadingUserName) {
             chipText = formatMessage(
-                { id: 'accountChip.chipText', defaultMessage: 'Hi' },
+                { id: 'accountChip.chipText', defaultMessage: 'Hi, {name}' },
                 { name: currentUser.firstname }
             );
         } else if (shouldIndicateLoading) {
