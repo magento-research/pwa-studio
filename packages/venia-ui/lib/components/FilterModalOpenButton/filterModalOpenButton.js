@@ -19,6 +19,8 @@ const FilterModalOpenButton = props => {
             }}
             onClick={handleOpen}
             type="button"
+            aria-live="polite"
+            aria-busy="false"
         >
             <FormattedMessage
                 id={'productList.filter'}
@@ -31,8 +33,8 @@ const FilterModalOpenButton = props => {
 export default FilterModalOpenButton;
 
 FilterModalOpenButton.propTypes = {
-    filters: array,
     classes: shape({
         filterButton: string
-    })
+    }),
+    filters: array
 };

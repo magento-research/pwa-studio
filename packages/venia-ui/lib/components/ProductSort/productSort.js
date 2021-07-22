@@ -75,7 +75,12 @@ const ProductSort = props => {
     };
 
     return (
-        <div ref={elementRef} className={classes.root}>
+        <div
+            ref={elementRef}
+            className={classes.root}
+            aria-live="polite"
+            aria-busy="false"
+        >
             <Button
                 priority={'low'}
                 classes={{

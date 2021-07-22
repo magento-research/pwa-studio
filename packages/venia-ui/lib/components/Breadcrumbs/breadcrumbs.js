@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useBreadcrumbs } from '@magento/peregrine/lib/talons/Breadcrumbs/useBreadcrumbs';
 import resourceUrl from '@magento/peregrine/lib/util/makeUrl';
 import { useStyle } from '../../classify';
+import Shimmer from './breadcrumbs.shimmer';
 import defaultClasses from './breadcrumbs.css';
 
 const DELIMITER = '/';
@@ -44,10 +45,19 @@ const Breadcrumbs = props => {
         });
     }, [classes.divider, classes.link, normalizedData]);
 
-    // Don't display anything but the empty, static height div when loading or
-    // if there was an error.
-    if (isLoading || hasError) {
-        return <div className={classes.root} />;
+    if (isLoading) {
+        return <Shimmer />;
+    }
+
+    // Don't display anything but the empty, static height div when there's an error.
+    if (hasError) {
+        return (
+            <div
+                className={classes.root}
+                aria-live="polite"
+                aria-busy="false"
+            />
+        );
     }
 
     // If we have a "currentProduct" it means we're on a PDP so we want the last
@@ -69,7 +79,7 @@ const Breadcrumbs = props => {
     ) : null;
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} aria-live="polite" aria-busy="false">
             <Link className={classes.link} to="/">
                 <FormattedMessage id={'global.home'} defaultMessage={'Home'} />
             </Link>

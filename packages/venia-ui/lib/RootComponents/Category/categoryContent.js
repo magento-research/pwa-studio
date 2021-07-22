@@ -5,16 +5,21 @@ import { useCategoryContent } from '@magento/peregrine/lib/talons/RootComponents
 
 import { useStyle } from '../../classify';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import Gallery from '../../components/Gallery';
+import FilterModalOpenButton, {
+    FilterModalOpenButtonShimmer
+} from '../../components/FilterModalOpenButton';
+import { FilterSidebarShimmer } from '../../components/FilterSidebar';
+import Gallery, { GalleryShimmer } from '../../components/Gallery';
 import { StoreTitle } from '../../components/Head';
 import Pagination from '../../components/Pagination';
-import ProductSort from '../../components/ProductSort';
+import ProductSort, { ProductSortShimmer } from '../../components/ProductSort';
 import RichContent from '../../components/RichContent';
+import Shimmer from '../../components/Shimmer';
+import SortedByContainer, {
+    SortedByContainerShimmer
+} from '../../components/SortedByContainer';
 import defaultClasses from './category.css';
 import NoProductsFound from './NoProductsFound';
-import { fullPageLoadingIndicator } from '../../components/LoadingIndicator';
-import SortedByContainer from '../../components/SortedByContainer';
-import FilterModalOpenButton from '../../components/FilterModalOpenButton';
 
 const FilterModal = React.lazy(() => import('../../components/FilterModal'));
 const FilterSidebar = React.lazy(() =>
@@ -50,12 +55,16 @@ const CategoryContent = props => {
     const classes = useStyle(defaultClasses, props.classes);
 
     const shouldShowFilterButtons = filters && filters.length;
+    const shouldShowFilterShimmer = filters === null;
 
     // If there are no products we can hide the sort button.
     const shouldShowSortButtons = totalPagesFromData;
+    const shouldShowSortShimmer = !totalPagesFromData && isLoading;
 
     const maybeFilterButtons = shouldShowFilterButtons ? (
         <FilterModalOpenButton filters={filters} />
+    ) : shouldShowFilterShimmer ? (
+        <FilterModalOpenButtonShimmer />
     ) : null;
 
     const filtersModal = shouldShowFilterButtons ? (
@@ -64,14 +73,20 @@ const CategoryContent = props => {
 
     const sidebar = shouldShowFilterButtons ? (
         <FilterSidebar filters={filters} />
+    ) : shouldShowFilterShimmer ? (
+        <FilterSidebarShimmer />
     ) : null;
 
     const maybeSortButton = shouldShowSortButtons ? (
         <ProductSort sortProps={sortProps} />
+    ) : shouldShowSortShimmer ? (
+        <ProductSortShimmer />
     ) : null;
 
     const maybeSortContainer = shouldShowSortButtons ? (
         <SortedByContainer currentSort={currentSort} />
+    ) : shouldShowSortShimmer ? (
+        <SortedByContainerShimmer />
     ) : null;
 
     const categoryResultsHeading =
@@ -83,6 +98,8 @@ const CategoryContent = props => {
                 }}
                 defaultMessage={'{count} Results'}
             />
+        ) : isLoading ? (
+            <Shimmer width={5} />
         ) : null;
 
     const categoryDescriptionElement = categoryDescription ? (
@@ -90,24 +107,26 @@ const CategoryContent = props => {
     ) : null;
 
     const content = useMemo(() => {
-        if (totalPagesFromData) {
-            return (
-                <Fragment>
-                    <section className={classes.gallery}>
-                        <Gallery items={items} />
-                    </section>
-                    <div className={classes.pagination}>
-                        <Pagination pageControl={pageControl} />
-                    </div>
-                </Fragment>
-            );
-        } else {
-            if (isLoading) {
-                return fullPageLoadingIndicator;
-            } else {
-                return <NoProductsFound categoryId={categoryId} />;
-            }
+        if (!totalPagesFromData && !isLoading) {
+            return <NoProductsFound categoryId={categoryId} />;
         }
+
+        const gallery = totalPagesFromData ? (
+            <Gallery items={items} />
+        ) : (
+            <GalleryShimmer items={items} />
+        );
+
+        const pagination = totalPagesFromData ? (
+            <Pagination pageControl={pageControl} />
+        ) : null;
+
+        return (
+            <Fragment>
+                <section className={classes.gallery}>{gallery}</section>
+                <div className={classes.pagination}>{pagination}</div>
+            </Fragment>
+        );
     }, [
         categoryId,
         classes.gallery,
@@ -118,6 +137,8 @@ const CategoryContent = props => {
         totalPagesFromData
     ]);
 
+    const categoryTitle = categoryName ? categoryName : <Shimmer width={5} />;
+
     return (
         <Fragment>
             <Breadcrumbs categoryId={categoryId} />
@@ -126,13 +147,15 @@ const CategoryContent = props => {
                 <div className={classes.categoryHeader}>
                     <h1 className={classes.title}>
                         <div className={classes.categoryTitle}>
-                            {categoryName || '...'}
+                            {categoryTitle}
                         </div>
                     </h1>
                     {categoryDescriptionElement}
                 </div>
                 <div className={classes.sidebar}>
-                    <Suspense fallback={null}>{sidebar}</Suspense>
+                    <Suspense fallback={<FilterSidebarShimmer />}>
+                        {sidebar}
+                    </Suspense>
                 </div>
                 <div className={classes.categoryContent}>
                     <div className={classes.heading}>

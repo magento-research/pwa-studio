@@ -2,42 +2,69 @@
 
 exports[`renders a placeholder item while awaiting item 1`] = `
 <div
-  className="root_pending"
+  aria-busy="true"
+  aria-live="polite"
+  className="root"
 >
   <div
-    className="images_pending"
+    className="root_rectangle"
+    style={Object {}}
   >
-    <div
-      className="root container"
+    <span
+      className="content"
     >
-      <img
-        alt="Placeholder for gallery item image"
-        className="image placeholder_layoutOnly"
-        loading="eager"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAQAAADIpIVQAAAADklEQVR42mNkgAJGIhgAALQABsHyMOcAAAAASUVORK5CYII="
-        width={100}
-      />
-      <img
-        alt="Placeholder for gallery item image"
-        className="image loaded"
-        loading="lazy"
-        onError={[MockFunction]}
-        onLoad={[MockFunction]}
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAQAAADIpIVQAAAADklEQVR42mNkgAJGIhgAALQABsHyMOcAAAAASUVORK5CYII="
-      />
-    </div>
+      <div
+        className="root container"
+      >
+        <img
+          alt="Placeholder for gallery item image"
+          className="image placeholder_layoutOnly"
+          loading="eager"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAQAAADIpIVQAAAADklEQVR42mNkgAJGIhgAALQABsHyMOcAAAAASUVORK5CYII="
+          width={100}
+        />
+        <img
+          alt="Placeholder for gallery item image"
+          className="image loaded"
+          loading="lazy"
+          onError={[MockFunction]}
+          onLoad={[MockFunction]}
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAQAAADIpIVQAAAADklEQVR42mNkgAJGIhgAALQABsHyMOcAAAAASUVORK5CYII="
+        />
+      </div>
+    </span>
   </div>
   <div
-    className="name_pending"
-  />
+    className="root_rectangle"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <span
+      className="content"
+    />
+  </div>
   <div
-    className="price_pending"
-  />
+    className="root_rectangle"
+    style={
+      Object {
+        "width": "3rem",
+      }
+    }
+  >
+    <span
+      className="content"
+    />
+  </div>
 </div>
 `;
 
 exports[`renders correctly with valid item data 1`] = `
 <div
+  aria-busy="false"
+  aria-live="polite"
   className="root"
 >
   <a

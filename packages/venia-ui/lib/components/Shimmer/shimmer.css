@@ -1,0 +1,71 @@
+.root {
+    display: inline-block;
+    background: rgb(var(--venia-global-color-gray))
+        linear-gradient(
+            to right,
+            rgb(var(--venia-global-color-gray)) 0%,
+            rgb(var(--venia-global-color-gray-50)) 40%,
+            rgb(var(--venia-global-color-gray)) 80%,
+            rgb(var(--venia-global-color-gray)) 100%
+        )
+        no-repeat;
+    background-size: var(--venia-global-maxWidth) 100%;
+    pointer-events: none;
+    -webkit-animation-name: shimmerAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.root_rectangle {
+    composes: root;
+    min-height: var(--venia-typography-body-M-fontSize);
+}
+
+.root_button {
+    composes: root from '../Button/button.css';
+    composes: root;
+    border: none;
+}
+
+.root_checkbox {
+    composes: input from '../Checkbox/checkbox.css';
+    composes: root;
+    border: none;
+}
+
+.root_radio {
+    composes: input from '../RadioGroup/radio.css';
+    composes: root;
+    border: none;
+}
+
+.root_textArea {
+    composes: input from '../TextArea/textArea.css';
+    composes: root;
+    min-height: 6.75rem;
+    border: none;
+}
+
+.root_textInput {
+    composes: input from '../TextInput/textInput.css';
+    composes: root;
+    border: none;
+}
+
+.content {
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@-webkit-keyframes shimmerAnimation {
+    0% {
+        background-position: calc(var(--venia-global-maxWidth) * -1) 0;
+    }
+
+    100% {
+        background-position: var(--venia-global-maxWidth) 0;
+    }
+}

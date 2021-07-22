@@ -1,5 +1,5 @@
 .filterButton {
-    composes: root_lowPriority from '../../components/Button/button.css';
+    composes: root_lowPriority from '../Button/button.css';
     min-width: 6.25rem;
 }
 

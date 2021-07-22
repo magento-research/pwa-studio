@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback, useRef, Fragment } from 'react';
+import React, { useMemo, useCallback, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { array, arrayOf, shape, string, number } from 'prop-types';
 import { useFilterSidebar } from '@magento/peregrine/lib/talons/FilterSidebar';
@@ -90,28 +90,31 @@ const FilterSidebar = props => {
     ) : null;
 
     return (
-        <Fragment>
-            <aside className={classes.root} ref={filterRef}>
-                <div className={classes.body}>
-                    <div className={classes.header}>
-                        <h2 className={classes.headerTitle}>
-                            <FormattedMessage
-                                id={'filterModal.headerTitle'}
-                                defaultMessage={'Filters'}
-                            />
-                        </h2>
-                    </div>
-                    <CurrentFilters
-                        filterApi={filterApi}
-                        filterNames={filterNames}
-                        filterState={filterState}
-                        onRemove={handleApplyFilter}
-                    />
-                    {clearAll}
-                    <ul className={classes.blocks}>{filtersList}</ul>
+        <aside
+            className={classes.root}
+            ref={filterRef}
+            aria-live="polite"
+            aria-busy="false"
+        >
+            <div className={classes.body}>
+                <div className={classes.header}>
+                    <h2 className={classes.headerTitle}>
+                        <FormattedMessage
+                            id={'filterModal.headerTitle'}
+                            defaultMessage={'Filters'}
+                        />
+                    </h2>
                 </div>
-            </aside>
-        </Fragment>
+                <CurrentFilters
+                    filterApi={filterApi}
+                    filterNames={filterNames}
+                    filterState={filterState}
+                    onRemove={handleApplyFilter}
+                />
+                {clearAll}
+                <ul className={classes.blocks}>{filtersList}</ul>
+            </div>
+        </aside>
     );
 };
 

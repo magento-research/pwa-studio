@@ -17,12 +17,18 @@
     display: block;
     height: 100%;
     object-fit: contain;
-    opacity: 1;
-    transition-duration: 512ms;
-    transition-property: opacity, visibility;
-    transition-timing-function: ease-out;
-    visibility: visible;
+    transition: opacity 512ms ease-out;
     width: 100%;
+}
+
+.imageLoaded {
+    composes: loaded from '../Image/image.css';
+    opacity: 1;
+}
+
+.imageNotLoaded {
+    composes: notLoaded from '../Image/image.css';
+    opacity: 0;
 }
 
 .imagePlaceholder {
@@ -48,30 +54,4 @@
 .price {
     font-size: var(--venia-typography-detail-XL-fontSize);
     min-height: 1rem;
-}
-
-/* state: pending */
-
-.root_pending {
-    composes: root;
-}
-
-.image_pending {
-    composes: image;
-    background-color: rgb(var(--venia-global-color-gray));
-}
-
-.images_pending {
-    composes: images;
-}
-
-.name_pending {
-    composes: name;
-    background-color: rgb(var(--venia-global-color-gray));
-}
-
-.price_pending {
-    composes: price;
-    background-color: rgb(var(--venia-global-color-gray));
-    width: 3rem;
 }

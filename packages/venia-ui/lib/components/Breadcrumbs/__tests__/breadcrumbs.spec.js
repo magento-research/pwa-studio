@@ -1,5 +1,6 @@
 import React from 'react';
 import { createTestInstance } from '@magento/peregrine';
+import { mockShimmer } from '../breadcrumbs.shimmer';
 import { useBreadcrumbs } from '@magento/peregrine/lib/talons/Breadcrumbs/useBreadcrumbs';
 
 import Breadcrumbs from '../breadcrumbs';
@@ -13,16 +14,27 @@ jest.mock('@magento/peregrine/lib/util/makeUrl', () =>
 jest.mock('../../../classify');
 jest.mock('@magento/peregrine/lib/talons/Breadcrumbs/useBreadcrumbs');
 
+jest.mock('../breadcrumbs.shimmer', () => {
+    const mockedShimmer = jest.fn(() => null);
+
+    return {
+        __esModule: true,
+        default: mockedShimmer,
+        mockShimmer: mockedShimmer
+    };
+});
+
 const defaultProps = {
     categoryId: 'category1'
 };
-test('renders an empty div if breadcrumbs are loading', () => {
+test('renders the breadcrumb shimmer if breadcrumbs are loading', () => {
     useBreadcrumbs.mockReturnValueOnce({
         isLoading: true,
         normalizedData: []
     });
 
     const instance = createTestInstance(<Breadcrumbs {...defaultProps} />);
+    expect(mockShimmer).toHaveBeenCalled();
     expect(instance.toJSON()).toMatchSnapshot();
 });
 

@@ -2,7 +2,10 @@
 
 exports[`renders if \`items\` is an array of objects 1`] = `
 <mock-SlickSlider>
-  <div>
+  <div
+    aria-busy="false"
+    aria-live="polite"
+  >
     <div
       className="undefined undefined"
     >
@@ -53,7 +56,10 @@ https://backend.test/media/catalog/product/test/product/1.png?auto=webp&format=p
     </div>
     <div />
   </div>
-  <div>
+  <div
+    aria-busy="false"
+    aria-live="polite"
+  >
     <div
       className="undefined undefined"
     >

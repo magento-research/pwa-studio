@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<div
+  aria-busy="false"
+  aria-live="polite"
+>
   <button
     disabled={false}
     onClick={[Function]}

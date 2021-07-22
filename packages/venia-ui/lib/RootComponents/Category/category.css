@@ -38,9 +38,11 @@
 }
 
 .categoryInfo {
+    flex-basis: 100%;
     line-height: var(--venia-global-typography-heading-lineHeight);
     margin: 1rem 0;
     max-width: 75vw;
+    text-align: center;
 }
 
 .headerButtons {
@@ -81,7 +83,7 @@
 
     .categoryInfo {
         margin: 0;
-        flex-basis: 100%;
+        text-align: left;
     }
 
     .sidebar {

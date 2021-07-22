@@ -1,0 +1,14 @@
+.root {
+    composes: root from './productSort.css';
+}
+
+.sortButtonShimmer {
+    composes: root_button from '../Shimmer/shimmer.css';
+    composes: sortButton from './productSort.css';
+}
+
+@media (min-width: 1024px) {
+    .sortButtonShimmer {
+        min-width: 12rem;
+    }
+}
