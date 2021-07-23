@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Newsletter displays an error message if the email already subscribed 1`] = `
+<div
+  className="root"
+>
+  <h2
+    className="title"
+  >
+    <mock-FormattedMessage
+      defaultMessage="Subscribe to your Newsletter"
+      id="newsletter.titleText"
+    />
+  </h2>
+  <FormError
+    errors={
+      Array [
+        "This email address is already subscribed.",
+      ]
+    }
+  />
+  <form
+    className="form"
+    onKeyDown={[Function]}
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <span
+      className="root"
+      style={
+        Object {
+          "--iconsAfter": 0,
+          "--iconsBefore": 0,
+        }
+      }
+    >
+      <span
+        className="input"
+      >
+        <input
+          autoComplete="email"
+          className="input"
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          value=""
+        />
+      </span>
+      <span
+        className="before"
+      />
+      <span
+        className="after"
+      />
+    </span>
+    <p
+      className="root"
+    />
+    <div
+      className="buttonsContainer"
+    >
+      <i />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Newsletter renders correctly 1`] = `
+<div
+  className="root"
+>
+  <h2
+    className="title"
+  >
+    <mock-FormattedMessage
+      defaultMessage="Subscribe to your Newsletter"
+      id="newsletter.titleText"
+    />
+  </h2>
+  <FormError
+    errors={Array []}
+  />
+  <form
+    className="form"
+    onKeyDown={[Function]}
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <span
+      className="root"
+      style={
+        Object {
+          "--iconsAfter": 0,
+          "--iconsBefore": 0,
+        }
+      }
+    >
+      <span
+        className="input"
+      >
+        <input
+          autoComplete="email"
+          className="input"
+          id="email"
+          name="email"
+          onBlur={[Function]}
+          onChange={[Function]}
+          value=""
+        />
+      </span>
+      <span
+        className="before"
+      />
+      <span
+        className="after"
+      />
+    </span>
+    <p
+      className="root"
+    />
+    <div
+      className="buttonsContainer"
+    >
+      <i />
+    </div>
+  </form>
+</div>
+`;

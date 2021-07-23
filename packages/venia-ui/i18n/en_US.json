@@ -424,5 +424,9 @@
     "wishlistPage.wishlistDisabledMessage": "The wishlist is not currently available.",
     "wishlist.itemCountOpen": "Showing {currentCount} of {count} items in this list",
     "wishlist.itemCountClosed": "You have {count} items in this list",
-    "wishlist.loadMore": "Load More"
+    "wishlist.loadMore": "Load More",
+    "newsletter.subscribeMessage": "The email address is subscribed.",
+    "newsletter.loadingText": "Subscribing",
+    "newsletter.titleText": "Subscribe to your Newsletter",
+    "newsletter.subscribeText": "Subscribe"
 }

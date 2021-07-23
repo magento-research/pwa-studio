@@ -60,4 +60,18 @@ module.exports = veniaTargets => {
     });
 
     new CategoryListProductAttributes(venia);
+
+    // Create a TargetableReactComponent linked to the `footer.js` file
+    const FooterComponent = venia.reactComponent(
+        '@magento/venia-ui/lib/components/Footer/footer.js'
+    );
+    // Add an import statement for Newsletter component
+    const Newsletter = FooterComponent.addImport(
+        "Newsletter from '@magento/venia-ui/lib/components/Newsletter'"
+    );
+    // Use targetable method to append newsletter component inside div of footer component
+    FooterComponent.appendJSX(
+        '<div className={classes.links}>',
+        `<${Newsletter}/>`
+    );
 };

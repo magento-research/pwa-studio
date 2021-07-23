@@ -1,0 +1,38 @@
+.root {
+    display: block;
+    gap: 1.5rem;
+    justify-items: stretch;
+}
+.form {
+    display: grid;
+    row-gap: 0.9375rem;
+}
+.modal {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(var(--venia-global-color-gray));
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+.modal_active {
+    visibility: visible;
+    composes: modal;
+    opacity: 0.9;
+}
+.buttonsContainer {
+    display: grid;
+    gap: 1.5rem;
+    grid-auto-flow: row;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+.title {
+    color: rgb(var(--venia-global-color-gray-900));
+    font-size: var(--venia-typography-body-S-fontSize);
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
