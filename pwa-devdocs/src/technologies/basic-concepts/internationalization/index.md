@@ -60,7 +60,7 @@ instead of a CSV format, it uses JSON.
 
 Dictionary files must be inside an `i18n` directory and use their target locale for their filename.
 
-Instead of the [standard ISO language tag][] the filename format follow's Magento's convention for specifying locale:
+Instead of the [standard ISO language tag][] the filename format follows Magento's convention for specifying locale:
 `<language id in lowercase>_<country id in uppercase>.json`.
 For example: `en_US.json`, `en_GB.json`, `fr_FR.json`.
 
@@ -87,7 +87,7 @@ For example, in Magento, the original `en_US` locale text identifies the transla
 ```json
 {
     "About Us": "About Us",
-    "Hi, {name}": "Hi, {name}",
+    "Hi, {name}": "Hi, {name}"
 }
 ```
 
@@ -109,7 +109,7 @@ return(
         id="component.greeting"
         defaultMessage="Hi, {name}"
         values={{
-            name: 'Veronica',
+            name: 'Veronica'
         }}
     />
 )
@@ -121,7 +121,7 @@ When using the `formatMessage()` function, pass in the mapping object as the sec
 
 ```jsx
 const text = formatMessage(
-    { id:"component.greeting", defaultMessage="Hi, {name}"},
+    { id: "component.greeting", defaultMessage: "Hi, {name}"},
     { name: currentUser.firstname }
 );
 ```
