@@ -144,7 +144,7 @@
     "editModal.headerText": "Edit Item",
     "Email Signup": "Email Signup",
     "errorView.header": "Oops!",
-    "errorView.homeButton": "Take me home",
+    "errorView.goHome": "Take me home",
     "errorView.message": "Looks like something went wrong. Sorry about that.",
     "field.optional": "Optional",
     "filterFooter.results": "See Results",
