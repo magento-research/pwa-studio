@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo } from 'react';
 import { connect } from 'react-redux';
-import { useMutation } from '@apollo/client';
+
 import gql from 'graphql-tag';
 
 import { useAwaitQuery } from '@magento/peregrine/lib/hooks/useAwaitQuery';
@@ -55,16 +55,14 @@ const CartContextProvider = props => {
         derivedCartState
     ]);
 
-    const [fetchCartId] = useMutation(CREATE_CART_MUTATION);
     const fetchCartDetails = useAwaitQuery(CART_DETAILS_QUERY);
 
     useEffect(() => {
         // cartApi.getCartDetails initializes the cart if there isn't one.
         cartApi.getCartDetails({
-            fetchCartId,
             fetchCartDetails
         });
-    }, [cartApi, fetchCartDetails, fetchCartId]);
+    }, [cartApi, fetchCartDetails]);
 
     return (
         <CartContext.Provider value={contextValue}>
@@ -86,17 +84,6 @@ export default connect(
 )(CartContextProvider);
 
 export const useCartContext = () => useContext(CartContext);
-
-/**
- * We normally do not keep GQL queries in Peregrine. All components should pass
- * queries to talons/hooks. This is an exception to the rule because it would
- * be unecessarily complex to pass these queries to the context provider.
- */
-const CREATE_CART_MUTATION = gql`
-    mutation createCart {
-        cartId: createEmptyCart
-    }
-`;
 
 const CART_DETAILS_QUERY = gql`
     query checkUserIsAuthed($cartId: String!) {

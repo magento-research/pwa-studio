@@ -3,6 +3,7 @@ import { useIntl } from 'react-intl';
 import { useMutation, useQuery } from '@apollo/client';
 import { useCartContext } from '@magento/peregrine/lib/context/cart';
 import { useUserContext } from '@magento/peregrine/lib/context/user';
+import gql from 'graphql-tag';
 
 import { appendOptionsToPayload } from '@magento/peregrine/lib/util/appendOptionsToPayload';
 import { findMatchingVariant } from '@magento/peregrine/lib/util/findMatchingProductVariant';
@@ -151,6 +152,12 @@ const getConfigPrice = (product, optionCodes, optionSelections) => {
 
 const SUPPORTED_PRODUCT_TYPES = ['SimpleProduct', 'ConfigurableProduct'];
 
+const CREATE_CART_MUTATION = gql`
+    mutation createCart {
+        cartId: createEmptyCart
+    }
+`;
+
 /**
  * @param {GraphQLDocument} props.addConfigurableProductToCartMutation - configurable product mutation
  * @param {GraphQLDocument} props.addSimpleProductToCartMutation - configurable product mutation
@@ -189,10 +196,12 @@ export const useProductFullDetail = props => {
         productType
     );
 
-    const [{ cartId }] = useCartContext();
+    const [{ cartId }, cartApi] = useCartContext();
+
     const [{ isSignedIn }] = useUserContext();
     const { formatMessage } = useIntl();
 
+    const [fetchCartId] = useMutation(CREATE_CART_MUTATION);
     const { data: storeConfigData } = useQuery(
         operations.getWishlistConfigQuery,
         {
@@ -290,6 +299,14 @@ export const useProductFullDetail = props => {
         async formValues => {
             const { quantity } = formValues;
 
+            let newCartId = null;
+            if (cartId === null) {
+                newCartId = await cartApi.createCart({
+                    fetchCartId
+                });
+            }
+            const currentCartId = newCartId === null ? cartId : newCartId;
+            console.log(currentCartId);
             /*
                 @deprecated in favor of general addProductsToCart mutation. Will support until the next MAJOR.
              */
@@ -310,7 +327,7 @@ export const useProductFullDetail = props => {
 
                 if (isSupportedProductType) {
                     const variables = {
-                        cartId,
+                        cartId: currentCartId,
                         parentSku: payload.parentSku,
                         product: payload.item,
                         quantity: payload.quantity,
@@ -341,7 +358,7 @@ export const useProductFullDetail = props => {
                 }
             } else {
                 const variables = {
-                    cartId,
+                    cartId: currentCartId,
                     product: {
                         sku: product.sku,
                         quantity
@@ -364,6 +381,8 @@ export const useProductFullDetail = props => {
             addProductToCart,
             addSimpleProductToCart,
             cartId,
+            cartApi,
+            fetchCartId,
             hasDeprecatedOperationProp,
             isSupportedProductType,
             optionCodes,

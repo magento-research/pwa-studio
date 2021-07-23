@@ -12,7 +12,7 @@ export const createCart = payload =>
 
         // if a cart already exists in the store, exit
         if (cart.cartId) {
-            return;
+            return cart.cartId;
         }
 
         // Request a new cart.
@@ -22,7 +22,7 @@ export const createCart = payload =>
         const cartId = await retrieveCartId();
         if (cartId) {
             dispatch(actions.getCart.receive(cartId));
-            return;
+            return cartId;
         }
 
         try {
@@ -39,6 +39,7 @@ export const createCart = payload =>
                 receivePayload = data.cartId;
                 // write to storage in the background
                 saveCartId(data.cartId);
+                return data.cartId;
             }
 
             dispatch(actions.getCart.receive(receivePayload));
@@ -130,7 +131,6 @@ export const addItemToCart = (payload = {}) => {
                 // and fetch details
                 await dispatch(
                     getCartDetails({
-                        fetchCartId,
                         fetchCartDetails
                     })
                 );
@@ -206,7 +206,6 @@ export const updateItemInCart = (payload = {}) => {
                 // we migrate to the `cart` query for details, away from REST.
                 await dispatch(
                     getCartDetails({
-                        fetchCartId,
                         fetchCartDetails
                     })
                 );
@@ -240,7 +239,6 @@ export const updateItemInCart = (payload = {}) => {
                 // and fetch details
                 await dispatch(
                     getCartDetails({
-                        fetchCartId,
                         fetchCartDetails
                     })
                 );
@@ -309,7 +307,6 @@ export const removeItemFromCart = payload => {
 
         await dispatch(
             getCartDetails({
-                fetchCartId,
                 fetchCartDetails
             })
         );
@@ -317,27 +314,22 @@ export const removeItemFromCart = payload => {
 };
 
 export const getCartDetails = payload => {
-    const { fetchCartId, fetchCartDetails } = payload;
+    const { fetchCartDetails } = payload;
 
     return async function thunk(dispatch, getState, { apolloClient }) {
-        const { cart, user } = getState();
-        const { cartId } = cart;
+        const { user } = getState();
+
         const { isSignedIn } = user;
+
+        // if a cart exists in storage, act like we just received it
+        const cartId = await retrieveCartId();
+        if (cartId) {
+            dispatch(actions.getCart.receive(cartId));
+        }
 
         // if there isn't a cart, create one then retry this operation
         if (!cartId) {
-            try {
-                await dispatch(
-                    createCart({
-                        fetchCartId
-                    })
-                );
-            } catch (error) {
-                // If creating a cart fails, all is not lost. Return so that the
-                // user can continue to at least browse the site.
-                return;
-            }
-            return thunk(...arguments);
+            return;
         }
 
         // Once we have the cart id indicate that we are starting to make
@@ -369,19 +361,6 @@ export const getCartDetails = payload => {
 
                 // Clear cart data from Apollo cache
                 await clearCartDataFromCache(apolloClient);
-
-                // Create a new cart
-                try {
-                    await dispatch(
-                        createCart({
-                            fetchCartId
-                        })
-                    );
-                } catch (error) {
-                    // If creating a cart fails, all is not lost. Return so that the
-                    // user can continue to at least browse the site.
-                    return;
-                }
 
                 // Retry this operation
                 return thunk(...arguments);
