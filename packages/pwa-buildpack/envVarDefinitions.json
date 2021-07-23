@@ -234,6 +234,17 @@
                     "default": false
                 }
             ]
+        },
+        {
+            "name": "Trusted vedors",
+            "variables": [
+                {
+                    "name": "TRUSTED_VENDORS",
+                    "type": "str",
+                    "desc": "A list of trusted vendors.",
+                    "default": ""
+                }
+            ]
         }
     ],
     "changes": []
