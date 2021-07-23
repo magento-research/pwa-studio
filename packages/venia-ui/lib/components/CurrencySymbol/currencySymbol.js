@@ -25,7 +25,7 @@ const isNarrowSymbolSupported = (() => {
         return true;
     } catch (e) {
         if (e.constructor !== RangeError) {
-            throw e;
+            console.warn(e);
         }
 
         return false;
