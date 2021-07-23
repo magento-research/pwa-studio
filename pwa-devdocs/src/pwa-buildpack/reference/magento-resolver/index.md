@@ -31,7 +31,7 @@ In `webpack.config.js`:
 
 ``` js
 const buildpack = require('@magento/pwa-buildpack');
-const MagentoResolver = buildpack.Webpack.MagentoResolver;
+const MagentoResolver = buildpack.WebpackTools.MagentoResolver;
 
 module.exports = async env => {
     const config {
