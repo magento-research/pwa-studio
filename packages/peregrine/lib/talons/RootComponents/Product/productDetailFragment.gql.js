@@ -14,7 +14,10 @@ export const ProductDetailsFragment = gql`
         }
         id
         media_gallery_entries {
+            # id is deprecated and unused in our code, but lint rules require we
+            # request it if available
             id
+            uid
             label
             position
             disabled
@@ -64,7 +67,10 @@ export const ProductDetailsFragment = gql`
                 product {
                     id
                     media_gallery_entries {
+                        # id is deprecated and unused in our code, but lint rules require we
+                        # request it if available
                         id
+                        uid
                         disabled
                         file
                         label
