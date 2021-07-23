@@ -1,5 +1,5 @@
 import React from 'react';
-import { func, number, shape, string } from 'prop-types';
+import { elementType, number, shape, string } from 'prop-types';
 
 import { useStyle } from '../../classify';
 import defaultClasses from './icon.css';
@@ -36,5 +36,5 @@ Icon.propTypes = {
         root: string
     }),
     size: number,
-    src: func.isRequired
+    src: elementType.isRequired
 };
