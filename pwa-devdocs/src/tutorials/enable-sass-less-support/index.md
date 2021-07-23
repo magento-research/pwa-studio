@@ -16,6 +16,28 @@ Use a package manager, such as `yarn` or `npm`, to install the SASS loader as a 
 yarn add --dev sass-loader node-sass
 ```
 
+{:.bs-callout-warning}
+While installing the SASS loader you may get the error `TypeError: this.getOptions is not a function`.
+To resolve this error, just downgrade to version 10 of SASS loader.
+For this, edit `package.json` and change the version of sass-loader:
+
+```diff
+- "sass-loader": "^12.1.0"
++ "sass-loader": "^10.0.0"
+```
+
+Remove the `node_modules` folder and run:
+
+```sh
+yarn install
+```
+
+Or install sass-loader as a dev dependency with a specific version:
+
+```sh
+yarn add sass-loader@^10.0.0
+```
+
 ### Step 2. Modify the Webpack configuration
 
 Edit `webpack.config.js` and add a new `config` rule entry:
