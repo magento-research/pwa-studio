@@ -31,7 +31,7 @@ const absoluteUrl = /^(data|http|https)?:/i;
 const joinUrls = (base, url) =>
     (base.endsWith('/') ? base.slice(0, -1) : base) +
     '/' +
-    (url.startsWith('/') ? url.slice(1) : url);
+    (url && url.startsWith('/') ? url.slice(1) : url);
 
 const mediaBases = new Map()
     .set('image-product', 'catalog/product/')
