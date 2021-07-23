@@ -9,6 +9,7 @@ const CheckoutPagePaymentsList = require('./CheckoutPagePaymentsList');
 const SavedPaymentTypes = require('./SavedPaymentTypes');
 const EditablePaymentTypes = require('./EditablePaymentTypes');
 const SummaryPaymentTypes = require('./SummaryPaymentTypes');
+const RichContentTypeList = require('./RichContentTypeList');
 
 module.exports = veniaTargets => {
     const venia = Targetables.using(veniaTargets);
@@ -60,4 +61,6 @@ module.exports = veniaTargets => {
     });
 
     new CategoryListProductAttributes(venia);
+
+    new RichContentTypeList(venia);
 };

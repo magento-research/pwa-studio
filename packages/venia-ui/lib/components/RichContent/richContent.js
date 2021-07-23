@@ -3,6 +3,8 @@ import { useStyle } from '../../classify';
 import defaultClasses from './richContent.css';
 import { shape, string } from 'prop-types';
 import richContentRenderers from './richContentRenderers';
+import { setContentTypeConfig } from '@magento/pagebuilder/lib/config';
+import richContentTypes from './richContentTypes';
 
 /**
  * RichContent component.
@@ -17,12 +19,24 @@ import richContentRenderers from './richContentRenderers';
  *
  * @returns {React.Element} A React component that renders Heading with optional styling properties.
  */
-const RichContent = props => {
+const RichContent = (props) => {
     const classes = useStyle(defaultClasses, props.classes);
     const rendererProps = {
         ...props,
         classes
     };
+    for (const ContentType of richContentTypes) {
+        const { component, configAggregator } = ContentType;
+        if (!ContentType.name) {
+            ContentType.name = component.name;
+        }
+        if (ContentType.name && component && configAggregator) {
+            setContentTypeConfig(ContentType.name, {
+                component,
+                configAggregator
+            });
+        }
+    }
     for (const Renderer of richContentRenderers) {
         const { Component, canRender } = Renderer;
         if (canRender(rendererProps.html)) {
@@ -33,7 +47,7 @@ const RichContent = props => {
     if (process.env.NODE_ENV === 'development') {
         console.warn(
             `None of the following rich content renderers returned anything for the provided HTML.`,
-            richContentRenderers.map(r => `<${r.name}>`),
+            richContentRenderers.map((r) => `<${r.name}>`),
             props.html
         );
     }
