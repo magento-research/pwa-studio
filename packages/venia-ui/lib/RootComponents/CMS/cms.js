@@ -11,9 +11,9 @@ import { useIntl } from 'react-intl';
 import defaultClasses from './cms.css';
 
 const CMSPage = props => {
-    const { id } = props;
+    const { id, identifier } = props;
 
-    const talonProps = useCmsPage({ id });
+    const talonProps = useCmsPage({ id, identifier });
     const {
         cmsPage,
         hasContent,
@@ -68,6 +68,7 @@ const CMSPage = props => {
 
 CMSPage.propTypes = {
     id: number,
+    identifier: string,
     classes: shape({
         heading: string
     })
